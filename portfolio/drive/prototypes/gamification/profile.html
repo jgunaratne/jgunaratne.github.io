@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Gamefication</title>
+<link rel="stylesheet" href="/static/game.css" type="text/css">
+<script src="/static/js/jquery-1.7.2.min.js"></script>
+<script src="/static/js/game.js"></script>
+<!-- <script src="/static/js/profile.js"></script> -->
+</head>
+<body>
+  <div class="overlay">
+    <div class="profile">
+      <div class="mug"></div>
+      <div class="person-desc">
+        <h4>John Doe</h4>
+        <p>{{ earnedSkills }} Skills | {{ earnedBadges }} Badges</p>
+      </div>
+      <div class="menu-button">
+        <div class="icon-wrapper">
+          <div class="icon menu-state person"></div>
+        </div>
+        <div class="menu-arrow"></div>
+        <div class="menu">
+          <div class="arrow">
+            <div class="inner-arrow"></div>
+          </div>
+          <ul>
+            <li><div class="icon person"></div> <a href="/profile.html">My profile</a></li>
+            <li><div class="icon skills"></div> <a href="/skills.html">All skills</a></li>
+            <li><div class="icon badge"></div> <a href="/badges.html">All badges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="break"></div>
+    </div>
+    <h2>My profile</h2>
+    <div class="divider"></div>
+    <div class="items-container">
+      <h4 class="header">
+        Skills <span class="stats">- Earned <span class="skill-count">{{ earnedSkills }}</span> of {{ scount }}</span>
+      </h4>
+      <div class="skills">
+        {% for skill in skills %}
+          <a href="/skill_info/{{ skill.name }}">
+            {% if skill.enabled %}
+              <div class="circle small" style="background: {{ skill.color }}">
+            {% else %}
+              <div class="circle small" style="background: #B3AEC2">
+            {% endif %}
+          
+              <div class="ring-first">
+                <div class="ring-second"></div>
+              </div>
+              {% if skill.enabled %}
+                <div class="icon {{ skill.icon }}" style="background: {{ skill.color }}"></div>
+              {% else %}
+                <div class="icon {{ skill.icon }}" style="background: #B3AEC2"></div>
+              {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      <div class="break space"></div>
+      <h4 class="header">
+        Badges <span class="stats">- Earned <span class="badge-count">{{ earnedBadges }}</span> of {{ bcount }}</span>
+      </h4>
+      <div class="badges">
+        {% for badge in badges %}
+          <a href="/badge_info/{{ badge.name }}">
+            {% if badge.enabled %}
+              <div class="badge" style="background: {{ badge.color }}"></div>
+            {% else %}
+              <div class="badge" style="background: #B3AEC2"></div>
+            {% endif %}
+          </a>
+        {% endfor %}
+        <!-- <div class="badge">
+                  <div class="badge-fill"></div>
+                </div>
+                <div class="badge"></div>
+                <div class="badge"></div>
+                <div class="badge"></div>
+                <div class="badge"></div>
+                <div class="badge"></div>
+                <div class="badge"></div> -->
+      </div>
+      <div class="break space"></div>
+      <h4 class="header">
+        Leaderboard <span class="stats">- #558</span>
+      </h4>
+      <ol>
+        <li><div class="mug"></div>Vance Vagell</li>
+        <li><div class="mug"></div>Antonella Pavese</li>
+        <li><div class="mug"></div>Varnali Shah</li>
+        <li><div class="mug"></div>Junius Gunaratne</li>
+      </ol>
+      <div class="break"></div>
+    </div>
+  </div>
+</body>
+</html>

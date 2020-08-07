@@ -1,0 +1,146 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="polymer-drive-list-item" attributes="item items type name selecteditem icon thumb" on-mousedown="onMouseDown" on-mouseup="onMouseUp" on-click="onClick" on-dblclick="onDblClick" on-mouseover="onMouseOver" on-mouseout="onMouseOut">
+<template>
+  <link rel="stylesheet" href="polymer-drive-list-item.css">
+  <div class="contents {{selecteditem ? 'selected' : ''}}">
+    
+    <div class="thumb" style="background-image: url({{thumb}})"></div>
+    <div class="icon-container"><div class="icon" style="background-image: url({{icon}})"></div></div>
+    <p class="title">{{name}}</p>
+    <p class="owner">{{item.ownerName}}</p>
+    <p class="date">Jan 23, 2014</p>
+
+  </div>
+</template>
+<script>
+  (function() {
+    Polymer('polymer-drive-list-item', {
+      item: null,
+      selected: false,
+      selecteditem: false,
+      wasSelected: false,
+      ready: function() {
+        var t = this;
+        setTimeout(function() {
+          var mimeClass = '';
+          if (t.item && t.item.mimeType) {
+            if (t.item.mimeType.indexOf('document') != -1 || t.item.mimeType.indexOf('word') != -1) {
+              mimeClass = 'doc';
+            }
+            if (t.item.mimeType.indexOf('sheet') != -1 || t.item.mimeType.indexOf('excel') != -1) {
+              mimeClass = 'sheet';
+            }
+            if (t.item.mimeType.indexOf('presentation') != -1 || t.item.mimeType.indexOf('powerpoint') != -1) {
+              mimeClass = 'slide';
+            }
+            if (t.item.mimeType.indexOf('image') != -1) {
+              mimeClass = 'image';
+            }
+            if (t && t.classList && mimeClass) {
+              t.classList.add(mimeClass);
+            }
+          }
+
+          t.classList.add('in');
+
+        }, 0);
+      },
+      onMouseDown: function(e,i,el) {
+        el.item.polymerObj = el;
+        if (el.isSelected()) {
+          el.wasSelected = true;
+        }
+        el.setSelected(true);
+      },
+      onMouseUp: function(e,i,el) {
+        el.classList.remove('droptarget');
+        var app = document.getElementsByTagName('polymer-drive-list-container')[0];
+        if (app.mode == 'itemSelectMode') {
+          var list = document.getElementsByTagName('polymer-drive-list')[0];
+          if (!e.ctrlKey && !e.shiftKey && !e.metaKey) {
+            list.deselectAllItems();
+          }
+          if (e.shiftKey) {
+            var selItems = list.getSelectedItems();
+            var allItems = list.getAllItems();
+            var min = allItems.length;
+            var max = 0;
+            for (var i = 0; i < selItems.length; i++) {
+              for (var j = 0; j < allItems.length; j++) {
+                if (selItems[i] == allItems[j]) {
+                  if (min > j) min = j;
+                  if (max < j) max = j;
+                }
+              }
+            }
+            for (var i = min; i < max; i++) {
+              allItems[i].setSelected(true);
+            }
+          }
+        }
+        if (el.wasSelected) {
+          el.setSelected(false);
+        } else {
+          el.setSelected(true);
+        }
+        el.wasSelected = false;
+      },
+      onMouseOver: function(e,i,el) {
+        if (this.item && this.item.type == 'folder' && !this.classList.contains('selected')) {
+          var app = document.getElementsByTagName('polymer-drive-list-container')[0];
+          if (app && app.mode == 'dragMode') {
+            el.classList.add('droptarget');
+            app.dropTarget = this;
+          }
+        }
+      },
+      onMouseOut: function(e,i,el) {
+        if (this.item && this.item.type == 'folder') {
+          var app = document.getElementsByTagName('polymer-drive-list-container')[0];
+          if (app && app.mode == 'dragMode') {
+            el.classList.remove('droptarget');
+            app.dropTarget = null;
+          }
+        }
+      },
+      onClick: function(e,i,el) {
+        var toolbar = document.getElementsByTagName("polymer-drive-toolbar")[0];
+        toolbar.showFileControls();
+        e.stopPropagation();
+      },
+      onDblClick: function(e,i,el) {
+        if (this.type == 'folder') {
+          var list = document.getElementsByTagName("polymer-drive-list")[0];
+          list.showFolder(this.item);
+
+          var crumbs = document.getElementsByTagName('polymer-drive-breadcrumbs')[0];
+          crumbs.addCrumb(this.item);
+
+          // var list = document.getElementsByTagName("polymer-drive-list")[0];
+          // list.classList.add('in');
+
+        }
+        e.stopPropagation();
+      },
+      isSelected: function() {
+        if (this.item && this.item.selecteditem) {
+          return this.item.selecteditem;
+        } else {
+          return false;
+        }
+      },
+      toggleSelected: function() {
+        this.selected = !this.selected;
+        this.item.selecteditem = this.selected;
+      },
+      setSelected: function(bool) {
+        this.selected = bool;
+        this.item.selecteditem = bool;
+      },
+      getPolymerObj: function() {
+        return this;
+      }
+    });
+})();
+</script>
+</polymer-element>

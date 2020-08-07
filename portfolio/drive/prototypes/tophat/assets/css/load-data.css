@@ -1,0 +1,79 @@
+#loadingData {
+	position: fixed;
+	width: calc(100% - 100px);
+	height: calc(100% - 100px);
+	background: #fff;
+	padding: 50px;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.kd-progress p {
+	margin: 4px 0;
+}
+
+.kd-progressstatus {
+	color: #202020;
+	margin-bottom: 0;
+}
+
+.kd-progressbar {
+	width: 320px;
+	border: 1px solid #999;
+	padding: 1px;
+}
+
+.kd-progresstext {
+	color: #999;
+}
+
+.kd-progressbar-animated.kd-progressbar-tall .kd-progresstrack {
+	background-size: 20px 10px;
+	-webkit-animation-name: bg-tall;
+}
+
+.kd-progressbar-animated .kd-progresstrack {
+	-webkit-box-shadow: inner 0 0 0 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inner 0 0 0 1px rgba(0, 0, 0, 0.1);
+	box-shadow: inner 0 0 0 1px rgba(0, 0, 0, 0.1);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	background-size: 16px 8px;
+	background-image: -webkit-linear-gradient(315deg, transparent, transparent 33%, rgba(0, 0,
+		0, 0.12) 33%, rgba(0, 0, 0, 0.12) 66%, transparent 66%, transparent);
+	background-image: -moz-linear-gradient(315deg, transparent, transparent 33%, rgba(0, 0, 0,
+		0.12) 33%, rgba(0, 0, 0, 0.12) 66%, transparent 66%, transparent);
+	background-image: -o-linear-gradient(315deg, transparent, transparent 33%, rgba(0, 0, 0,
+		0.12) 33%, rgba(0, 0, 0, 0.12) 66%, transparent 66%, transparent);
+	background-image: linear-gradient(315deg, transparent, transparent 33%, rgba(0, 0, 0, 0.12
+		) 33%, rgba(0, 0, 0, 0.12) 66%, transparent 66%, transparent);
+	-webkit-animation-name: bg;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+.kd-progressbar-tall .kd-progresstrack,.kd-progressbar-tall .kd-quantitytrack
+	{
+	height: 8px;
+}
+
+.kd-progressbar-blue .kd-progresstrack {
+	background-color: #6188f5;
+}
+
+.kd-progresstrack {
+	background-color: #ccc;
+	width: 100%;
+	height: 5px;
+}
+
+@-webkit-keyframes bg {
+	0% { background-position:0 0; }
+	100% { background-position:-16px 0; }
+}
+@-webkit-keyframes bg-tall {
+	0% { background-position:0 0; }
+	100% { background-position:-20px 0; }
+}

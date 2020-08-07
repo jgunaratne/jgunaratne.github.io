@@ -1,0 +1,20 @@
+::-webkit-scrollbar {
+  width: 15px;
+  background: transparent;
+  overflow: visible;
+  z-index: 100;
+  position: static;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-right: 4px solid #fff;
+  border-left: 4px solid #fff;
+  border-top: 6px solid #fff;
+  border-bottom: 6px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}

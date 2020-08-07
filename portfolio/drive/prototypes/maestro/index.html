@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Maestro</title>
+<link rel="stylesheet" href="css/maestro.css" type="text/css">
+</head>
+<body>
+  <header>
+    <div class="google-logo"></div>
+  </header>
+  <div class="sec-header">
+    <h2>Apps Script Dashboard</h2>
+  </div>
+  <table class="data-table" id="dataTable">
+    <tbody>
+      <tr class="top-head">
+        <th class="pad-right" width="240">Script Name</th>
+        <th colspan="3" class="pad-right">Number of Executions</th>
+        <th colspan="3">Number of Active Users</th>
+        <th class="align-center">Health</th>
+        <th width="120">Last Week</th>
+        <th class="align-right" width="100">Availability</th>
+      </tr>
+      <tr class="bottom-head">
+        <th></th>
+        <th class="number">1 day</th>
+        <th class="number">7 day</th>
+        <th>30 day</th>
+        <th class="number">1 day</th>
+        <th class="number">7 day</th>
+        <th class="number">30 day</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td colspan="10" class="section"><h4>Scripts in
+            Spreadsheet</h4></td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health ok"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 10%"></div>
+            <div class="red" style="height: 40%"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 0"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 100%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 10%"></div>
+            <div class="red" style="height: 20%"></div>
+            <div class="green" style="height: 70%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 90%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 10%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health good"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 50%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 20%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 80%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td colspan="10" class="section"><h4>Scripts in Sites</h4></td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health good"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 10%"></div>
+            <div class="red" style="height: 40%"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 0"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 100%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 10%"></div>
+            <div class="red" style="height: 20%"></div>
+            <div class="green" style="height: 70%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 90%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 10%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td colspan="10" class="section"><h4>Extensions</h4></td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health good"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 50%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 20%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 80%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health bad"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 50%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 20%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 80%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td colspan="10" class="section"><h4>Web Apps</h4></td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health good"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 50%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 20%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 80%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health good"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 50%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 20%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 80%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+      <tr>
+        <td><a href="item.html">Validator</a></td>
+        <td>7</td>
+        <td>10</td>
+        <td>100</td>
+        <td>27</td>
+        <td>13</td>
+        <td>7</td>
+        <td><div class="health bad"></div></td>
+        <td class="activity"><div class="bar">
+            <div class="none" style="height: 50%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 50%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 20%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 80%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 40%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 60%"></div>
+          </div>
+          <div class="bar">
+            <div class="none" style="height: 70%"></div>
+            <div class="red" style="height: 0"></div>
+            <div class="green" style="height: 30%"></div>
+          </div></td>
+        <td class="align-right">53%</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="footer-placeholder"></div>
+  <footer> &copy; 2012 Google </footer>
+  <script src="js/maestro.js"></script>
+</body>
+</html>

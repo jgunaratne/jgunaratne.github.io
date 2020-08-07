@@ -1,0 +1,92 @@
+<link rel="import" href="/polymer/polymer.html">
+
+<polymer-element 
+	name="edison-promo"
+	attributes="shell showpromo"
+	on-click="onClick" >
+	
+<template>
+	
+	<style>
+		.promo.hide {
+			height: 0;
+			padding: 0 18px;
+			padding-left: 74px;
+			-webkit-transition: all .2s;
+		}
+		.promo {
+			-webkit-box-sizing: border-box;
+			background: #4285F4;
+			position: relative;
+			color: white;
+			height: 74px;
+			padding: 18px;
+			padding-left: 74px;
+			-webkit-transition: all .2s;
+			overflow: hidden;
+		}
+		.promo .app {
+			position: absolute;
+			left: 15px;
+			top: 15px;
+		}
+		.promo .close {
+			-webkit-filter: invert(1);
+			position: absolute;
+			right: 12px; 
+			top: 20px;
+			width: 16px;
+			padding: 8px;
+			cursor: pointer;
+		}
+		.promo .close:active {
+			background: rgba(0,0,0,0.1);
+		}
+		.promo .lead {
+			font-size: 16px;
+			padding-bottom: 4px;
+			font-family: RobotoLight;
+		}
+		.promo .detail {
+			font-size: 12px;
+			font-family: Roboto
+		}
+	</style>
+	
+	<div id="promo" class="promo {{showpromo == 'true' ? '' : 'hide'}}">
+		
+		<img src="img/app.svg" class="app" />
+		
+		<div class="lead">Download the Drive app</div>
+		<div class="detail"><content></content></div>
+	
+		<img src="img/close.svg" class="close" id="promo-close" />
+		
+	</div>
+	
+</template>
+
+<script>
+
+  (function() {
+	  
+	  Polymer('edison-promo', {
+	  	ready: function(){
+	  		this.setEvents();
+	  		var t = this;
+			setTimeout(function() {
+				t.shell.promo = t;
+			},0);
+	  	},
+		setEvents: function(){
+		},
+		onClick: function(){
+			this.shell.showpromo = 'false';
+		}
+	  });
+	
+  })();
+  
+</script>
+
+</polymer-element>

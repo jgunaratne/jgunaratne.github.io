@@ -1,0 +1,144 @@
+:host.grid {
+	margin: 10px;
+	float: left;
+}
+
+:host.grid .card {
+	width: 180px;
+	border: 1px solid rgba(212, 212, 212, 1);
+}
+
+:host.grid .card.file {
+	border-color: transparent;
+}
+
+:host.grid .card.folder {
+	box-shadow: 0 0 2px rgba(0,0,0,.15);
+}
+
+:host.grid .card.selected {
+	border-color: rgb(41, 98, 255);
+	background-color: rgb(41, 98, 255);
+	color: #fff;
+}
+
+:host.grid .card.focus {
+	outline: 6px solid rgba(41, 98, 255, .33);
+}
+
+:host.grid .thumb {
+	width: calc(100% - 2px);
+	height: 120px;
+	background-color: #eee;
+	background-size: cover;
+	border: 1px solid #d8d8d8;
+	box-shadow: 0 0 2px rgba(0,0,0,.15);
+	position: relative;
+}
+
+:host.grid .thumb-icon {
+	background-size: cover;
+	-webkit-filter: grayscale(100%) opacity(20%);
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	border: none;
+	position: relative;
+}
+
+.doc .thumb-icon {
+	background-image: url(img/doc.svg);
+}
+
+.sheet .thumb-icon {
+	background-image: url(img/sheet.svg);
+}
+
+.slide .thumb-icon {
+	background-image: url(img/slide.svg);
+}
+
+:host.grid .title {
+	margin: 1px 0 -1px 0;
+	font-size: 13px;
+	width: calc(100% - 42px);
+	float: left;
+	line-height: 42px;
+}
+
+:host.grid .icon {
+	width: 42px;
+	height: 42px;
+	background-position: center;
+	float: left;
+}
+
+:host.grid .owner, :host.grid .date {
+	display: none;
+}
+
+.icon.doc {
+	background-image: url(img/doc.svg);
+}
+
+.icon.sheet {
+	background-image: url(img/sheet.svg);
+}
+
+.icon.slide {
+	background-image: url(img/slide.svg);
+}
+
+.icon.folder {
+	background-image: url(img/folder.svg);
+	opacity: .5;
+}
+
+.card.selected .icon {
+	-webkit-filter: invert(100%) brightness(0);
+	opacity: 1; 
+}
+
+.clear {
+	clear: both;
+}
+
+:host.list .card {
+	border-bottom: 1px solid #eaeaea;
+	font-size: 13px;
+	line-height: 50px;
+}
+
+:host.list.last .card {
+	border-bottom: none;
+}
+
+:host.list .card.selected {
+	border-color: rgb(41, 98, 255);
+	background-color: rgb(41, 98, 255);
+	color: #fff;
+}
+
+:host.list .icon {
+	width: 42px;
+	height: 42px;
+	margin-top: 3px;
+	background-position: center;
+	float: left;
+}
+
+:host.list .title {
+	float: left;
+}
+
+:host.list .owner {
+	float: right;
+	width: 20%;
+}
+
+:host.list .date {
+	float: right;
+	width: 20%;
+	text-align: right;
+	margin-right: 10px;
+}

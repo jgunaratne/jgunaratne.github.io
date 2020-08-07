@@ -1,0 +1,22 @@
+<link rel="import" href="../../../polymer/polymer.html">
+<polymer-element name="sharing-email-snippet" attributes="from doctitle doctype photo docid quote">
+<template>
+  <link rel="stylesheet" href="sharing-email-snippet.css">
+  <div class="snippet-container {{ new }}">
+    <div class="photo"><img src="img/people/photo_{{ photo }}.png" alt="Photo of {{ from }}"></div>
+    <div class="snippet-contents">
+      <h4>{{ from }}</h4>
+      <template if="{{ quote != null }}"><q>{{ quote }}</q></template>
+      <div class="snippet-text"><content></content></div>
+    </div>
+  </div>
+</template>
+<script>
+  (function() {
+    Polymer('sharing-email-snippet', {
+      ready: function() { 
+      }
+    });
+  })();
+</script>
+</polymer-element>

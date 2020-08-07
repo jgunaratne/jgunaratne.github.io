@@ -1,0 +1,116 @@
+<link rel="import" href="/polymer/polymer.html">
+<polymer-element name="edison-breadcrumbs" attributes="shell crumbs">
+<template>
+  <style>
+    .breadcrumbs {
+      background-color: #fff;
+      height: 45px;
+      line-height: 45px;
+      width: 200%;
+      font-size: 12px;
+      position: relative;
+	  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
+	  z-index: 5;
+    }
+    ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+/*      margin-right: 10px;*/
+	  cursor: pointer;
+    }
+    li:first-child {
+      margin-left: 10px;
+    }
+  </style>
+  
+  <div class="breadcrumbs">
+    <ul>
+      <template repeat="{{crumb, i in crumbs}}">
+        <edison-crumb 
+			item="{{crumb}}" 
+			shell="{{shell}}" 
+			index="{{i}}" 
+			breadcrumbs="{{breadcrumbs}}" last="{{i == crumbs.length - 1}}">
+		</edison-crumb>
+      </template>
+    </ul>
+  </div>
+  
+</template>
+
+<script>
+  (function() {
+    Polymer('edison-breadcrumbs', {
+      crumbs: [],
+      ready: function() {
+		  
+        var t = this;
+        setTimeout(function() {
+          t.shell.breadcrumbs = t;
+          t.addCrumb(t.shell.item);
+          t.breadcrumbs = t;
+        }, 0)
+      },
+      addCrumb: function(item) {
+        this.crumbs.push(item);
+      },
+      removeCrumb: function(i) {
+        this.crumbs.splice(i + 1, this.crumbs.length - i);
+      },
+      onClick: function() {
+
+      }
+    });
+  })();
+</script>
+</polymer-element>
+
+<polymer-element name="edison-crumb" attributes="item shell index breadcrumbs last" on-click="onClick">
+<template>
+  <style>
+  :host {
+	  margin-left: 50px;
+	  transition: all 0.5s;
+	  opacity: 0;
+  }
+  :host.in {
+	  margin-left: 0;
+	  opacity: 1;
+  }
+  .caret.last {
+    display: none;
+  }
+  </style>
+  <li>{{item.title}} &nbsp; <span class="caret {{last == true ? 'last' : ''}}">»</span></li>
+</template>
+<script>
+  (function() {
+    Polymer('edison-crumb', {
+      ready: function() {
+		  
+		  var t = this
+		  
+		  setTimeout(function(){
+			  
+			  // animate crumb moving in
+			  t.classList.add('in')
+			  
+			  // new page, reset file count
+			  t.shell.fileCount = 0
+			  
+		  }, 0)
+		  
+
+		  
+      },
+      onClick: function() {
+        this.shell.item = this.item;
+        this.breadcrumbs.removeCrumb(this.index);
+      }
+    });
+  })();
+</script>
+</polymer-element>

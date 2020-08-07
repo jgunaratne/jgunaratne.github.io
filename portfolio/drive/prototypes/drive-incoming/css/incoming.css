@@ -1,0 +1,210 @@
+body {
+	font: 13px Arial;
+	padding: 0;
+	margin: 50px;
+	color: #909090;
+}
+
+.circle-container {
+	width: 430px;
+	height: 430px;
+	position: relative;
+	-webkit-filter: grayscale(100%);
+	-webkit-transition: all .5s;
+}
+
+.circle-container:hover {
+	width: 430px;
+	height: 430px;
+	position: relative;
+	-webkit-filter: grayscale(0);
+	-webkit-transition: all .5s;
+}
+
+.circle {
+	width: 430px;
+	height: 430px;
+	border-radius: 50%;
+	background-color: #f5f5f5;
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	
+	
+	background-color: #f5f5f5;
+	-webkit-transition: all .5s;
+}
+
+.circle-container:hover .circle {
+		background: #4285f4;
+		-webkit-transition: all .5s;
+		
+		-webkit-animation-name: pulse;
+	-webkit-animation-duration: .67s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+		
+}
+
+h2 {
+	position: absolute;
+	font-weight: normal;
+	text-align: center;
+	width: 100%;
+	bottom: 110px;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 90px;
+	margin: 0;
+	padding: 0;
+}
+
+.circle-container:hover h2, .circle-container:hover p {
+	color: #fff;
+}
+
+.file {
+	width: 100px;
+	height: 125px;
+	background-size: cover;
+	border-radius: 10px;
+	position: absolute;
+	top: 150px;
+	left: calc(50% - 100px/ 2);
+	-webkit-animation-delay: 1s;
+	-webkit-animation-name: white;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-fill-mode: forwards;
+	opacity: 1;
+	-webkit-transition: all .5s;
+}
+
+.file.one {
+	background-image: url(../img/gray-drive-doc.png);
+	-webkit-transition: all .5s;
+}
+
+.circle-container:hover .file.one {
+	background-image: url(../img/blue-drive-doc.png);
+	-webkit-transition: all .5s;
+}
+
+.file.two {
+	width: 100px;
+	height: 125px;
+	border-radius: 10px;
+	position: absolute;
+	left: calc(50% - 100px/ 2 - 5px);
+	-webkit-transform: rotate(20deg);
+	opacity: 1;
+	background-image: url(../img/blue-drive-image.png);
+	background-size: cover;
+}
+
+.circle-container:hover .file.two {
+	margin-top: -20px;
+  margin-left: -70px;
+	background-image: url(../img/blue-drive-image.png);
+	background-size: cover;
+	background-color: none;
+	-webkit-transform: rotate(-20deg);
+	-webkit-transition: all .5s;
+}
+
+.file.three {
+	width: 100px;
+	height: 125px;
+	border-radius: 10px;
+	position: absolute;
+	top: 130px;
+	left: calc(50% - 100px/ 2 - 0);
+	-webkit-transform: rotate(20deg);
+	opacity: .5;
+	background-image: url(../img/blue-drive-kix.png);
+	background-size: cover;
+	opacity: 0;
+}
+
+.circle-container:hover .file.three {
+	margin-top: 5px;
+	margin-left: 60px;
+	opacity: 1;
+	background-image: url(../img/blue-drive-kix.png);
+	background-size: cover;
+	background-color: none;
+	-webkit-transform: rotate(40deg);
+	-webkit-transition: all .5s;
+}
+
+.file.four {
+	width: 100px;
+	height: 125px;
+	border-radius: 10px;
+	position: absolute;
+	top: 130px;
+	left: calc(50% - 100px/ 2 - 0);
+	background-image: url(../img/blue-drive-video.png);
+	background-size: cover;
+	-webkit-transform: rotate(20deg);
+	opacity: 0;
+	-webkit-transition: all .5s;
+}
+
+.circle-container:hover .file.four {
+	margin-top: -60px;
+	margin-left: 10px;
+	-webkit-transform: rotate(10deg);
+	opacity: 1;
+	
+	-webkit-transition: all .5s;
+}
+
+.drop {
+	opacity: 1;
+	-webkit-transition: all .25s;
+}
+
+.circle-container:hover .drop {
+	opacity: 0;
+	-webkit-transition: all .25s;
+}
+
+.incoming {
+	opacity: 0;
+	-webkit-transition: all .25s;
+}
+
+.circle-container:hover .incoming {
+	opacity: 1;
+	-webkit-transition: all .25s;
+}
+
+
+@-webkit-keyframes pulse {
+	0% {
+		width: 430px;
+		height: 430px;
+		top: 0;
+		left: 0;
+	}
+	50% {
+		width: 445px;
+		height: 445px;
+		top: -8px;
+		left: -8px;
+	}
+	100% {
+		width: 430px;
+		height: 430px;
+		top: 0;
+		left: 0;
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sign In</title>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/login.js"></script>
+<style>
+@import url("css/login.css");
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div id="loginPane">
+    <h2>Sign In</h2>
+      <div id="loginType">
+        Do you have an account and password? <input type="radio"
+          name="userType" id="regYes" class="radio-btn"><label>Yes</label> <input
+          type="radio" name="userType" id="regNo" checked="checked" class="radio-btn"><label>No</label>
+      </div>
+      <div>
+        <label class="field-label">Login (Email):</label> <input
+          type="text" id="emailFld">
+      </div>
+      <div>
+        <label class="field-label">Password:</label> <input
+          type="password" id="passwdFld">
+      </div>
+      <div id="newUserOptions">
+        <div>
+          <label class="field-label">Confirm password:</label> <input
+            type="password" id="passwdConfirmFld">
+        </div>
+      </div>
+      <div>
+        <div id="msgArea">Messages go here.</div>
+        <button id="signInBtn" class="primary">Sign in</button>
+      </div>
+      <div class="clear"></div>
+  </div>
+</body>
+</html>

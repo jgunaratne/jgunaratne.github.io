@@ -1,0 +1,215 @@
+.dialog {
+  background: #fff;
+  position: fixed;
+  width: 720px;
+  top: 140px;
+  left: 50%;
+  margin-left: -402px;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 30px 42px;
+  z-index: 10;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dialog h4 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+  color: #222;
+  margin-bottom: 1em;
+}
+
+.sidebar {
+  float: left;
+  margin-left: -16px;
+  width: 180px;
+}
+
+.sidebar a {
+  display: block;
+  line-height: 29px;
+  color: #333;
+  font-size: 13px;
+  padding: 0 16px;
+}
+
+.sidebar a:hover {
+  color: #222;
+  background-color: #EEE;
+}
+
+.sidebar ul ul {
+  margin-left: 28px;
+}
+
+.scroll-pane {
+  width: 485px;
+  height: 330px;
+  float: left;
+  overflow-y: scroll;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #D9D9D9;
+  border-top: 1px solid silver;
+  margin: 0 0 10px 50px;
+}
+
+#imagePicker, #docPicker {
+  display: none;
+}
+
+.image-thumb {
+  background-color: #EEE;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 94px;
+  height: 94px;
+  margin: 0 0 15px 15px;
+  float: left;
+  border: 3px solid white;
+}
+
+.image-thumb.selected {
+  border: 3px solid rgba(130, 202, 252, .8);
+}
+
+
+#docsList li {
+  line-height: 2.8em;
+  border-top: 1px solid #f5f5f5;
+  -webkit-user-select: none;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  height: 2.8em;
+}
+
+#docsList li:hover {
+  background: #eee;
+}
+
+#docsList li.selected {
+  background: #f5f5f5;
+}
+
+#docsList .icon {
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons_sprite.png) no-repeat -720px 0;
+  display: block;
+  float: left;
+  margin: 7px 5px 0 0;
+}
+
+#docsList .title {
+  width: 260px;
+  overflow: hidden;
+  display: block;
+  float: left;
+}
+
+#docsList .date {
+  display: block;
+  float: left;
+  width: 100px;
+}
+
+#docsList .name {
+  display: block;
+  float: left;
+  font-size: 11px;
+  color: #999;
+  line-height: 3.5em;
+}
+
+#addOverlay {
+  position: absolute;
+  background: #fff;
+  left: 40px;
+  top: 120px;
+  z-index: 10;
+  padding: 20px 15px;
+  outline: 1px solid #e9e9e9;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.15);
+  -webkit-transition: display 0.15s linear;
+  display: none;
+}
+
+#addOverlay ul {
+  float: left;
+  width: 150px;
+}
+
+#addOverlay h4 {
+  text-transform: uppercase;  
+  font-size: 11px;
+  color: #999;
+  margin: 5px 5px 15px 5px;
+}
+
+#addOverlay li a {
+  color: #666;
+  display: block;
+  padding: 10px 15px 10px 36px;
+}
+
+#addOverlay li a span {
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons_sprite.png) no-repeat;
+  display: block;
+  position: absolute;
+  margin: -6px 0 0 -32px;
+}
+
+#addOverlay li a:hover {
+  background: #ececec;
+}
+
+#addOverlay .add-group {
+  float: left;
+  padding-right: 15px;
+}
+
+#addOverlay .item-group {
+  float: left;
+  border-left: 1px solid #ebebeb; 
+  display: none;
+}
+
+#addOverlay .item-group h4 {
+  margin: 15px 15px 8px 25px;
+}
+
+#addOverlay .item-group .search {
+  border: 1px solid #D9D9D9;
+  margin: 0 0 0 25px;
+  font-size: 13px;
+  line-height: 11px;
+  padding: 6px 5px;
+  width: 85%;
+  color: #999;
+}
+
+#addOverlay .item-group ul {
+  margin-left: 15px;
+}
+
+#addOverlay .item-group ul.last {
+  margin-right: 0;
+}
+
+#addOverlay .bottom-options {
+  margin-top: 24px;
+  padding-top: 8px;
+  border-top: 1px solid #ebebeb;
+}
+
+#addOverlay .bottom-options .kd-button {
+  margin-left: 20px;
+}
+
+.clear {
+  clear: both;
+}

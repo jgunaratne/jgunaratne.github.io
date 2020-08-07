@@ -1,0 +1,219 @@
+:host {
+	
+}
+
+:host:after {
+	clear: both;
+	content: ' ';
+	height: 0;
+	display: table;
+	visibility: hidden;
+}
+
+/* MODAL and FLOATING LABEL */
+.modal_wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(242, 242, 242, .8);
+  z-index: 9999999999999;
+  opacity: 1;
+}
+.modal {
+  /* border: 1px solid rgba(0,0,0,.15); */
+  padding: 16px;
+  background-color: #FAFAFA;
+  box-shadow: 0 10px 26px rgba(0,0,0,.4);
+  border-radius: 3px;
+  float: left;
+  position: relative;
+}
+
+.modal_content {
+  width: 450px;
+}
+.modal_title {
+  padding: 8px 8px 0 8px;
+  -webkit-font-smoothing: antialiased;
+  color: #393939;
+  line-height: 26px;
+  cursor: default;
+  margin-bottom: 8px;
+}
+.modal_body {
+  font-weight: normal;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 20px;
+}
+.modal_close {
+  width: 24px;
+  height: 24px;
+  background-image: url(img/close.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px 24px;
+  opacity: .7;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+.modal_close:hover {
+  opacity: 1;
+}
+.modal_dialog_text {
+  padding: 0 8px 0 8px;
+}
+.modal_dialog_text a {
+  color: #4374E0;
+  text-decoration: none;
+}
+.input_label_pair {
+  position: relative;
+  margin-bottom: 7px;
+  padding-top: 18px;
+}
+.floating_label {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  top: 19px; /* Should be 16, but after aplying -webkit-backface-visibility fix, it needs to be 20 */
+  left: 0;
+  height: 10px;
+  font-weight: normal;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  color: #CCCCCC;
+  -webkit-transition: 150ms cubic-bezier(0.4, 0.0, 0.2, 1) top, 150ms cubic-bezier(0.4, 0.0, 0.2, 1) opacity, 150ms cubic-bezier(0.4, 0.0, 0.2, 1) color, 150ms cubic-bezier(0.4, 0.0, 0.2, 1) -webkit-transform;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;/* <-- THIS IS A TEMP FIX TO FIX THE SCALING ANTIALIASING JUMPS... WEBKIT BUG ON OS X */
+}
+.floating_label_hidden {
+  /* top: 24px; Just use this line if not doing the full scale transform */
+  /*-webkit-transform: scale(1.6);*/
+  font-size: 14px;
+  color: #C1C1C1 !important;
+  top: 36px; /* Should be 33, but after aplying -webkit-backface-visibility fix to .floating_label, it needs to be 20 */
+}
+.floating_label_focused {
+  color: #4374E0;
+}
+.modal_text_input {
+  width: 100%;
+  font-weight: normal;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  padding: 16px 0 8px 0;
+  line-height: 18px;
+  border: none;
+  border-bottom: 1px solid #CCCCCC;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  -webkit-transition: 200ms border-color;
+  /* box-shadow: 0px 3px 8px rgba(50, 50, 50, 0.09); */
+}
+.modal_text_input:focus {
+  border: none;
+  padding: 16px 0 7px 0;
+  border-bottom: 2px solid #4374E0;
+  outline: none;
+  /* box-shadow: 0px 2px 8px rgba(50, 50, 50, 0.08); */
+}
+.input_label_pair .modal_text_input {
+  position: relative;
+}
+.input_label_pair .modal_text_input:focus {
+}
+.stacked_modal_text_input_margin {
+  /*margin-bottom: 20px;*/
+}
+.modal_text_below_input_margin {
+  /*margin-bottom: 26px;*/
+}
+::-webkit-input-placeholder {
+  color: #BFBFBF;
+}
+.modal button {
+  -webkit-border-radius: 2px;
+  background-color: #FAFAFA;
+  border: 1px solid rgba(0,0,0,0);
+  color: #4C4C4C;
+  cursor: default;
+  font-weight: normal;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  height: 36px;
+  line-height: 27px;
+  margin: 0 16px 0 0;
+  min-width: 102px;
+  outline: 0;
+  padding: 0 8px;
+  -webkit-transition: 200ms box-shadow;
+}
+.modal button:last-child {
+  margin: 0;
+}
+.modal button:hover {
+  color: #000000;
+  /* -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1); */
+}
+.modal button.blue_button {
+  background-color: #4184F3;
+  border: 1px solid rgba(0,0,0,0);
+  color: #FFFFFF;
+}
+.modal button.blue_button:focus {
+}
+.modal button:hover.blue_button {
+  /* box-shadow: 0px 1px 1px rgba(0,0,0,0.1); */
+}
+.modal button:focus.blue_button {
+  /* -webkit-box-shadow: inset 0 0 0 1px #fff;
+  box-shadow: inset 0 0 0 1px #fff; */
+}
+.modal_dialog_buttons {
+  float: right;
+  margin: 24px 0 0 0;
+  font-size: 14px;
+}
+.modal_dialog_buttons:after { /* clearfix to avoid editing the html */
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.modal_drag_handle {
+  position: absolute;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.modal_drag_handle_n {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+.modal_drag_handle_s {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+.modal_drag_handle_e {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+}
+.modal_drag_handle_w {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 16px;
+}

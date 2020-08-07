@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Artboard 1 1 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1-1-1" sketch:type="MSArtboardGroup">
+            <circle id="Oval-1" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup" cx="21" cy="21" r="7"></circle>
+            <path d="M30.7229703,33.5462016 C30.7229703,34.3268514 30.1436036,34.959693 29.4289184,34.959693 C28.7142332,34.959693 28.1348665,34.3268514 28.1348665,33.5462016 L28.1348665,23.3585071 L30.7229703,23.3585071 L30.7229703,33.5462016 Z" id="Oval-2" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(29.634866, 29.358507) rotate(-45.000000) translate(-29.634866, -29.358507) "></path>
+        </g>
+    </g>
+</svg>

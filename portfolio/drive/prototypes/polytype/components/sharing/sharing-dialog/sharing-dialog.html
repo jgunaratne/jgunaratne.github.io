@@ -1,0 +1,67 @@
+<link rel="import" href="/polymer/polymer.html">
+<polymer-element name="sharing-dialog" on-click="onClick">
+<template>
+	<link rel="stylesheet" href="sharing-dialog.css">
+	<div class="dialog">
+		<div class="toast" id="toast">Anyone with link can view. Link copied to clipboard.</div>
+		<h1>Share file link</h1>
+		<h4>Link visbility</h4>
+		<div class="status" id="status">
+			<div class="status-contents" id="statusContents">
+			    <p><strong>Specific people</strong> - only invited people can access</p>
+				<p id="anyoneLnk"><strong>Anyone with link</strong> can view</p>
+			</div>
+			<div class="inner-btn btn-icon" id="copyLinkBtn"><div class="icon link"></div>Copy link</div></div>
+			<div class="divider"></div>
+			<h4>People</h4>
+			<div class="btn-group">
+				<div class="field">Enter names, email addresses or groups...</div><div class="btn btn-icon"><div class="icon edit"></div>Can edit</div>
+			</div>
+			<div class="clear"></div>
+			<div class="group">
+				<div class="btn">Done</div><div class="manage-btn"><div class="icon settings"></div>Manage permissions</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</template>
+	<script>
+		(function() {
+			Polymer('sharing-dialog', {
+				ready: function() {
+
+				},
+				onClick: function(e) {
+					var id = e.srcElement.id;
+					if (id == 'copyLinkBtn') {
+						this.rollUpMsg();
+					} else if (id == 'anyoneLnk' || id == 'status') {
+						this.reset();
+					}
+				},
+				rollUpMsg: function(e) {
+					var statusContents = document.getElementById('statusContents');
+					statusContents.classList.remove('rollup');
+					statusContents.classList.add('rollup');
+					var toast = document.getElementById('toast');
+					toast.classList.remove('show');
+					if (this.toastTimeout1) {
+						clearTimeout(this.toastTimeout1);
+					}
+					this.toastTimeout1 = setTimeout(function() {
+						toast.classList.add('show');
+					}, 500);
+					if (this.toastTimeout2) {
+						clearTimeout(this.toastTimeout2);
+					}
+					this.toastTimeout2 = setTimeout(function() {
+						toast.classList.remove('show');
+					}, 5500);
+				},
+				reset: function() {
+					document.getElementById('statusContents').classList.remove('rollup');
+					document.getElementById('toast').classList.remove('show');
+				}
+			});
+		})();
+	</script>
+</polymer-element>

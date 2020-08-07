@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Drive</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="bower_components/platform/platform.js" shadow></script>
+    <link rel="import" href="bower_components/drive/drive-app.html">
+    <link rel="stylesheet" type="text/css" href="assets/css/drive.css">
+
+    <style>
+    .notification {
+        background: rgba(0,0,0,.8);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 30px;
+        position: fixed;
+        top: 40px;
+        left: 50%;
+        width: 320px;
+        margin-left: -160px;
+        text-align: center;
+        -webkit-transition: all .5s;
+    }
+    .notification.out {
+        opacity: 0;
+        top: 0;
+        -webkit-transition: all .5s;
+    }
+    </style>
+</head>
+<body unresolved>
+	<drive-app></drive-app>
+     <div class="notification" id="notification">Resize window to view responsive design</div>
+    <script>
+    var note = document.getElementById('notification');
+    setTimeout(function() {
+        note.classList.add('out');
+    }, 2500);
+    </script>
+</body>
+</html>

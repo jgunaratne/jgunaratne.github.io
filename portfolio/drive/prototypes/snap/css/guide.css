@@ -1,0 +1,95 @@
+
+.col-grid {
+  width: 60px;
+  height: 100%;
+  margin-left: 15px;
+  background: #fff;
+  float: left;
+  -webkit-transition: background 0.25s linear;
+}
+
+.page.show-grid .col-grid {
+  background: #FCFCF0;
+  -webkit-transition: background 0.25s linear;
+}
+
+.guide {
+  position: absolute;
+}
+
+.guide.vertical {
+  box-shadow: 1px 0 0 #CCE680 inset, -1px 0 0 #CCE680 inset;
+  height: 100%;
+  padding-right: 15px;
+  cursor: ew-resize;
+}
+
+.guide.vertical.first {
+  box-shadow: 1px 0 0 #fff inset, -1px 0 0 #CCE680 inset;
+  border-left: 1px dashed #CCE680;
+}
+
+.guide.vertical.last {
+  box-shadow: 1px 0 0 #CCE680 inset, -1px 0 0 #fff inset;
+  border-right: 1px dashed #CCE680;
+}
+
+.guide.horizontal {
+  box-shadow: 1px 1px 0 #CCE680 inset, -1px -1px 0 #CCE680 inset;
+  width: 100%;
+  padding-bottom: 15px;
+
+}
+
+.stopper {
+  position: absolute;
+  border-top: 1px solid #F2BFBF;
+  padding-bottom: 10px;
+  width: 935px;
+  margin: 0 0 0 -10px;
+  top: 14px;
+  z-index: 2;
+}
+
+.stopper .grip {
+  background: #CC0000;
+  width: 30px;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  top: -3px;
+  background: rgba(204, 0, 0, 0);
+  cursor: ns-resize;
+}
+
+.stopper:hover .grip {
+  outline: 1px solid #000;
+  background: #fff;
+  -webkit-transition: background 0.25s linear;
+  cursor: ns-resize;
+  z-index: 100;
+}
+
+.stopper .handle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  outline: 1px solid #000;
+  background: #fff;
+  top: -4px;
+  z-index: 1;
+  cursor: ns-resize;
+}
+
+.stopper .handle.left {
+  left: -2px;
+}
+
+.stopper .handle.right {
+  right: -2px;
+}
+
+.published .guide, .published .stopper, .published .col-grid {
+  display: none;
+}

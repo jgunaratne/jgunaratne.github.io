@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sharing</title>
+<link href="css/sharing.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="kix"></div>
+	<div class="shared-people-area"></div>
+	<div id="shareInvokeArea"></div>
+	<button class="main-share-btn share-icon" style="display: none">
+		<div class="share icon"></div>
+	</button>
+	<button class="main-share-btn icon" id="mainShareBtn"
+		style="display: none">
+		<div class="private icon"></div>
+		Share
+	</button>
+	<div class="sharing-areas">
+		<div class="sharing-dialog">
+			<div class="arrow">
+				<div class="inner-arrow"></div>
+			</div>
+			<div class="main-input-container">
+				<div class="close" id="closeSharingDialog"></div>
+				<h1>Share file link</h1>
+
+				<div class="link-control-container">
+					<div class="gray-link-area">
+						<div class="dd-container">
+							<div class="dd-topitem">
+								<ul>
+									<li><strong>No link sharing</strong> - only invited people
+										can access</li>
+									<li><span class="left"><span class="shared-with"><strong>Limited:</strong> Anyone
+												with the link <span class="domain">in domain.com </span><strong>can
+													view</strong>
+										</span> <span class="share-people"></span></span>
+									<div class="gray-drop-down-icon"></div></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="copy-link">
+						<div class="link icon"></div>
+						<span class="label">Copy link</span>
+					</div>
+					<div class="clear"></div>
+					<div class="link-container">
+						<div class="link-section focus">
+							<input id="linkURL" type="text"
+								value="https://docs.google.com/a/google.com/document/d/1pyJD6zmyqmtSLwYvuExHkwLzhD8VlZcPpCVSHEs7H7U/edit#heading=h.uhw4szs9tdmk">
+						</div>
+					</div>
+				</div>
+				<ul class="drop-menu" id="linkSharingMenu">
+					<li id="linkSharingMenuNoLinkSharingItem"><div class="check"></div>
+						<strong>No link sharing</strong> - only invited people can access</li>
+					<li class="divider"></li>
+					<li id="linkSharingMenuCanViewItem"><div
+							class="check selected"></div> <strong>Limited:</strong> Anyone
+						with the link <strong>can view</strong></li>
+					<li id="linkSharingMenuCanCommentItem"><div class="check"></div>
+						<strong>Limited:</strong> Anyone with the link <strong>can
+							comment</strong></li>
+					<li id="linkSharingMenuCanEditItem"><div class="check"></div>
+						<strong>Limited:</strong> Anyone with the link <strong>can
+							edit</strong></li>
+					<li class="divider"></li>
+					<li id="linkSharingMenuMoreItem"><div class="check"></div>More</li>
+
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Limited:</strong>
+						People at domain.com with the link <strong>can view</strong></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Limited:</strong>
+						People at domain.com with the link <strong>comment</strong></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Limited:</strong>
+						People at domain.com with the link <strong>can edit</strong></li>
+					<li class="divider advanced-sharing hide"></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Limited:</strong>
+						People at domain.com <strong>can find and view</strong></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Limited:</strong>
+						People at domain.com <strong>can find and comment</strong></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Limited:</strong>
+						People at domain.com <strong>can find and edit</strong></li>
+					<li class="divider advanced-sharing hide"></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Public:</strong>
+						anyone on the Internet <strong>can find and view</strong></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Public:</strong>
+						anyone on the Internet <strong>can find and comment</strong></li>
+					<li class="advanced-sharing hide"><div class="check"></div> <strong>Public:</strong>
+						anyone on the Internet <strong>can find and edit</strong></li>
+
+				</ul>
+				<div class="clear"></div>
+				<div class="main-input">
+					<div class="permission-btn permission-btn-main-input"
+						id="permissionBtnMainInput">
+						<div class="icon edit"></div>
+						<span class="acl-btn-text collapse">Can edit</span>
+						<div class="menu-arrow-down"></div>
+					</div>
+					<div class="input-info">Enter names, email address or groups</div>
+					<input id="contactInput" type="text">
+				</div>
+			</div>
+			<ul class="drop-menu" id="editACL">
+				<li id="reqAccessLi"><div class="check"></div>Can request
+					access</li>
+				<li><div class="check"></div>Can view</li>
+				<li><div class="check"></div>Can comment</li>
+				<li><div class="check selected"></div>Can edit</li>
+			</ul>
+			<div class="contact-list-container">
+				<div class="suggested">Suggested for you</div>
+				<ul id="contactList">
+				</ul>
+			</div>
+			<div class="note">
+				<div class="note-info">Add a note to your editors</div>
+				<textarea id="noteInput"></textarea>
+			</div>
+			
+			<div class="btn-group" id="doneBtnGroup">
+				<button id="doneBtn">Done</button>
+			</div>
+			<div class="btn-group" id="sendBtnGroup">
+				<button class="green disabled" id="shareBtn">Send</button>
+				<button id="cancelBtn">Cancel</button>
+			</div>
+			<div class="share-status">
+				<div class="settings icon"></div>
+				Manage permissions
+			</div>
+		</div>
+	</div>
+	<div class="manage-sharing-dialog">
+		<div class="manage-sharing-container">
+			<div class="close"></div>
+			<h2>Manage sharing for document</h2>
+			<ul class="sharing-acls">
+				<li><div class="green-bg">
+						<div class="acl-photo link"></div>
+					</div>
+					<div class="item-content">
+						<div class="title">Anyone with the link</div>
+						<div class="advanced settings">
+							<div class="gray-drop-down-icon"></div>
+							Link settings
+						</div>
+					</div> <a href="#"><span class="acl" id="linkACLText">Can view</span><span
+						class="drop-down-icon"></span></a>
+					<div class="options">
+						<div class="option-content">
+							<div class="link-section pad-top">
+								<input class="link-url" type="text"
+									value="https://docs.google.com/a/google.com/document/d/1pyJD6zmyqmtSLwYvuExHkwLzhD8VlZcPpCVSHEs7H7U/edit#heading=h.uhw4szs9tdmk">
+							</div>
+							<input type="checkbox" class="left"><label class="block">If
+								this URL exists on a crawled site, allow this content to be
+								findable on search engines.</label>
+							<div class="clear"></div>
+						</div>
+					</div></li>
+				<li><div class="acl-photo" id="ownerPhoto"></div>
+					<div class="item-content">
+						<div class="title" id="ownerTitle">Owner</div>
+						<div class="advanced settings">
+							<div class="gray-drop-down-icon"></div>
+							Owner settings
+						</div>
+					</div> <a href="#">Owner <span class="drop-down-icon"></span></a>
+					<div class="options">
+						<div class="option-content">
+							<input type="checkbox" checked><label>Editors can
+								change permissions</label>
+							<div></div>
+							<input type="checkbox" checked><label>Viewers can
+								download</label>
+							<div class="clear"></div>
+						</div>
+					</div></li>
+			</ul>
+			<button class="icon" id="manageSharingDocBtn">
+				<div class="private icon"></div>
+				Make item private
+			</button>
+			<a class="learn-more" href="#">Learn more about sharing</a>
+		</div>
+		<ul class="drop-menu" id="manageSharingEditACL">
+			<li><div class="check"></div>Can request access</li>
+			<li><div class="check"></div>Can view</li>
+			<li><div class="check"></div>Can comment</li>
+			<li><div class="check selected"></div>Can edit</li>
+		</ul>
+	</div>
+
+	<div class="easier-dialog">
+		<div class="graphic"></div>
+		<div class="easier-container">
+			<h3>Anyone with the link can view</h3>
+			<p>Anyone with the link can view this item. Now it's easier than
+				ever to share with friends, family or co-workers.</p>
+			<div class="fill clear"></div>
+			<button class="blue" id="gotItBtn">Got it</button>
+			<a class="learn-more" href="#">Learn more</a>
+		</div>
+	</div>
+	<div class="notification">
+		<div class="n-inner">
+			<div class="copy icon"></div>
+			<span class="msg">Link copied to clipboard.</span>
+		</div>
+	</div>
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/sharing.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<link rel="import" href="/polymer/polymer.html">
+
+<!-- ITEM PROTOTYPE -->
+<polymer-element 
+	name="device-frame" 
+	attributes="device source">
+
+<template>
+	
+	<!-- IMPORT A STYLE SHEET -->
+	<link rel="stylesheet" href="device-frame.css" />
+	
+	<!-- ACTUAL COMPONENT CODE -->
+	<div id="device" class="{{device}}">
+		<iframe src="{{source}}" frameborder="0"></iframe>
+	</div>
+	
+	<!-- <div id="frame" class="{{device}}"></div> -->
+	
+</template>
+
+<!-- BEHAVIORIAL CODE -->
+<script>
+	
+	(function(){
+	
+		Polymer('device-frame', {
+			
+			ready: function(){
+				// do nothing
+				console.log('Frame ready')
+			}
+		})
+		
+	})()
+	
+</script>
+
+</polymer-element>

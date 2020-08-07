@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html>
+<head>
+	<title>Drive Tesla Lite</title>
+	<script src="bower_components/platform/platform.js" shadow></script>
+	<script src="assets/js/demodata2.js"></script>
+
+	<link rel="import" href="bower_components/polymer-ui-splitter/polymer-ui-splitter.html">
+	<link rel="stylesheet" href="bower_components/polymer-flex-layout/polymer-flex-layout.css">
+
+	<link rel="import" href="bower_components/polymer-ui-icon-button/polymer-ui-icon-button.html">
+
+
+
+	<link rel="import" href="bower_components/polymer-ui-menu-button/polymer-ui-menu-button.html">
+	<link rel="import" href="bower_components/polymer-ui-menu-item/polymer-ui-menu-item.html">
+	<link rel="import" href="bower_components/polymer-ui-toolbar/polymer-ui-toolbar.html">
+	<link rel="import" href="bower_components/polymer-flex-layout/polymer-flex-layout.html">
+
+	<link rel="import" href="polymer/elements/polymer-drive-app/polymer-drive-app.html">
+	<link rel="import" href="polymer/elements/polymer-drive-toolbar/polymer-drive-toolbar.html">
+	<link rel="import" href="polymer/elements/polymer-drive-sidebar/polymer-drive-sidebar.html">
+	<link rel="import" href="polymer/elements/polymer-drive-sidebar-item/polymer-drive-sidebar-item.html">
+	<link rel="import" href="polymer/elements/polymer-drive-breadcrumbs/polymer-drive-breadcrumbs.html">
+	<link rel="import" href="polymer/elements/polymer-drive-list-container/polymer-drive-list-container.html">
+	<link rel="import" href="polymer/elements/polymer-drive-list/polymer-drive-list.html">
+	<link rel="import" href="polymer/elements/polymer-drive-list-item/polymer-drive-list-item.html">
+	<link rel="import" href="polymer/elements/polymer-drive-menu-button/polymer-drive-menu-button.html">
+	<link rel="import" href="polymer/elements/polymer-drive-create-button/polymer-drive-create-button.html">
+	<link rel="import" href="polymer/elements/drive-create-button/drive-create-button.html">
+
+	<link rel="import" href="polymer/elements/polymer-drive-icon-button/polymer-drive-icon-button.html">
+
+	<style>
+		body {
+			margin: 0;
+			-webkit-user-select: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			overflow-x: hidden;
+		}
+		body.no-overflow {
+			overflow: hidden;
+		}
+
+		#detailsBox {
+			position; absolute;
+			overflow: hidden;
+			height: calc(100%);
+		}
+
+		.details {
+			background: url(details.png);
+			width: 364px;
+			height: 792px;
+		}
+		drive-create-button {
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+		}
+	</style>
+</head>
+<body oncontextmenu="return false;" unresolved>
+	<polymer-drive-app>
+	<polymer-drive-list-container>
+	<polymer-drive-toolbar>
+	<h1 class="product-title">Drive</h1>
+	<polymer-drive-breadcrumbs></polymer-drive-breadcrumbs>
+</polymer-drive-toolbar>
+<div id="flexPane" class="flexbox">
+	<div id="sideBox">
+		<polymer-drive-sidebar></polymer-drive-sidebar>
+	</div>
+	<polymer-ui-splitter direction="left"></polymer-ui-splitter>
+	<div flex class="relative">
+		<div id="rightBox">
+			<polymer-drive-list layout="grid"></polymer-drive-list>
+			<drive-create-button></drive-create-button>
+		</div>
+	</div>
+	<polymer-ui-splitter direction="right"></polymer-ui-splitter>
+	<div id="detailsBox" class="closed">
+		<div class="details"></div>
+	</div>
+</div>
+</polymer-drive-list-container>
+</polymer-drive-app>
+</body>
+</html>

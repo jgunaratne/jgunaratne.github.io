@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Drive-Folder-21" sketch:type="MSLayerGroup" transform="translate(-1.000000, -2.000000)">
+            <g id="Page-1" transform="translate(0.000000, 2.000000)" sketch:type="MSShapeGroup">
+                <g id="Shape-_x2B_-Drive_x5F_Icon_x5F_Monochrome_x5F_SmallSizes_x5F_rgb-_x2B_-Rectangle-110">
+                    <path d="M9,2 L3,2 C1.896,2 1.01,2.896 1.01,4 L1,16 C1,17.104 1.896,18 3,18 L19,18 C20.104,18 21,17.104 21,16 L21,6 C21,4.896 20.104,4 19,4 L11,4 L9,2 L9,2 Z" id="Shape" fill="#000000"></path>
+                    <g id="Drive_x5F_Icon_x5F_Monochrome_x5F_SmallSizes_x5F_rgb-_x2B_-Rectangle-110" transform="translate(6.000000, 7.000000)" fill="#FFFFFF">
+                        <path d="M3.265,0.154 L6.355,5.307 L9.838,5.307 L6.748,0.154 L3.265,0.154" id="Fill-1"></path>
+                        <path d="M3.091,0.445 L0,5.596 L1.742,8.5 L4.833,3.349 L3.091,0.445" id="Fill-3"></path>
+                        <path d="M2.09,8.5 L8.272,8.5 L10.014,5.596 L3.833,5.598 L2.09,8.5" id="Fill-5"></path>
+                    </g>
+                    <rect id="Rectangle" opacity="0" fill="#FFFFFF" x="0" y="0" width="21" height="21"></rect>
+                </g>
+            </g>
+            <rect id="Rectangle" sketch:type="MSShapeGroup" x="0" y="0" width="21" height="21"></rect>
+            <rect id="Rectangle" sketch:type="MSShapeGroup" x="0" y="0" width="21" height="21"></rect>
+        </g>
+    </g>
+</svg>

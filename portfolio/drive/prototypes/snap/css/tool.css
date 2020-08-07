@@ -1,0 +1,149 @@
+.toolbar {
+  height: 36px;
+  border: 1px solid #e5e5e5;
+  border-left: none;
+  background: #f3f3f3;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.toolbar.tools.image, .toolbar.tools.text {
+  display: none;
+}
+
+.tools {
+  padding-left: 35px;
+}
+
+.tools .expand-menu {
+  background: url(../img/icons_sprite.png) 0 -24px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tools li {
+  float: left;
+}
+
+.tools li a {
+  color: #666;
+  font-size: 11px;
+  padding: 6px 8px 6px 28px;
+  margin: 5px 8px;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background: url(../img/icons_sprite.png) no-repeat;
+  position: relative;
+}
+
+.tools li a:hover {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 2px;
+}
+
+.tools li.first {
+  border-right: 1px solid #e5e5e5;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+.tools li.last {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+
+.tools li.last a {
+  padding: 7px 28px 7px 8px;
+  margin: 4px 8px;
+  background: none;
+}
+
+
+.tools li.divider {
+  border-left: 1px solid #ccc;
+  height: 20px;
+  margin: 8px;
+}
+
+.tools li.hide-label a {
+  text-indent: -2000px;
+  padding: 6px 8px 6px 16px;
+  margin: 4px 0;
+}
+
+.tools li.hide-icon a {
+  padding: 4px 8px;
+  background: none;
+  font-weight: bold;
+}
+
+.tools li.hide-icon.menu a {
+  padding: 6px 24px 6px 8px;
+}
+
+.tools li.hide-icon .expand-menu {
+  right: 4px;
+}
+
+.tools li.hide-icon.menu a {
+  margin: 4px 0;
+}
+
+.tools li.expand a {
+  padding-right: 18px;
+}
+
+.tools li.expand .expand {
+  background: url(../img/icons_sprite.png) 0 -73px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tools li .add {
+  background-color: #d54937;
+  background-position: -840px 0;
+  color: #fff;
+  border-radius: 2px;
+  text-indent: -2000px;
+  padding: 6px 16px 6px 8px;
+}
+
+.tool-menu {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px;
+  position: absolute;
+  top: 112px;
+  left: 260px;
+  margin-right: 100%;
+  background: #f5f5f5;
+  width: auto;
+  outline: 1px solid #e5e5e5;
+  width: 50px;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-transition: opacity 0.1s linear;
+  z-index: 100;
+  color: #444;
+  display: none;
+}
+
+.tool-menu li a {
+  display: block;
+  padding: 5px;
+}
+
+.tool-menu li:hover {
+  background: #e0e0e0;
+}

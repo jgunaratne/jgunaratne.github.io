@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Gamefication</title>
+<link rel="stylesheet" href="/static/game.css" type="text/css">
+<script src="/static/js/jquery-1.7.2.min.js"></script>
+<script src="/static/js/game.js"></script>
+</head>
+<body>
+  <div class="overlay">
+    <div class="profile">
+      <div class="mug"></div>
+      <div class="person-desc">
+        <h4>John Doe</h4>
+        <p>{{ earnedSkills }} Skills | {{ earnedBadges }} Badges</p>
+      </div>
+      <div class="menu-button">
+        <div class="icon-wrapper">
+          <div class="icon menu-state skills"></div>
+        </div>
+        <div class="menu-arrow"></div>
+        <div class="menu">
+          <div class="arrow">
+            <div class="inner-arrow"></div>
+          </div>
+          <ul>
+            <li><div class="icon person"></div> <a href="/profile.html">My profile</a></li>
+            <li><div class="icon skills"></div> <a href="/skills.html">All skills</a></li>
+            <li><div class="icon badge"></div> <a href="/badges.html">All badges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="break"></div>
+    </div>
+    <ul class="badge-list">
+      <li>
+        {% if badge.enabled %} 
+          <div class="badge large" style="background: {{ badge.color }}"></div>
+        {% else %}
+          <div class="badge large" style="background: #b3aec2"></div>
+        {% endif %}
+        <div class="badge-desc">
+          <h4>{{ badge.name }}</h4>
+          {% if badge.enabled %} 
+            <p>You've earned this badge!</p>
+            <br/>
+            <p>Share with a friend:</p>
+            <img class="gplus" src="/static/img/gplus.png"></img><img class="linkedin" src="/static/img/linkedin.png"></img>
+          {% else %}
+            <p>Not yet earned</p>
+          {% endif %}
+          
+          <div class="space"></div>
+          <p>Friends with this badge:</p>
+          <div class="break"></div>
+          <div class="mugs"></div>
+          <!-- <div class="mug small"></div>
+                    <div class="mug small"></div>
+                    <div class="mug small"></div>
+                    <div class="mug small"></div> -->
+        </div>
+      </li>
+    </ul>
+    <div class="break space double"></div>
+    <div class="divider"></div>
+    <div class="container">
+      {% if badge.enabled %} 
+        <h4>You earned this badge with the following skills:</h4>
+      {% else %}
+        <h4>To earn this badge, you need to earn these skills:</h4>
+      {% endif %}
+      <div class="space"></div>
+      {% for skill in skills %}
+        <a href="/skill_info/{{ skill.name }}">
+          {% if skill.enabled %}          
+            <div class="circle" style="background: {{ skill.color }}">
+              <!-- <P>{{ skill.enabled }}, bg color is {{ skill.color }}</P> -->
+          {% else %}
+            <div class="circle" style="background: #B3AEC2">
+              <!-- <P>{{ skill.enabled }}, will be gray</P> -->
+          {% endif %}
+            <div class="ring-first">
+              <div class="ring-second"></div>
+            </div>
+            
+            {% if skill.enabled %}
+              <div class="icon {{ skill.icon }}" style="background: {{ skill.color }}"></div>
+              <div class="circle-desc" style="color: {{ skill.color }}">{{ skill.name }}</div>
+            {% else %}
+              <div class="icon {{ skill.icon }}" style="background: #B3AEC2"></div>
+              <div class="circle-desc" style="color: #B3AEC2">{{ skill.name }}</div>
+            {% endif %}
+
+          </div>
+        </a>
+      {% endfor %}
+  
+    </div>
+  </div>
+  <!-- <script>
+      var desc = decodeURIComponent(getUrlVars()['desc']);
+      $('.badge-desc h4').html(desc);
+    </script> -->
+</body>
+</html>

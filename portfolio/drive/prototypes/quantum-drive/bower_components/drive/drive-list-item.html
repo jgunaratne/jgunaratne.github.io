@@ -1,0 +1,244 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="drive-list-item" attributes="item items app level view" on-click="{{onClick}}" on-dblclick="{{onDblClick}}">
+<template>
+<style>
+:host {
+	position: relative;
+}
+.circle {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: #e5e5e5;
+	background-size: cover;
+	border-radius: 50%;
+	margin-left: -72px;
+	float: left;
+	margin-top: 5px;
+}
+.circle.doc {
+	background-color: #4c85cd;
+}
+.circle.sheet {
+	background-color: #6fbd42;
+}
+.circle.slide {
+	background-color: #ebbe43;
+}
+.circle.pdf {
+	background-color: #e06055;
+}
+.circle.folder {
+	background-color: #b8b8b8;
+}
+.circle .icon {
+	width: 48px;
+	height: 48px;
+	background-color: #fff;
+	margin: 1px;
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.doc .icon {
+	-webkit-mask-image: url(img/doc.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.grid .doc .icon {
+	background-color: #4c85cd;
+}
+.sheet .icon {
+	-webkit-mask-image: url(img/sheet.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.grid .sheet .icon {
+	background-color: #6fbd42;
+}
+.slide .icon {
+	-webkit-mask-image: url(img/slide.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.grid .slide .icon {
+	background-color: #ebbe43;
+}
+.jpg .icon, .png .icon {
+	-webkit-mask-image: url(img/img.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.grid .jpg .icon, .grid .png .icon {
+	background-color: #e06055;
+}
+.pdf .icon {
+	-webkit-mask-image: url(img/pdf.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.grid .pdf .icon {
+	background-color: #e06055;
+}
+.folder .icon {
+	-webkit-mask-image: url(img/folder.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.grid .folder .icon {
+	background-color: #b8b8b8;
+}
+.list .name, .list .owner, .list .date {
+	float: left;
+}
+.list .name {
+	width: 50%;
+}
+.list .owner {
+	width: 20%;
+}
+.list .date {
+	width: 25%;
+}
+.list.selected .name .name-container {
+	background-color: #2a56c6;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 15px;
+	margin-left: -10px;
+}
+.list.selected .circle {
+	background-color: #2a56c6
+}
+li {
+	position: relative;
+}
+li.list {
+	border-bottom: 1px solid #e5e5e5;
+	cursor: pointer;
+	-webkit-user-select: none;
+}
+li:before, li:after {
+    content: " ";
+    display: table;
+}
+li:after {
+    clear: both;
+}
+:host(.last) li {
+	border-bottom: none;
+}
+.tile {
+	margin: 10px;
+}
+.thumb {
+	width: 100%;
+	height: 160px;
+	background-size: cover;
+	background-position: center;
+
+	border: 1px solid #e6e6e6;
+	border-top: 1px solid #f3f3f3;
+	border-left: 1px solid #f3f3f3;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.025);
+}
+.tile.folder .thumb {
+	display: none;
+}
+.doc .thumb, .pdf .thumb {
+	background-image: url(../../assets/thumbs/doc.png) !important;
+	background-position: top;
+}
+.sheet .thumb {
+	background-image: url(../../assets/thumbs/sheet.png) !important;
+}
+.slide .thumb {
+	background-image: url(../../assets/thumbs/sheet.png) !important;
+}
+li.grid {
+	float: left;
+	width: calc(100%/3);
+}
+.grid .tile.folder {
+	border: 1px solid rgba(0,0,0,.1);
+	border-top: 1px solid rgba(0,0,0,.05);
+	border-left: 1px solid rgba(0,0,0,.05);
+	box-shadow: 1px 1px 2px rgba(0,0,0,.025);
+}
+.grid .name {
+	font-size: 14px;
+	float: left;
+	line-height: 40px;
+}
+.grid .icon {
+	margin: 8px;
+	width: 24px;
+	height: 24px;
+	float: left;
+}
+.grid .tile.folder .icon {
+	margin: 8px;
+}
+.grid.selected .icon {
+	background-color: #fff;
+}
+.grid.selected .tile {
+	background-color: #2a56c6;
+	color: #fff;
+}
+.clear {
+	clear: both;
+}
+</style>
+	<li id="item" class="{{view == 'list' ? 'list' : 'grid'}}">
+		<template if="{{view == 'list'}}">
+			<template if="{{item.thumb == null}}">
+				<div class="circle {{item.type}}"><div class="icon"></div></div>
+			</template>
+			<template if="{{item.thumb != null}}">
+				<div class="circle" style="background-image: url({{item.thumb}})"></div>
+			</template>
+			<div class="name"><span class="name-container">{{item.name}}</span></div>
+			<div class="owner">{{item.owner}}</div>
+			<div class="date">{{item.date}}</div>
+			<drive-list-star item="{{item}}"></drive-list-star>
+		</template>
+		<template if="{{view == 'grid'}}">
+			<div class="tile {{item.type}}">
+				<div class="thumb" style="background-image: url({{item.thumb}})"></div>
+				<div class="{{item.type}}"><div class="icon"></div></div>
+				<div class="name"><span class="name-container">{{item.name}}</span></div>
+				<div class="clear"></div>
+			</div>
+		</template>
+	</li>
+</template>
+<script>
+Polymer('drive-list-item', {
+	domReady : function(e) {
+
+	},
+	onClick : function(e) {
+		this.$.item.classList.toggle('selected');
+	},
+	onDblClick : function() {
+		if (this.item.contents) {
+			// this.app.prevContent = this.items;
+			// this.items = this.item.contents;
+
+			if (this.level == 0) {
+				this.app.$.list0.classList.add('closed');
+				this.app.$.list1.classList.remove('out');
+			} else if (this.level == 1) {
+				this.app.$.list1.classList.add('closed');
+				this.app.$.list2.classList.remove('out');
+			}
+
+		}
+		
+	},
+	deselectItem : function() {
+		this.$.item.classList.remove('selected');
+	}
+});
+</script>
+</polymer-element>

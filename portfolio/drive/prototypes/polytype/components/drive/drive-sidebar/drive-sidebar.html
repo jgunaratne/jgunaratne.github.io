@@ -1,0 +1,40 @@
+<link rel="import" href="/polymer/polymer.html">
+<polymer-element name="drive-sidebar">
+<template>
+  <link rel="stylesheet" href="drive-sidebar.css">
+  <ul>
+  	<template repeat="{{ item in contents }}">
+		  <li><drive-sidebar-item item="{{item}}" siblings="{{contents}}" parentitem="{{this}}" hasFoldersFlag="true"></drive-sidebar-item></li>
+	 </template>
+  </ul>
+</template>
+<script>
+  (function() {
+    Polymer('drive-sidebar', {
+      hasFoldersFlag : true,
+      ready: function() { 
+        this.contents = [
+	      	{ title : 'My Drive', icon : 'folder', selectedInSidebar : true, contents : [], type : 'folder', hasFoldersFlag :true }, 
+	      	{ title : 'Incoming', icon : 'shared', contents : []}, 
+	      	{ title : 'Starred', icon : 'starred', contents : []},
+	      	{ title : 'Recent', icon : 'recent', contents : []},
+	      	{ title : 'Trash', icon : 'trashed', contents : []}];
+      },
+      deselectAll : function() {
+        if (this) {
+          this.deselectChildren(this);
+        }
+      },
+      deselectChildren : function(folder) {
+        for (i in folder.contents) {
+          var cItem = folder.contents[i];
+          cItem.selectedInSidebar = false;
+          if (cItem.type == 'folder') {
+            this.deselectChildren(cItem);
+          }
+        }
+      }
+    });
+  })();
+</script>
+</polymer-element>

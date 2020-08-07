@@ -1,0 +1,87 @@
+<link rel="import" href="/polymer/polymer.html">
+<polymer-element name="drive-sidebar-item" attributes="item siblings parentitem hasFoldersFlag" on-click="onClick" on-mouseover="onMouseOver" on-mouseout="onMouseOut" on-mousemove="onMouseMove">
+<template>
+<link rel="stylesheet" href="drive-sidebar-item.css">
+<div class="{{item.selectedInSidebar ? 'selected' : ''}} {{ hideChildren ? 'hide-children' : 'open'}}">
+  <div class="marker"></div>
+  <div class="{{hasFoldersFlag ? 'arrow' : ''}}"></div>
+  <div class="sidebar-item">
+    <div class="icon {{item.icon ? item.icon : 'folder'}}"></div><div class="title">{{item.title}}</div>
+  </div>
+    <ul>
+       <template repeat="{{ child in item.contents }}">
+          <template if="{{child.type == 'folder'}}">
+            <li><polymer-drive-sidebar-item item="{{child}}" siblings="{{item.contents}}" parentitem="{{item}}" hasFoldersFlag="true"></polymer-drive-sidebar-item>
+            </li>
+            </template>
+        </template>
+    </ul>
+  </div>
+</template>
+<script>
+  (function() {
+    Polymer('drive-sidebar-item', {
+      hasFoldersFlag : false,
+      hideChildren : true,
+      ready: function() {
+        var t = this;
+        
+
+        setTimeout(function() {
+          t.hasFoldersFlag = t.hasFolders();
+          t.polymerObj = t;
+        },100)
+      },
+      hasFolders : function() {
+        var contents = this.item.contents;
+        for (i in contents) {
+          if (contents[i].type == 'folder') {
+            return true;
+          }
+        }
+        return false;
+      },
+      deselectSiblings : function() {
+       for (i in this.siblings) {
+          if (this.siblings[i]) {
+            this.siblings[i].selectedInSidebar = false;
+          }
+        }       
+      },
+      onClick: function(e, n, elem) {
+
+        var classList = e.toElement.classList;
+
+        if (classList.contains('arrow')) {
+          this.hideChildren = !this.hideChildren;
+        }
+
+        var classList = e.srcElement.classList;
+        if (classList.contains('title') || classList.contains('icon')) {
+          var sidebar = document.getElementsByTagName("drive-sidebar")[0];
+          sidebar.deselectAll();
+          this.item.selectedInSidebar = true;
+        }
+
+        e.stopPropagation();
+      },
+      setHoverState: function(bool) {
+        if (bool) {
+          el.classList.add('over');
+        } else {
+          el.classList.remove('over');
+        }
+      },
+      onMouseOver: function(e,i,el) {
+        el.classList.remove('over');
+      },
+      onMouseOut: function(e,i,el) {
+       el.classList.remove('over');
+      },
+      onMouseMove: function(e,i,el) {
+        
+      }
+    });
+  })();
+</script>
+</polymer-element>

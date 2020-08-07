@@ -1,0 +1,59 @@
+nav {
+	border-top: 1px solid #dcdfdc;
+	border-bottom: 1px solid #cecece;
+	height: 58px;
+	background: linear-gradient(#fff 0%, #efefef 2%, #e7e7e7 100%);
+}
+
+nav h2 {
+	font-weight: normal;
+	line-height: 58px;
+	margin: 0;
+	padding: 0;
+	color: #333333;
+	float: left;
+}
+
+nav .icon {
+	margin: 9px;
+	padding: 5px;
+	border: 1px solid transparent;
+}
+
+nav .icon.selected {
+	border: 1px solid #cccccb;
+	border-top: 1px solid #bbbbbb;
+	border-radius: 3px;
+}
+
+.icon .menu {
+	background: #8e8e8e;
+	-webkit-mask-image: url(../img/menu.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-box-shadow:inset 0px 2px 8px #000;
+	width: 28px;
+	height: 28px;
+}
+
+.icon .search {
+	background: #8e8e8e;
+	-webkit-mask-image: url(../img/search.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-box-shadow:inset 0px 2px 8px #000;
+	width: 28px;
+	height: 28px;
+}
+
+.content {
+	background: #f8f8f8;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}

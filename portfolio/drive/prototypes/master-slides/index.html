@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Punch</title>
+<link rel="stylesheet" href="css/punch.css" type="text/css">
+<link rel="stylesheet" href="components/menu.css" type="text/css">
+<script src="components/menu.js"></script>
+<link rel="stylesheet" href="components/menubar.css" type="text/css">
+<script src="components/menubar.js"></script>
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/components.js"></script>
+<script src="js/box.js"></script>
+<script src="js/contextmenu.js"></script>
+<script src="js/toolbar.js"></script>
+<script src="js/slide.js"></script>
+<script src="js/punch.js"></script>
+<script src="js/events.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/setup.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Untitled presentation</h1>
+      <div id="componentMenubar"></div>
+      <ul class="menu-bar" style="display: none">
+        <li>File
+          <ul class="menu">
+            <li><a>Share...</a></li>
+            <li class="divider"></li>
+            <li><a>New</a></li>
+            <li><a>Open...</a></li>
+            <li><a>Rename...</a></li>
+            <li><a>Make a copy...</a></li>
+            <li class="divider"></li>
+            <li><a>See revision history</a></li>
+            <li><a>Language</a></li>
+          </ul>
+        </li>
+        <li>Edit
+          <ul class="menu">
+            <li><a>Undo</a></li>
+            <li><a>Redo</a></li>
+            <li class="divider"></li>
+            <li><a>Cut</a></li>
+            <li><a>Copy</a></li>
+            <li><a>Paste</a></li>
+            <li><a>Delete</a></li>
+            <li><a>Duplicate</a></li>
+            <li class="divider"></li>
+            <li><a>Select all</a></li>
+            <li><a>Select none</a></li>
+          </ul>
+        </li>
+        <li>View
+          <ul class="menu">
+            <li><a>Start presentation</a></li>
+            <li><a>Animations</a></li>
+            <li class="divider"></li>
+            <li><a>Fit</a></li>
+            <li><a>50%</a></li>
+            <li><a>100%</a></li>
+            <li><a>200%</a></li>
+            <li class="divider"></li>
+            <li><a>Zoom in</a></li>
+            <li><a>Zoom out</a></li>
+          </ul>
+        </li>
+        <li>Insert
+          <ul class="menu">
+            <li><a>Text box</a></li>
+            <li><a>Image...</a></li>
+            <li><a>Link...</a></li>
+            <li><a>Video...</a></li>
+            <li><a>Word Art</a></li>
+            <li><a>Line</a></li>
+            <li><a>Shape</a></li>
+            <li><a>Table</a></li>
+            <li><a>Animate</a></li>
+            <li class="divider"></li>
+            <li><a>Comment</a></li>
+            <li class="divider"></li>
+            <li><a>New slide</a></li>
+            <li><a>Import slidest...</a></li>
+          </ul>
+        </li>
+        <li>Slide
+          <ul class="menu">
+            <li><a>New slide</a></li>
+            <li><a>Duplicate slide</a></li>
+            <li><a>Delete slide</a></li>
+            <li class="divider"></li>
+            <li><a>Background...</a></li>
+            <li><a>Change layout...</a></li>
+            <li><a>Change theme...</a></li>
+          </ul>
+        </li>
+        <li>Format</li>
+        <li>Arrange</li>
+        <li>Tools</li>
+        <li>Table</li>
+        <li>Help</li>
+      </ul>
+      <div class="toolbars">
+        <ul class="toolbar common">
+          <li class="toolbar-icon wide red" id="newSlideToolbarBtn">
+            <div class="icon add"></div>
+            <div class="divider"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">New&nbsp;Slide</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon undo"></div>
+            <div class="tooltip">Undo</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon redo"></div>
+            <div class="tooltip">Redo</div>
+          </li>
+          <li class="toolbar-icon wide">
+            <div class="icon cloudboard"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Cloudboard</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon format-painter"></div>
+            <div class="tooltip">Format&nbsp;Painter</div>
+          </li>
+          <li class="divider"></li>
+          <li class="toolbar-icon" id="zoomToFit">
+            <div class="icon zoom-to-fit"></div>
+            <div class="tooltip">Zoom&nbsp;to&nbsp;fit</div>
+          </li>
+          <li class="toolbar-icon" id="zoomInBtn">
+            <div class="icon zoom-in"></div>
+            <div class="tooltip">Zoom&nbsp;in</div>
+          </li>
+          <li class="divider"></li>
+          <li class="toolbar-icon selected">
+            <div class="icon pointer"></div>
+            <div class="tooltip">Pointer</div>
+          </li>
+          <li class="toolbar-icon wide">
+            <div class="icon line"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Insert&nbsp;line</div>
+          </li>
+          <li class="toolbar-icon wide">
+            <div class="icon shape"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Insert&nbsp;shape</div>
+            <div class="shape-menu">
+              <ul>
+                <li id="insertCircleBtn"><img
+                  src="img/shapes/circle.svg"></li>
+                <li id="insertRectBtn"><img
+                  src="img/shapes/square.svg"></li>
+                <li id="insertRoundRectBtn"><img
+                  src="img/shapes/roundrect.svg"></li>
+                <li><img src="img/shapes/polygon.svg"></li>
+                <li><img src="img/shapes/starburst.svg"></li>
+              </ul>
+            </div>
+          </li>
+          <li class="toolbar-icon" id="insertTextBtn">
+            <div class="icon text-box"></div>
+            <div class="tooltip">Insert&nbsp;text&nbsp;box</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon image"></div>
+            <div class="tooltip">Insert&nbsp;image</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon link"></div>
+            <div class="tooltip">Insert&nbsp;link</div>
+          </li>
+          <li class="divider"></li>
+        </ul>
+        <ul class="toolbar shape">
+          <li class="toolbar-icon wide" id="fillColorBtn">
+            <div class="icon fill-color"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Fill&nbsp;color</div>
+            <div class="kd-colorpicker">
+              <table class="kd-colortable greys" border="0"
+                cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #000000"></td>
+                    <td style="background: #444"></td>
+                    <td style="background: #666"></td>
+                    <td style="background: #999"></td>
+                    <td style="background: #ccc"></td>
+                    <td style="background: #eee"></td>
+                    <td style="background: #f3f3f3"></td>
+                    <td style="background: #fff" class="selected"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="kd-colortable primaries" border="0"
+                cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #FF0000"></td>
+                    <td style="background: #ff9900"></td>
+                    <td style="background: #ffff00"></td>
+                    <td style="background: #00ff00"></td>
+                    <td style="background: #00ffff"></td>
+                    <td style="background: #0000ff"></td>
+                    <td style="background: #9900ff"></td>
+                    <td style="background: #ff00ff"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="kd-colortable" border="0" cellspacing="0"
+                cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #f4cccc"></td>
+                    <td style="background: #fce5cd"></td>
+                    <td style="background: #fff2cc"></td>
+                    <td style="background: #d9ead3"></td>
+                    <td style="background: #d0e0e3"></td>
+                    <td style="background: #cfe2f3"></td>
+                    <td style="background: #d9d2e9"></td>
+                    <td style="background: #ead1dc"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #ea9999"></td>
+                    <td style="background: #f9cb9c"></td>
+                    <td style="background: #ffe599"></td>
+                    <td style="background: #b6d7a8"></td>
+                    <td style="background: #a2c4c9"></td>
+                    <td style="background: #9fc5e8"></td>
+                    <td style="background: #b4a7d6"></td>
+                    <td style="background: #d5a6bd"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #e06666"></td>
+                    <td style="background: #f6b26b"></td>
+                    <td style="background: #ffe599"></td>
+                    <td style="background: #93c47d"></td>
+                    <td style="background: #76a5af"></td>
+                    <td style="background: #6fa8dc"></td>
+                    <td style="background: #8e7cc3"></td>
+                    <td style="background: #c27ba0"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #cc0000"></td>
+                    <td style="background: #e69138"></td>
+                    <td style="background: #f1c232"></td>
+                    <td style="background: #6aa84f"></td>
+                    <td style="background: #45818e"></td>
+                    <td style="background: #3d85c6"></td>
+                    <td style="background: #674ea7"></td>
+                    <td style="background: #a64d79"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #990000"></td>
+                    <td style="background: #b45f06"></td>
+                    <td style="background: #bf9000"></td>
+                    <td style="background: #38761d"></td>
+                    <td style="background: #134f5c"></td>
+                    <td style="background: #0b5394"></td>
+                    <td style="background: #351c75"></td>
+                    <td style="background: #741b47"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #660000"></td>
+                    <td style="background: #783f04"></td>
+                    <td style="background: #7f6000"></td>
+                    <td style="background: #274e13"></td>
+                    <td style="background: #0c343d"></td>
+                    <td style="background: #073763"></td>
+                    <td style="background: #20124d"></td>
+                    <td style="background: #4c1130"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li class="toolbar-icon wide" id="lineColorBtn">
+            <div class="icon line-color"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Line&nbsp;color</div>
+            <div class="kd-colorpicker">
+              <table class="kd-colortable greys" border="0"
+                cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #000000"></td>
+                    <td style="background: #444"></td>
+                    <td style="background: #666"></td>
+                    <td style="background: #999"></td>
+                    <td style="background: #ccc"></td>
+                    <td style="background: #eee"></td>
+                    <td style="background: #f3f3f3"></td>
+                    <td style="background: #fff" class="selected"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="kd-colortable primaries" border="0"
+                cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #FF0000"></td>
+                    <td style="background: #ff9900"></td>
+                    <td style="background: #ffff00"></td>
+                    <td style="background: #00ff00"></td>
+                    <td style="background: #00ffff"></td>
+                    <td style="background: #0000ff"></td>
+                    <td style="background: #9900ff"></td>
+                    <td style="background: #ff00ff"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="kd-colortable" border="0" cellspacing="0"
+                cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #f4cccc"></td>
+                    <td style="background: #fce5cd"></td>
+                    <td style="background: #fff2cc"></td>
+                    <td style="background: #d9ead3"></td>
+                    <td style="background: #d0e0e3"></td>
+                    <td style="background: #cfe2f3"></td>
+                    <td style="background: #d9d2e9"></td>
+                    <td style="background: #ead1dc"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #ea9999"></td>
+                    <td style="background: #f9cb9c"></td>
+                    <td style="background: #ffe599"></td>
+                    <td style="background: #b6d7a8"></td>
+                    <td style="background: #a2c4c9"></td>
+                    <td style="background: #9fc5e8"></td>
+                    <td style="background: #b4a7d6"></td>
+                    <td style="background: #d5a6bd"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #e06666"></td>
+                    <td style="background: #f6b26b"></td>
+                    <td style="background: #ffe599"></td>
+                    <td style="background: #93c47d"></td>
+                    <td style="background: #76a5af"></td>
+                    <td style="background: #6fa8dc"></td>
+                    <td style="background: #8e7cc3"></td>
+                    <td style="background: #c27ba0"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #cc0000"></td>
+                    <td style="background: #e69138"></td>
+                    <td style="background: #f1c232"></td>
+                    <td style="background: #6aa84f"></td>
+                    <td style="background: #45818e"></td>
+                    <td style="background: #3d85c6"></td>
+                    <td style="background: #674ea7"></td>
+                    <td style="background: #a64d79"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #990000"></td>
+                    <td style="background: #b45f06"></td>
+                    <td style="background: #bf9000"></td>
+                    <td style="background: #38761d"></td>
+                    <td style="background: #134f5c"></td>
+                    <td style="background: #0b5394"></td>
+                    <td style="background: #351c75"></td>
+                    <td style="background: #741b47"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #660000"></td>
+                    <td style="background: #783f04"></td>
+                    <td style="background: #7f6000"></td>
+                    <td style="background: #274e13"></td>
+                    <td style="background: #0c343d"></td>
+                    <td style="background: #073763"></td>
+                    <td style="background: #20124d"></td>
+                    <td style="background: #4c1130"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li class="toolbar-icon wide">
+            <div class="icon line-weight"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Line&nbsp;weight</div>
+          </li>
+          <li class="toolbar-icon wide">
+            <div class="icon line-type"></div>
+            <div class="dropdown"></div>
+            <div class="tooltip">Line&nbsp;type</div>
+          </li>
+          <li class="divider"></li>
+        </ul>
+        <ul class="toolbar text">
+          <li class="toolbar-text wide" id="fontMenu">
+            <div class="label">Arial</div>
+            <div class="dropdown"></div>
+          </li>
+          <li class="divider small"></li>
+          <li class="toolbar-text" id="fontSizeMenu">
+            <div class="label">12</div>
+            <div class="dropdown"></div>
+            <ul class="dropdown-menu">
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>14</li>
+              <li>18</li>
+              <li>24</li>
+              <li>30</li>
+              <li>36</li>
+              <li>48</li>
+              <li>60</li>
+            </ul>
+          </li>
+          <li class="divider small"></li>
+          <li class="toolbar-icon" id="boldBtn">
+            <div class="icon bold"></div>
+            <div class="tooltip">Bold</div>
+          </li>
+          <li class="toolbar-icon" id="italicBtn">
+            <div class="icon italic"></div>
+            <div class="tooltip">Italic</div>
+          </li>
+          <li class="toolbar-icon" id="underlineBtn">
+            <div class="icon underline"></div>
+            <div class="tooltip">Underline</div>
+          </li>
+          <li class="toolbar-icon" id="textColorBtn">
+            <div class="icon text-color"></div>
+            <div class="tooltip">Text&nbsp;color</div>
+            <div class="kd-colorpicker">
+              <table class="kd-colortable greys" border="0"
+                cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #000000"></td>
+                    <td style="background: #444"></td>
+                    <td style="background: #666"></td>
+                    <td style="background: #999"></td>
+                    <td style="background: #ccc"></td>
+                    <td style="background: #eee"></td>
+                    <td style="background: #f3f3f3"></td>
+                    <td style="background: #fff" class="selected"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="kd-colortable primaries" border="0"
+                cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #FF0000"></td>
+                    <td style="background: #ff9900"></td>
+                    <td style="background: #ffff00"></td>
+                    <td style="background: #00ff00"></td>
+                    <td style="background: #00ffff"></td>
+                    <td style="background: #0000ff"></td>
+                    <td style="background: #9900ff"></td>
+                    <td style="background: #ff00ff"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="kd-colortable" border="0" cellspacing="0"
+                cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td style="background: #f4cccc"></td>
+                    <td style="background: #fce5cd"></td>
+                    <td style="background: #fff2cc"></td>
+                    <td style="background: #d9ead3"></td>
+                    <td style="background: #d0e0e3"></td>
+                    <td style="background: #cfe2f3"></td>
+                    <td style="background: #d9d2e9"></td>
+                    <td style="background: #ead1dc"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #ea9999"></td>
+                    <td style="background: #f9cb9c"></td>
+                    <td style="background: #ffe599"></td>
+                    <td style="background: #b6d7a8"></td>
+                    <td style="background: #a2c4c9"></td>
+                    <td style="background: #9fc5e8"></td>
+                    <td style="background: #b4a7d6"></td>
+                    <td style="background: #d5a6bd"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #e06666"></td>
+                    <td style="background: #f6b26b"></td>
+                    <td style="background: #ffe599"></td>
+                    <td style="background: #93c47d"></td>
+                    <td style="background: #76a5af"></td>
+                    <td style="background: #6fa8dc"></td>
+                    <td style="background: #8e7cc3"></td>
+                    <td style="background: #c27ba0"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #cc0000"></td>
+                    <td style="background: #e69138"></td>
+                    <td style="background: #f1c232"></td>
+                    <td style="background: #6aa84f"></td>
+                    <td style="background: #45818e"></td>
+                    <td style="background: #3d85c6"></td>
+                    <td style="background: #674ea7"></td>
+                    <td style="background: #a64d79"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #990000"></td>
+                    <td style="background: #b45f06"></td>
+                    <td style="background: #bf9000"></td>
+                    <td style="background: #38761d"></td>
+                    <td style="background: #134f5c"></td>
+                    <td style="background: #0b5394"></td>
+                    <td style="background: #351c75"></td>
+                    <td style="background: #741b47"></td>
+                  </tr>
+                  <tr>
+                    <td style="background: #660000"></td>
+                    <td style="background: #783f04"></td>
+                    <td style="background: #7f6000"></td>
+                    <td style="background: #274e13"></td>
+                    <td style="background: #0c343d"></td>
+                    <td style="background: #073763"></td>
+                    <td style="background: #20124d"></td>
+                    <td style="background: #4c1130"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li class="divider small"></li>
+          <li class="toolbar-icon" id="numListBtn">
+            <div class="icon list-numbered"></div>
+            <div class="tooltip">Numbered&nbsp;list</div>
+          </li>
+          <li class="toolbar-icon" id="bulletListBtn">
+            <div class="icon list-bullet"></div>
+            <div class="tooltip">Bullet&nbsp;list</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon indent"></div>
+            <div class="tooltip">Indent</div>
+          </li>
+          <li class="toolbar-icon">
+            <div class="icon outdent"></div>
+            <div class="tooltip">Outdent</div>
+          </li>
+          <li class="toolbar-icon wide">
+            <div class="icon align-left"></div>
+            <div class="tooltip">Left&nbsp;align</div>
+            <div class="dropdown"></div>
+          </li>
+        </ul>
+        <ul class="toolbar layout-options">
+          <li class="toolbar-text">
+            <div>Background...</div>
+          </li>
+          <li class="toolbar-text" id="insertPlaceholderBtn">
+            <div>Insert placeholder</div>
+          </li>
+          <li class="toolbar-text" id="newLayoutBtn">
+            <div>New layout</div>
+          </li>
+          <li class="toolbar-text">
+            <div>New theme</div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="content-pane">
+      <div class="slide-previews">
+        <div class="clear"></div>
+      </div>
+      <div class="master-area">
+        <div class="master-slide-previews">
+          <div class="slide-area-title preview-title">
+            <i>My Biz</i></span>
+          </div>
+          <div class="clear"></div>
+          <div class="slide-title master-slide-title">Master slide</div>
+          <div class="slide-preview master-slide-preview"></div>
+          <div class="slide-title layouts-title">Slide layouts</div>
+        </div>
+        <div class="slide-area-title main-theme">
+          Editing <i>Biz theme</i> - <i class="title-name">Title</i> <span
+            class="slide-layout-label">layout</span> <span
+            class="sidenote">(Used by <span
+            class="layout-slide-use">1 slide</span>)
+          </span>
+          <div class="bg-settings">
+            <div class="icon"></div>
+            <div class="arrow"></div>
+          </div>
+        </div>
+        <div class="slide-area">
+          <div class="slide-bg"></div>
+          <div class="master"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="context-menu set-layout">
+    <li class="disabled"><a><span class="icon cut"></span>Cut</a></li>
+    <li class="disabled"><a><span class="icon copy"></span>Copy</a></li>
+    <li class="disabled"><a><span class="icon paste"></span>Paste</a></li>
+    <li class="divider"></li>
+    <li><a>Background...</a></li>
+    <li>Change layout <span class="arrow-right"></span>
+      <ul class="context-sub-menu" id="layoutThumbSubmenu">
+        <li class="thumbnails"><div
+            class="thumbnails-container context-menu-thumbnails">
+            <div class="thumbnail"></div>
+          </div>
+          <div class="clear"></div></li>
+        <li class="divider"></li>
+        <li class="edit-theme-menu-item"><a>Edit <i>Biz
+              Theme</i> - <i class="title-name">Title</i> layout...
+        </a></li>
+        <li><a>Edit as new layout...</a></li>
+      </ul>
+    </li>
+    <li>Edit theme <span class="arrow-right"></span>
+      <ul class="context-sub-menu theme-thumb-submenu">
+        <li><a>Choose different theme...</a></li>
+        <li class="divider"></li>
+        <li class="thumbnails"><div
+            class="thumbnails-container context-menu-theme-thumbnails">
+            <div class="thumbnail"></div>
+          </div>
+          <div class="clear"></div></li>
+      </ul>
+    </li>
+    <li class="divider"></li>
+    <li><a>Change transition...</a></li>
+    <li class="divider"></li>
+    <li><a><span class="icon comment"></span>Comment</a></li>
+  </ul>
+  <ul class="context-menu box-menu">
+    <li class="disabled"><a><span class="icon cut"></span>Cut</a></li>
+    <li class="disabled"><a><span class="icon copy"></span>Copy</a></li>
+    <li class="disabled"><a><span class="icon paste"></span>Paste</a></li>
+    <li class="divider"></li>
+    <li id="addToThemeItem">Add to theme <span class="arrow-right"></span>
+      <ul class="context-sub-menu">
+        <li class="thumbnails"><div
+            class="thumbnails-container context-menu-add-to-theme-thumbnails">
+            <div class="thumbnail"></div>
+          </div>
+          <div class="clear"></div></li>
+      </ul>
+    </li>
+    <li id="updateInThemeItem"><a>Update in theme</a></li>
+    <li class="divider"></li>
+    <li class="disabled"><a>Link&hellip;</a></li>
+    <li class="disabled"><a><span class="icon comment"></span>Comment</a></li>
+    <li class="disabled"><a>Animate</a></li>
+  </ul>
+  <ul class="context-menu layout-preview-menu">
+    <li class="disabled"><a>New layout</a></li>
+    <li class="disabled"><a>Duplicate layout</a></li>
+    <li class="disabled"><a>Delete layout</a></li>
+    <li class="divider"></li>
+    <li><a>Rename layout...</a></li>
+  </ul>
+  <ul class="menu-custom bg-settings-menu">
+    <li id="showLayoutsItem"><a>Show layouts</a></li>
+    <li class="divider"></li>
+    <li class="disabled">Rename theme&hellip;</li>
+    <li class="disabled">Remove theme</li>
+    <li class="divider"></li>
+    <li id="exitLayoutItem"><a>Exit Masters</a></li>
+    <li></li>
+  </ul>
+</body>
+</html>

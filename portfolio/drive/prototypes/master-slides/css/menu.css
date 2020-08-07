@@ -1,0 +1,290 @@
+#componentMenubar {
+  top: 45px;
+  left: 40px;
+  position: absolute;
+}
+
+.menu-bar-custom {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 45px;
+  left: 40px;
+}
+
+.menu-custom {
+  margin: 6px 0 0 -8px;
+}
+
+.menu-bar-custom li {
+  display: inline-block;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.menu-bar-custom li:hover {
+  background: #F1F1F1;
+}
+
+.menu-custom,.context-menu,.context-menu .context-sub-menu {
+  position: absolute;
+  list-style: none;
+  padding: 6px 0;
+  line-height: 28px;
+  border: 1px solid #BBB;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+  background: #fff;
+  z-index: 50;
+}
+
+.context-menu {
+  display: none;
+}
+
+.context-sub-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-custom .icon,.context-menu .icon {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  display: block;
+  left: 6px;
+  top: 5px;
+  background: #666;
+  margin: 0;
+}
+
+.menu-custom li,.context-menu li,.context-sub-menu li {
+  position: relative;
+  padding: 0 80px 0 32px;
+  display: block;
+  line-height: 28px;
+}
+
+.context-menu .disabled {
+  opacity: .5;
+}
+
+.context-menu a {
+  display: block;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.menu-custom li:hover,.context-menu li:hover {
+  background: #F1F1F1;
+}
+
+.context-sub-menu li:hover {
+  background: #F1F1F1;
+}
+
+.context-sub-menu li.thumbnails:hover {
+  background: #fff;
+}
+
+.menu-custom li.disabled:hover,.context-menu li.disabled:hover,.context-menu li.thumbnails:hover
+  {
+  background: #fff;
+}
+
+.context-menu .context-sub-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  opacity: 0;
+  z-index: 0;
+  -webkit-transition: opacity 0;
+  -webkit-transition-delay: .2s;
+}
+
+.context-menu li:hover .context-sub-menu {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transition: opacity 0;
+  -webkit-transition-delay: .1s;
+}
+
+.menu-custom .divider,.context-menu .divider,.context-sub-menu .divider
+  {
+  border-top: 1px solid #EBEBEB;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.has-sub-menu.arrow-right,.context-menu .arrow-right {
+  position: absolute;
+  display: block;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #8C8C8C;
+  top: 10px;
+  right: 10px;
+}
+
+.context-sub-menu .thumbnails {
+  padding: 5px;
+}
+
+.context-sub-menu .thumbnails-container {
+  width: 388px;
+}
+
+.context-sub-menu .thumbnails-container.small {
+  width: 258px;
+}
+
+.context-sub-menu .thumbnail {
+  width: 115px;
+  height: 90px;
+  border: 2px solid #DDD;
+  float: left;
+  margin: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.caption {
+  background: rgba(0,0,0,.8);
+  color: #fff;
+  padding: 6px 10px;
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  z-index: 10;
+  line-height: 1em;
+  display: none;
+  width: 100%;
+}
+
+.slide-preview {
+  overflow: hidden;
+}
+
+.context-sub-menu .thumbnail:hover .caption, .slide-preview:hover .caption {
+  display: block;  
+}
+
+.context-sub-menu .thumbnail ul {
+  list-style: circle;
+}
+
+.context-sub-menu .thumbnail li {
+  line-height: 1.5em;
+  background: none
+}
+
+.context-sub-menu .thumbnail:hover {
+  border-color: #888;
+}
+
+.shape-menu {
+  width: 140px;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  z-index: 20;
+  padding: 3px;
+  margin: 2px 0 0 -1px;
+  display: none;
+}
+
+.selected .shape-menu {
+  display: block;
+}
+
+.shape-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shape-menu ul li {
+  float: left;
+  margin: 0;
+  padding: 3px;
+  width: 22px;
+  height: 22px;
+}
+
+.shape-menu ul li:hover {
+  background: #F1F1F1;
+}
+
+.shape-menu img {
+  width: 22px;
+  height: 22px;
+}
+
+.menu-custom.bg-settings-menu {
+  top: 150px;
+  right: 10px;
+  min-width: 210px;
+  display: none;
+}
+
+.menu-custom.bg-settings-menu li:hover {
+  background: #F1F1F1;
+}
+
+.context-menu-add-to-theme-thumbnails .thumbnail-container {
+  padding: 5px;
+  float: left;
+  width: 130px;
+}
+
+.context-menu-theme-thumbnails .thumbnail-container {
+  padding: 5px;
+  float: left;
+  width: 130px;
+}
+
+#addToThemeItem .context-sub-menu {
+  width: 300px;
+}
+
+.context-sub-menu.theme-thumb-submenu {
+  width: 290px;
+}
+
+.context-menu-add-to-theme-thumbnails .thumbnail-container .thumbnail,.context-menu-theme-thumbnails .thumbnail-container .thumbnail
+  {
+  background: #fff;
+}
+
+.context-menu-add-to-theme-thumbnails .thumbnail-container:hover,.context-menu-theme-thumbnails .thumbnail-container:hover
+  {
+  background: #ececec;
+}
+
+.context-menu-add-to-theme-thumbnails .desc,.context-menu-theme-thumbnails .desc
+  {
+  margin-left: 5px;
+  margin-top: -5px;
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.icon.cut {
+  -webkit-mask: url(../img/toolbar/cut-icon.png) center no-repeat;
+}
+
+.icon.copy {
+  -webkit-mask: url(../img/toolbar/copy-icon.png) center no-repeat;
+}
+
+.icon.paste {
+  -webkit-mask: url(../img/toolbar/paste-icon.png) center no-repeat;
+}
+
+.icon.comment {
+  -webkit-mask: url(../img/toolbar/insert-comment-icon.png) center
+    no-repeat;
+}

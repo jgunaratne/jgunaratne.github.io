@@ -1,0 +1,85 @@
+/*
+Copyright 2013 The Toolkitchen Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+*/
+
+:host { 
+  /*border: 1px solid transparent;*/
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font: normal normal 13px/1.3em Roboto,Arial,sans-serif !important;
+  height: 32px;
+  line-height: 32px;
+  margin: 2px 0;
+  min-width: 160px;
+  opacity: 0.5;
+  padding: 8px 3px 8px 0px;
+  position: relative;
+  white-space: nowrap;
+  -moz-box-sizing: border-box;
+}
+
+:host(:hover:host) {
+  background-color: #eee;
+  box-shadow: inset 4px 0 0 0 rgba(100,100,100,1);
+  color: #222;
+  cursor:pointer;
+}
+
+:host(.polymer-selected:host, [active]:host) {
+  opacity: 1;
+}
+
+:host(.polymer-ui-light-theme.polymer-selected:host, .polymer-ui-light-theme[active]:host) {
+  background: #fff url(/assets/img/check.png) no-repeat left middle;
+/*  background: #f2f2f2;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+*/}
+
+:host(.polymer-ui-dark-theme:host) {
+  color: #b3b3b3;
+}
+	
+:host(.polymer-ui-dark-theme:hover:host) {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:host(.polymer-ui-dark-theme.polymer-selected:host, .polymer-ui-dark-theme[active]:host) {
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:host([active].no-active-bg:host) {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+/* icon and label */
+polymer-ui-icon:not([showing]) {
+  display: none !important;
+}
+
+#label {
+  padding: 0 20px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+/*@polyfill :host #label > a, #link */
+::content > a, #link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -1px;
+}
+
+#link[hidden] {
+  display: none;
+}

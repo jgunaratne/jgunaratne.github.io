@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Trix Gamefication</title>
+<link rel="stylesheet" href="/static/game.css" type="text/css">
+<script src="/static/js/jquery-1.7.2.min.js"></script>
+<script src="/static/js/game.js"></script>
+<!-- <script src="js/badges.js"></script> -->
+</head>
+<body>
+  <div class="overlay">
+    <div class="profile">
+      <div class="mug"></div>
+      <div class="person-desc">
+        <h4>John Doe</h4>
+        <p>{{ earnedSkills }} Skills | {{ earnedBadges }} Badges</p>
+      </div>
+      <div class="menu-button">
+        <div class="icon-wrapper">
+          <div class="icon menu-state badge"></div>
+        </div>
+        <div class="menu-arrow"></div>
+        <div class="menu">
+          <div class="arrow">
+            <div class="inner-arrow"></div>
+          </div>
+          <ul>
+            <li><div class="icon person"></div> <a href="/profile.html">My profile</a></li>
+            <li><div class="icon skills"></div> <a href="/skills.html">All skills</a></li>
+            <li><div class="icon badge"></div> <a href="/badges.html">All badges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="break"></div>
+    </div>
+    <ul class="badge-list">
+      {% for badge in badges %}
+        <li>
+          <a href="/badge_info/{{ badge.name }}">
+        {% if badge.enabled %}
+          <div class="badge" style="background: {{ badge.color }}"></div>
+        {% else %}
+          <div class="badge" style="background: #B3AEC2"></div>
+        {% endif %}
+            <div class="badge-desc">
+              <h4>{{ badge.name }}</h4>
+              {% if badge.enabled %}
+                <p>You earned all <strong>{{ badge.skills }}</strong> skills for this badge!</p>
+              {% else %}
+                <p>You need <strong>{{ badge.skills }}</strong> skills to earn this badge</p>
+              {% endif %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+      
+    </ul>
+  </div>
+  <!-- <script>
+       $('.badge').on('click', function() {
+         console.log("activate badge: %s", $(this).attr('value'), this);
+         $.ajax({
+             url : "/activateBadge",
+             data : {
+               name : $(this).attr('value'),
+             },
+             success : function() {
+               alert('Activated badge.');
+             }
+         });
+
+       });
+  </script> -->
+</body>
+</html>

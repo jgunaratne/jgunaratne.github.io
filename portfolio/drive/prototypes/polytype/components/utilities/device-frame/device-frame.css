@@ -1,0 +1,53 @@
+#device {
+	position: relative;
+}
+#device iframe {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-color: #fff;
+}
+#device.iphone {
+	background-image: url('img/_frame_iphone.png');
+	width: 400px;
+	height: 820px;
+}
+#device.iphone iframe {
+	width: 320px;
+	height: 568px;
+	margin-top: -284px;
+	margin-left: -160px;
+}
+#device.gnexus {
+	background-image: url('img/_frame_gnexus.png');
+	width: 422px;
+	height: 825px;
+}
+#device.gnexus iframe {
+	width: 360px;
+	height: 640px;
+	margin-top: -320px;
+	margin-left: -180px;
+}
+#device.ipad {
+	background-image: url('img/_frame_ipad.png');
+	width: 1246px;
+	height: 960px;
+}
+#device.ipad iframe {
+	width: 1024px;
+	height: 768px;
+	margin-top: -384px;
+	margin-left: -512px;
+}
+#device.nexus10 {
+	background-image: url('img/_frame_nexus10.png');
+	width: 1548px;
+	height: 1062px;
+}
+#device.nexus10 iframe {
+	width: 1280px;
+	height: 800px;
+	margin-top: -400px;
+	margin-left: -640px;
+}

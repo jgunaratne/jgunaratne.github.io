@@ -1,0 +1,354 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="polymer-drive-list-container" on-mousedown="onMouseDown" on-mouseup="onMouseUp" on-mousemove="onMouseMove" on-click="onClick">
+<template>
+  <link rel="stylesheet" href="polymer-drive-list-container.css">
+  <content></content>
+</template>
+<script>
+  (function() {
+    Polymer('polymer-drive-list-container', {
+      drag: false,
+      enableDragging: false,
+      dx: 0,
+      dy: 0,
+      moveDX: 0,
+      moveDY: 0,
+      clickX: 0,
+      clickY: 0,
+      startDragFlag: false,
+      endDragFlag: false,
+      shunkTimeout: null,
+      dragInProgress: false,
+      dropTarget: null,
+      mode: 'marqueeMode',
+      ready: function() {
+        
+      },
+      startDrag: function(e,i,el) {
+
+        el.mode = 'dragMode';
+        var count = document.getElementById('count');
+        count.style.display = 'none';
+
+        el.dx = e.clientX;
+        el.dy = e.clientY;
+
+        el.drag = true;
+
+        var selectedItems = document.getElementsByTagName('polymer-drive-list')[0].getSelectedItems();
+
+        el.overlayEl = document.getElementById('dragOverlay');
+        el.overlayEl.style.left = 0;
+        el.overlayEl.style.top = 0;
+        document.getElementsByTagName('body')[0].classList.add('no-overflow');
+
+        el.overlayEl.classList.add('show');
+
+        var iClone = document.getElementById('items').cloneNode(true);
+        document.getElementById('overlayItems').innerHTML = '';
+        document.getElementById('overlayItems').appendChild(iClone);
+
+        el.classList.add('dragging');
+
+        var t = el;
+
+        if (el.shunkTimeout) {
+          clearTimeout(el.shunkTimeout);
+        }
+        el.shunkTimeout = setTimeout(function() {
+          t.startShunk(el);
+        }, 100);
+        
+      },
+      startShunk : function(el) {
+
+        var offsetWidth = 60;
+        var offsetHeight = 15;
+
+        var selCount = 0;
+        var firstLi;
+
+        var boxes = document.getElementById('overlayItems').querySelectorAll('polymer-drive-list-item');
+        for (i in boxes) {
+          var box = boxes[i];
+          var li = box.parentNode;
+          if (box && li && box.classList.contains('selected')) {
+            if (firstLi == null) {
+              firstLi = li;
+            }
+            box.style.left = (-li.offsetLeft + el.dx - offsetWidth - el.parentOffsetLeft) + 'px';
+            box.style.top = (-li.offsetTop + el.dy - offsetHeight - el.parentOffsetTop) + 'px';
+
+            box.classList.add('rotate');
+            if (i%3 == 0) {
+              box.classList.add('one');
+            } else if (i%3 == 1) {
+              box.classList.add('two');
+            } else if (i%3 == 2) {
+              box.classList.add('three');
+            }
+
+            selCount++;
+          }
+        }
+        setTimeout(function() {
+          if (selCount > 1) {
+            count.style.left = (el.dx - offsetWidth - el.parentOffsetLeft - 8 + 140) + 'px';
+            count.style.top = (el.dy - offsetHeight - el.parentOffsetTop - 8) + 'px';
+            count.innerHTML = selCount;
+            count.style.display = 'block';
+          }
+        }, 250);
+
+        if (el.mode == 'dragMode') {
+          var sidebar = document.getElementsByTagName('polymer-drive-sidebar')[0];
+          sidebar.classList.add('only-show-drive');
+          sidebar.openSidebar(true);
+
+         
+
+          setTimeout(function() {
+             var sidebarHeight = document.getElementsByTagName('polymer-drive-sidebar')[0].shadowRoot.getElementsByTagName('ul')[0].offsetHeight;
+            var winHeight = window.innerHeight - 100;
+            console.log(sidebarHeight, winHeight);
+            if (sidebarHeight > winHeight) {
+              document.getElementById('fixedTrash').style.display = 'block';
+            } else {
+              document.getElementById('fixedTrash').style.display = 'none';
+            }
+          }, 100);
+
+        }
+
+        var marquee = document.getElementById('marquee');
+        marquee.classList.remove('show');
+        
+      },
+      endDrag: function(e,i,el) {
+
+        var marquee = document.getElementById('marquee');
+          marquee.classList.remove('show');
+
+        if (el.mode == 'dragMode') {
+           var sidebar = document.getElementsByTagName('polymer-drive-sidebar')[0];
+          sidebar.classList.remove('only-show-drive');
+          sidebar.openSidebar(false);
+        }
+
+        el.drag = false;
+        el.overlayEl.classList.remove('show');
+        document.getElementsByTagName('body')[0].classList.remove('no-overflow');
+        el.classList.remove('dragging');
+        document.getElementById('overlayItems').innerHTML = '';
+        el.mode = 'marqueeMode';
+
+        if (el.dropTarget != null) {
+          var list = document.getElementsByTagName('polymer-drive-list')[0];
+          var selItems = list.getSelectedItems();
+          for (i in selItems) {
+            var sItem = selItems[i];
+            if (sItem.item != el.dropTarget.item) {
+              el.moveToFolder(el.dropTarget, sItem);
+            }
+          }
+        }
+
+        document.getElementById('fixedTrash').style.display = 'none';
+
+      },
+      onMouseDown: function(e,i,el) {
+        var list = document.getElementsByTagName('polymer-drive-list')[0];
+        el.parentOffsetLeft = list.parentNode.parentNode.offsetLeft;
+        el.parentOffsetTop = 110;
+
+        el.clickX = e.clientX - el.parentOffsetLeft;
+        el.clickY = e.clientY - el.parentOffsetTop;
+
+        el.moveDX = 0;
+        el.moveDY = 0;
+
+        el.startDragFlag = true;
+        el.dragInProgress = true;
+
+
+        if (e.srcElement.tagName.toLowerCase() == 'polymer-drive-list-item') {
+
+          //if (list.layout == 'grid') {
+          el.mode = 'itemSelectMode';
+          //}
+
+        } else if (e.srcElement.tagName.toLowerCase() == 'polymer-ui-splitter') {
+          el.mode = 'splitterDragMode';
+        } else {
+          el.mode = 'marqueeMode';
+          document.getElementsByTagName('polymer-drive-list')[0].deselectAllItems();
+        }
+
+        if (el.mode == 'marqueeMode') {
+          var marquee = document.getElementById('marquee');
+          marquee.style.left = el.clickX + 'px';
+          marquee.style.top = el.clickY + 'px';
+          marquee.style.width = 0; 
+          marquee.style.height = 0;
+        }
+      },
+      onMouseUp: function(e,i,el) {
+        if (el && el.overlayEl && el.overlayEl.classList) {
+          el.endDrag(e,i,el);
+        }
+        el.moveDX = 0;
+        el.moveDY = 0;
+        el.enableDragging = false;
+
+        el.startDragFlag = false;
+
+        if (el.mode == 'marqueeMode' && marquee) {
+          var marquee = document.getElementById('marquee');
+          marquee.classList.remove('show');
+        }
+        el.dropTarget = null;
+
+        var marquee = document.getElementById('marquee');
+          marquee.classList.remove('show');
+          
+      },
+      onMouseMove: function(e,i,el) {
+
+        if (el.startDragFlag) {
+          el.moveDX = Math.abs(e.clientX - el.clickX - el.parentOffsetLeft);
+          el.moveDY = Math.abs(e.clientY - el.clickY - el.parentOffsetTop);
+          if (el.moveDX > 15 && el.moveDY > 15) {
+            el.enableDragging = true;
+          } else {
+            el.enableDragging = false;
+          }
+        }
+
+        if (el.dragInProgress && el.enableDragging) {
+          if (el.mode == 'itemSelectMode') {
+            if (e && e.srcElement && e.srcElement.classList) {
+              el.startDrag(e,i,el);
+            }
+            el.dragInProgress = false;
+          }
+          if (el.mode == 'marqueeMode') {
+            var marquee = document.getElementById('marquee');
+            marquee.classList.add('show');
+            var dx = e.clientX - el.parentOffsetLeft - el.clickX;
+            var dy = e.clientY - el.parentOffsetTop - el.clickY;
+            var adjClientX = e.clientX - el.parentOffsetLeft;
+            var adjClientY = e.clientY - el.parentOffsetTop;
+            if (dx > 0 && dy > 0) {
+              marquee.style.width = dx + 'px'; 
+              marquee.style.height = dy + 'px';
+            } else if (dx < 0 && dy < 0) {
+              marquee.style.left = adjClientX + 'px';
+              marquee.style.top = adjClientY + 'px';
+              marquee.style.width = -dx + 'px'; 
+              marquee.style.height = -dy + 'px';
+            } else if (dx < 0 && dy > 0) {
+              marquee.style.left = adjClientX + 'px';
+              marquee.style.width = -dx + 'px'; 
+              marquee.style.height = dy + 'px';
+            } else if (dx > 0 && dy < 0) {
+              marquee.style.top = adjClientY + 'px';
+              marquee.style.width = dx + 'px'; 
+              marquee.style.height = -dy + 'px';
+            }
+            el.getSelection();
+          }
+        }
+        if (el.drag) {
+          var posX = e.clientX - el.dx;
+          var posY = e.clientY - el.dy;
+          el.overlayEl.style.left = posX + 'px';
+          el.overlayEl.style.top = posY + 'px';
+
+          var sidebarItem;
+
+          if (e.srcElement && e.srcElement.parentNode) {
+            if (e.srcElement.classList.contains('sidebar-item')) {
+              var sidebarItem = e.srcElement.parentNode.parentNode;
+              sidebarItem.classList.add('over');
+            } else if (e.srcElement.parentNode.classList.contains('sidebar-item')) {
+              var sidebarItem = e.srcElement.parentNode.parentNode.parentNode;
+              sidebarItem.classList.add('over');
+            }
+          }
+
+          if (e.srcElement && e.srcElement.tagName.toLowerCase() == 'polymer-drive-crumb') {
+            e.srcElement.classList.add('over');
+          }
+
+        }
+      },
+      getSelection : function() {
+        var selectedMarqueeItems = [];
+        var marquee = document.getElementById('marquee');
+        var left = marquee.offsetLeft;
+        var right = marquee.offsetLeft + marquee.offsetWidth;
+        var top = marquee.offsetTop;
+        var bottom = marquee.offsetTop + marquee.offsetHeight;
+
+        var aCoord = {
+          left: left,
+          right: right,
+          top: top,
+          bottom: bottom
+        };
+
+        var selectedItems = document.getElementById('items').getElementsByTagName('li');
+        for (var i = 0; i < selectedItems.length; i++) {
+          var li = selectedItems[i];
+          var leftItem = li.offsetLeft;
+          var rightItem = li.offsetLeft + li.offsetWidth;
+          var topItem = li.offsetTop;
+          var bottomItem = li.offsetTop + li.offsetHeight;
+
+          var bCoord = {
+            left: leftItem,
+            right: rightItem,
+            top: topItem,
+            bottom: bottomItem
+          }
+
+          var withinBounds = this.intersects(aCoord, bCoord);
+          var pItem = li.getElementsByTagName('polymer-drive-list-item')[0];
+          if (pItem) {
+           pItem.setSelected(false);
+           if (withinBounds) {
+            pItem.setSelected(true);
+            selectedMarqueeItems.push(pItem);
+          }
+        }
+      }
+      return selectedMarqueeItems;
+    },
+    intersects: function(a, b) {
+      return !( b.left > a.right
+        || b.right < a.left
+        || b.top > a.bottom
+        || b.bottom < a.top);
+    },
+    moveToFolder : function(destFolder, polymerItem) {
+      var list = document.getElementsByTagName("polymer-drive-list")[0];
+      var index = 0;
+      for (var i = 0; i < list.folder.contents.length; i++) {
+        if (list.folder.contents[i] == polymerItem.item) {
+          index = i;
+        }
+      }
+      polymerItem.setSelected(false);
+      destFolder.item.contents.push(polymerItem.item);
+      var list = document.getElementsByTagName("polymer-drive-list")[0];
+      list.folder.contents.splice(index, 1);
+      this.dropTarget.setSelected(false);
+      list.showFolder(list.folder);
+    },
+    onClick: function(e,i,el) {
+
+    }
+  });
+})();
+</script>
+</polymer-element>

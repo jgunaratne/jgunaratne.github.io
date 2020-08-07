@@ -1,0 +1,74 @@
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+}
+
+.list-view .list li {
+	float: left;
+	width: 100%;
+}
+
+
+.left-out {
+  position:relative;
+  float: left;
+}
+.left-out.ng-enter, .left-out.ng-leave {
+  transition:0.2s linear all;
+}
+.left-out.ng-enter-stagger,
+.left-out.ng-leave-stagger {
+  transition-delay:0.005s;
+}
+.left-out.ng-enter {
+  opacity:0;
+  left:200px;
+}
+.left-out.ng-enter.ng-enter-active {
+  opacity:1;
+  left:0;
+}
+.left-out.ng-leave {
+  opacity:1;
+  left:0;
+}
+.left-out.ng-leave.ng-leave-active {
+  opacity:0;
+  left:-200px;
+}
+
+
+.right-out {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  position:relative;
+  float: left;
+  margin: 10px;
+  background: white;
+}
+.right-out.ng-enter, .right-out.ng-leave {
+  transition:0.2s linear all;
+}
+.right-out.ng-enter-stagger,
+.right-out.ng-leave-stagger {
+  transition-delay:0.01s;
+}
+.right-out.ng-enter {
+  opacity:0;
+  left:-200px;
+}
+.right-out.ng-enter.ng-enter-active {
+  opacity:1;
+  left:0;
+}
+.right-out.ng-leave {
+  opacity:1;
+  left:0;
+}
+.right-out.ng-leave.ng-leave-active {
+  opacity:0;
+  left:200px;
+}

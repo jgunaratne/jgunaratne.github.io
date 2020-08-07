@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  font-family: Roboto,Arial,sans-serif;
+  position: relative;
+  text-align: left;
+}
+
+
+:host .snippet-container {
+  display: inline-block;
+  font-size: 0;
+  margin-bottom: 32px;
+  vertical-align: top;
+}
+
+:host .snippet-container > .photo {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 48px;
+  margin: 0 16px 16px 0;
+  position: relative;
+  vertical-align: top;
+  width: 48px;
+}
+
+:host .snippet-container h4 {
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 5px;
+}
+
+:host .snippet-container > .photo img {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+:host .snippet-container .snippet-contents {
+  display: inline-block;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 13px;
+  vertical-align: top;
+}
+:host .snippet-container .snippet-contents {
+  color: #777;
+}
+
+:host .snippet-container .snippet-contents > .snippet-text {
+  font-size: 13px;
+  line-height: 18px;
+  white-space: normal;
+}
+
+
+:host .snippet-container .snippet-contents q {
+  border-left: 1px solid #ccc;
+  display: block;
+  padding: 4px 0 3px 7px;
+  margin: 3px 0 7px 1px;
+}
+:host .snippet-container .snippet-contents q::before,
+:host .snippet-container .snippet-contents q::after {
+  content: '';
+}

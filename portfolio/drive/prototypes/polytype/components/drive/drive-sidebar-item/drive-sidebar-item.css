@@ -1,0 +1,34 @@
+:host {
+  float: left;
+  width: 100%;
+}
+
+.sidebar-item {
+  float: left;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.sidebar-item:hover {
+	 background: #eeeeee;
+}
+
+.marker {
+	position: absolute;
+	width: 4px;
+	height: 100%;
+}
+
+.selected .marker {
+	background: rgb(219, 68, 55);
+	height: 24px;
+	top: 10px;
+}
+
+:host:hover .marker {
+	background: #646464;
+}
+
+:host:hover .selected .marker {
+	background: rgb(219, 68, 55);
+}

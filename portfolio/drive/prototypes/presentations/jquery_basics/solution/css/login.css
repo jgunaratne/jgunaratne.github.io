@@ -1,0 +1,113 @@
+body {
+  font: 13px Arial, sans-serif;
+  margin: 0;
+  color: #444;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #163F5D;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #163F5D),
+    color-stop(100%, #3179AB) );
+}
+
+input[type=text],input[type=password] {
+  width: 240px;
+  border: 1px solid #ccc;
+  padding: 5px 6px;
+  font: 13px Arial, sans-serif;
+}
+
+input[type=text]:focus,input[type=password]:focus {
+  
+}
+
+.field-label {
+  width: 120px;
+  display: inline-block;
+}
+
+button,a.button {
+  padding: 6px 12px;
+  border: 1px solid #999;
+  font: 13px Arial, sans-serif;
+  border-radius: 3px;
+  margin-top: 20px;
+  float: right;
+  cursor: pointer;
+  background: #ececec;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec),
+    color-stop(100%, #999) );
+  color: #222;
+  margin-left: 10px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+button {
+  min-width: 90px;
+}
+
+a.button {
+  min-width: 70px;
+}
+
+button.primary,a.button.primary {
+  border: 1px solid #007D00;
+  background: #00cf00;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00cf00),
+    color-stop(100%, #007D00) );
+  color: #fff;
+  font-weight: bold;
+}
+
+button[disabled=disabled] {
+  opacity: .25;
+}
+
+button.primary:active,a.button.primary:active {
+  background: #007D00;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+}
+
+input[type=text].invalid,input[type=password].invalid {
+  border: 1px solid red;
+  outline: none;
+}
+
+#loginPane {
+  border: 1px solid #444;
+  padding: 20px 30px;
+  border-radius: 6px;
+  margin: 100px 50%;
+  left: -205px;
+  width: 380px;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+  line-height: 2.5em;
+}
+
+#regYes {
+  margin-left: 15px;
+}
+
+#msgArea {
+  color: red;
+  float: left;
+  margin-top: 18px;
+}
+
+.hide {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}

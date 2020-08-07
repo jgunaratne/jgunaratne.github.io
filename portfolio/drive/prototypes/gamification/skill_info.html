@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Gamefication</title>
+<link rel="stylesheet" href="/static/game.css" type="text/css">
+<script src="/static/js/jquery-1.7.2.min.js"></script>
+<script src="/static/js/game.js"></script>
+</head>
+<body>
+  <div class="overlay">
+    <div class="profile">
+      <div class="mug"></div>
+      <div class="person-desc">
+        <h4>John Doe</h4>
+        <p>{{ earnedSkills }} Skills | {{ earnedBadges }} Badges</p>
+      </div>
+      <div class="menu-button">
+        <div class="icon-wrapper">
+          <div class="icon menu-state skills"></div>
+        </div>
+        <div class="menu-arrow"></div>
+        <div class="menu">
+          <div class="arrow">
+            <div class="inner-arrow"></div>
+          </div>
+          <ul>
+            <li><div class="icon person"></div> <a href="/profile.html">My profile</a></li>
+            <li><div class="icon skills"></div> <a href="/skills.html">All skills</a></li>
+            <li><div class="icon badge"></div> <a href="/badges.html">All badges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="break"></div>
+    </div>
+    <ul class="badge-list">
+      <li>
+        {% if skill.enabled %} 
+           <div class="circle medium left" style="background: {{ skill.color }}">
+           <!-- <p>ENABLED</p> --> 
+        {% else %}
+          <div class="circle medium left gray">
+            <!-- <p>NOT ENABLED</p> -->      
+        {% endif %}
+        
+          <div class="ring-first">
+            <div class="ring-second"></div>
+          </div>
+          {% if skill.enabled %} 
+            <div class="icon {{ skill.icon }}" style="background: {{ skill.color }}"></div>
+          {% else %}
+            <div class="icon {{ skill.icon }}" style="background: #B3AEC2"></div>
+          {% endif %}
+        </div>
+        <div class="badge-desc">
+          <h4>{{ skill.name }}</h4>
+          
+          {% if skill.enabled %} 
+            <p>You've earned this skill!</p>
+            <br/>
+            <p>Share with a friend:</p>
+            <img class="gplus" src="/static/img/gplus.png"></img><img class="linkedin" src="/static/img/linkedin.png"></img>
+          {% else %}
+            <p>Not yet earned</p>
+          {% endif %} 
+          <div class="space"></div>
+            
+          <p>Friends with this skill:</p>
+          <div class="break"></div>
+          <div class="mugs"></div>
+          <!-- <div class="mug small"></div>
+          <div class="mug small"></div>
+          <div class="mug small"></div> -->
+        </div>
+      </li>
+    </ul>
+    <div class="break space double"></div>
+    <div class="divider"></div>
+    <div class="container">
+      <h4>To earn this skill:</h4>
+      <div class="space"></div>
+      <p>{{ skill.hint }}</p>
+    </div>
+  </div>
+  <!-- <script>
+      var desc = decodeURIComponent(getUrlVars()['desc']);
+      $('.badge-desc h4').html(desc);
+    </script> -->
+</body>
+</html>

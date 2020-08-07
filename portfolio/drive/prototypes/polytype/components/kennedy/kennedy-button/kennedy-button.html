@@ -1,0 +1,22 @@
+<link rel="import" href="/polymer/polymer.html">
+<polymer-element name="kennedy-button" attributes="type img" tabindex="0">
+  <template>
+    <link rel="stylesheet" href="kennedy-button.css">
+    <template if="{{ img != null }}">
+      <img src="{{ img }}">
+    </template>
+    <content></content>
+  </template>
+  <script>
+    (function() {
+      Polymer('kennedy-button', {
+        ready: function() {
+
+        },
+        onClick : function() {
+          
+        }
+      });
+    })();
+  </script>
+</polymer-element>

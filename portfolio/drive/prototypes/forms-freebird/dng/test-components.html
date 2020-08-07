@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Component test page</title>
+  <script type="text/javascript" src="../jquery/jquery-1.7.js"></script>
+  <script type="text/javascript" src="component.js"></script> <!-- Required to use any DNG components. -->
+  <script type="text/javascript" src="menu.js"></script>
+  <script type="text/javascript" src="menubar.js"></script>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Menu</h2>
+  <div id="test-menu"></div>
+  
+  <!-- omg hax -->
+  <br><br><br><br><br>
+  
+  <h2>Menubar</h2>
+  <div id="test-menubar"></div>
+  
+  <script>
+    /* MENU */
+    var menuData = {
+      // opt_label is undefined for an anonymous menu (e.g. popup)
+      menuitems: [
+        // Full-fledged item with an icon and an ID we can reference later.
+        { label: 'Bold', opt_icon: 'icon-bold.png', opt_id: 'bold-menu-item' },
+
+        // A divider, which doesn't need a label (it's ignored).
+        { opt_divider: true },
+
+        // Simple item with just a label.
+        { label: 'Undo' },
+
+        // Disabled item with just a label.
+        { label: 'Redo', opt_disabled: true },
+        
+        // Checked item.
+        { label: 'Amazing mode', opt_checked: true }
+      ]
+    };
+    var menu = new dng.Menu(menuData);
+    menu.render($('#test-menu'));
+    menu.setPosition(50, 50);
+    menu.setVisible(true); // Menus are hidden by default.
+    
+    /* MENUBAR */
+    // Create a couple menus to put in our menubar. DON'T PRE-RENDER THEM.
+    var fileMenuData = {
+      opt_label: 'File',
+      menuitems: [
+        { label: 'New' },
+        { label: 'Open'}
+      ]
+    };
+    var fileMenu = new dng.Menu(fileMenuData);
+    
+    var editMenuData = {
+      opt_label: 'Edit',
+      menuitems: [
+        { label: 'Cut' },
+        { label: 'Copy' },
+        { label: '', opt_divider: true },
+        { label: 'Paste' }
+      ]
+    };
+    var editMenu = new dng.Menu(editMenuData);
+    
+    var menubarData = {
+      menus: [fileMenu, editMenu]
+    };
+    var menuBar = new dng.MenuBar(menubarData);
+    menuBar.render($('#test-menubar'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="polymer-drive-incoming" attributes="layout">
+<template>
+  <link rel="stylesheet" href="polymer-drive-incoming.css">
+  <ul id="items" class="{{layout}}">
+    <template>
+      <li>
+        [no data]
+      </li>
+    </template>
+
+  </ul>
+  <div id="marquee"></div>
+</template>
+<script>
+  (function() {
+    Polymer('polymer-drive-incoming', {
+      folder: dataHandler.incoming,
+      layout: 'speciallist',
+      numFolders: 0,
+      ready: function() {
+        var t = this;
+        this.showFolder(this.folder);
+
+
+        var crumbs = document.getElementsByTagName('polymer-drive-breadcrumbs')[0];
+        crumbs.addCrumb(dataHandler.incoming);
+        console.log("crumbs: ", crumbs);
+      },
+      showFolder: function(folder) {
+        var t = this;
+        this.numFolders = this.countFolders(folder);
+        this.folder = this.sortFolder(folder);
+        console.log("showFolder TEST: ", this);
+      },
+      sortFolder: function(folder) {
+        function typeTitleSort(a,b) {
+          var aTitle = a.title.toLowerCase();
+          var bTitle = b.title.toLowerCase();
+          if (a.type == b.type) {
+            return (aTitle < bTitle) ? -1 : (aTitle > bTitle) ? 1 : 0;
+          } else {
+            return (a.type > b.type) ? -1 : 1;
+          }
+        }
+        folder.contents.sort(typeTitleSort);
+        return folder;
+      },
+      countFolders: function(folder) {
+        var contents = folder.contents;
+        var n = -1;
+        for (i in contents) {
+          if (contents[i].type == 'folder') {
+            n++;
+          }
+        }
+        return n;
+      },
+      setFolder: function(folder) {
+        this.showFolder();
+      },
+      deselectAllItems: function() {
+        // var listItems = document.getElementById('items').querySelectorAll('polymer-drive-list-item');
+        // for (var i = 0; i < listItems.length; i++) {
+        //   listItems[i].classList.remove('selected');
+        //   if (listItems[i].selecteditem) {
+        //     listItems[i].selecteditem = false;
+        //   }
+        // }
+        // var toolbar = document.getElementsByTagName('polymer-drive-toolbar')[0]
+        // toolbar.hideFileControls();
+      },
+      getAllItems: function() {
+        // var selectedItems = [];
+        // var listItems = document.getElementById('items').querySelectorAll('polymer-drive-list-item');
+        // for (var i = 0; i < listItems.length; i++) {
+        //   selectedItems.push(listItems[i]);
+        // }
+        // return selectedItems;
+      },
+      getSelectedItems: function() {
+        // var selectedItems = [];
+        // var listItems = document.getElementById('items').querySelectorAll('polymer-drive-list-item');
+        // for (var i = 0; i < listItems.length; i++) {
+        //   listItems[i].classList.remove('selected');
+        //   if (listItems[i].selecteditem) {
+        //     listItems[i].classList.add('selected');
+        //     selectedItems.push(listItems[i]);
+        //   }
+        // }
+        // return selectedItems;
+      }
+    });
+})();
+</script>
+</polymer-element>

@@ -1,0 +1,12 @@
+#petSiteContent {
+  display: none;
+}
+
+.block h1 {
+  font-size: 18px;
+  margin-bottom: .5em;
+}
+
+.block {
+  line-height: 1.33em;
+}

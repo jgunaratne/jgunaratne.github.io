@@ -1,0 +1,42 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="polymer-drive-content" on-mousedown="onMouseDown" on-mouseup="onMouseUp" on-mousemove="onMouseMove" on-click="onClick">
+<template>
+<style>
+:host {
+  position: absolute;
+  top: 112px;
+  left: 241px;
+  width: calc(100% - 241px);
+  height: calc(100% - 112px);
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-user-select: none;
+}
+</style>
+<content></content>
+</template>
+<script>
+  (function() {
+    Polymer('polymer-drive-content', {
+      dragging : false,
+      mousedown : false,
+      mouseup: false,
+      ready: function() {
+
+      },
+      onMouseDown: function() {
+
+      },
+      onMouseUp: function() {
+
+      },
+      onMouseMove: function(e) {
+
+      },
+      onClick: function() {
+
+      }
+    });
+  })();
+</script>
+</polymer-element>

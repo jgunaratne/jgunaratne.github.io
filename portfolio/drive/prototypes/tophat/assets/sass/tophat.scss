@@ -1,0 +1,59 @@
+@import url(load-data.css);
+@import url(../font/roboto/roboto.css);
+
+@import url(../../components/breadcrumb/breadcrumb.css);
+@import url(../../components/file/file.css);
+@import url(../../components/folder/folder.css);
+@import url(../../components/list/list.css);
+
+a {
+	color: #6282f7;
+	text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eeeeee;
+  color: #2f2f2f;
+}
+
+.tophat {
+  font-family: RobotoLight;
+  font-size: 13px;
+  .active-section {
+    position: absolute;
+    top: 60px;
+    left: 240px;
+    width: calc(100% - 40px - 240px);
+    height: calc(100% - 40px - 60px);
+    margin: 20px;
+    -webkit-transition: all .5s;
+    h1 {
+      margin: 0;
+    }
+  }
+  .closed .active-section {
+  	left: 0;
+  	width: calc(100% - 40px - 0);
+  	-webkit-transition: all .5s;
+  }
+  .drive-logo-white {
+  	width: 32px;
+  	height: 32px;
+  	float: left;
+  	margin: 14px 16px;
+  	background-image: url(../img/drive-logo-white.svg);
+  	background-size: contain;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	-webkit-filter: drop-shadow(0 1px 1px rgba(0,0,0,.33));
+  }
+  @import "nav-top";
+  @import "nav-left";
+  @import "buttons";
+}
+
+.clear {
+	clear: both;
+}

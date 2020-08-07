@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="22px" viewBox="0 0 19 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch Beta 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>file-smile + Rectangle-371</title>
+    <description>Created with Sketch Beta.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="file-smile-+-Rectangle-371" sketch:type="MSLayerGroup">
+            <g id="file-smile" sketch:type="MSShapeGroup">
+                <g id="Page-1">
+                    <g id="video-3-+-Oval-67-+-Oval-68-+-Shape-5">
+                        <g id="Group">
+                            <g id="video-3">
+                                <path d="M18.1862069,2.39327804 L18.1862069,20.485183 C18.1862069,20.8948156 17.8569369,21.2282609 17.4507617,21.2282609 L0.735445204,21.2282609 C0.3311802,21.2282609 0,20.8955736 0,20.485183 L0,0.743077823 C0,0.333445286 0.329270034,-8.88178419e-16 0.735445204,-8.88178419e-16 L15.7400606,-8.88178419e-16 L14.0293596,-1.77635684e-15 L16.1077833,2.02173913 L18.1862069,4.04347826 L18.1862069,2.39327804 L18.1862069,2.39327804 Z" id="Rectangle-9" fill="#CE5442"></path>
+                                <path d="M14.0293596,0 L14.0293596,3.2492527 C14.0293596,3.25758672 14.0295095,3.26592023 14.0298091,3.27425012 C14.0455804,3.7126672 14.4643747,4.05688276 14.9652124,4.04307708 L18.1862069,4.04307708 L14.0293596,0 L14.0293596,0 Z" id="Path-20" fill="#D56F60"></path>
+                            </g>
+                            <g id="Oval-67-+-Oval-68-+-Shape-3" transform="translate(6.062069, 10.108696)" fill="#FFFFFF">
+                                <ellipse id="Oval-67" cx="1.01034483" cy="1.01086957" rx="1.01034483" ry="1.01086957"></ellipse>
+                                <ellipse id="Oval-68" cx="5.01034483" cy="1.01086957" rx="1.01034483" ry="1.01086957"></ellipse>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="Rectangle-371" fill="#FFFFFF" sketch:type="MSShapeGroup" x="5" y="14" width="8" height="1" rx="2"></rect>
+        </g>
+    </g>
+</svg>

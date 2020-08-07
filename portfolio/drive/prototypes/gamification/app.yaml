@@ -1,0 +1,69 @@
+application: google.com:docs-ux-proto
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+      
+- url: /static
+  static_dir: static
+  
+- url: /addbadge
+  script: main.py
+  
+- url: /addskill
+  script: main.py
+
+- url: /activateBadge
+  script: main.py
+  
+- url: /activateSkill
+  script: main.py
+
+- url: /clear
+  script: main.py
+
+- url: /reset
+  script: main.py
+
+- url: /badges
+  script: main.py
+  
+- url: /skills
+  script: main.py
+  
+- url: /setmole
+  script: main.py
+  
+- url: /mole.js
+  script: main.py
+
+- url: /lastitem
+  script: main.py
+  
+- url: /badge_info/.*
+  script: main.py
+
+- url: /skill_info/.*
+  script: main.py
+
+- url: /profile.html
+  script: main.py
+
+- url: /skills.html
+  script: main.py
+  
+- url: /firstSkill.html
+  script: main.py
+    
+- url: /badges.html
+  script: main.py
+
+# libraries:
+#   - name: jinja2
+#     version: latest
+
+# - url: /favicon.ico
+#   static_files: images/favicon.ico
+#   upload: images/favicon.ico
+

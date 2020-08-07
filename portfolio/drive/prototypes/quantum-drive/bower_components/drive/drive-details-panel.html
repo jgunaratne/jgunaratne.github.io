@@ -1,0 +1,104 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="drive-details-panel" attributes="app">
+<template>
+<style>
+:host {
+	
+}
+.details-panel-container {
+	position: fixed;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	-webkit-transition: all .25s;
+	overflow: hidden;
+	top: 60px;
+	right: calc(50px);
+	min-height: 400px;
+	width: 0;
+	-webkit-transition: all .25s;
+}
+.detail-head {
+	height: 84px;
+	float: right;
+}
+.detail-head:before, .detail-head:after {
+    content: " ";
+    display: table;
+}
+.detail-head:after {
+    clear: both;
+}
+.list-head {
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	height: 34px;
+	width: 100%;
+	overflow: hidden;
+}
+.list-head h4 {
+	font-weight: normal;
+	font-size: 12px;
+	float: left;
+	margin: 10px;
+}
+.list-head h4:nth-child(1) {
+	margin-left: 20px;
+}
+.list-head:before, .list-head:after {
+    content: " ";
+    display: table;
+}
+.list-head:after {
+    clear: both;
+}
+.content-area {
+	margin: 20px;
+}
+p {
+	font-size: 14px;
+}
+.thumb  {
+	width: 100%;
+	height: 320px;
+	background-color: #ececec;
+	background-image: url(../../assets/thumbs/1.jpg);
+	background-size: cover;
+	margin-bottom: 50px;
+}
+@media all and (max-width: 800px) {
+	.details-panel-container {
+		width: 0;
+	}
+}
+@media all and (min-width: 1280px) {
+	.details-panel-container {
+		width: 320px;
+	}
+}
+</style>
+<div class="details-panel-container">
+	<div class="detail-head">
+		<drive-icon-button icon="share"></drive-icon-button>
+		<drive-icon-button icon="folder"></drive-icon-button>
+		<drive-icon-button icon="more"></drive-icon-button>
+	</div>
+	<div class="list-head">
+		<h4>Item details</h4>
+	</div>
+	<div class="content-area">
+		<div class="thumb"></div>
+		<p>Available offline</p>
+		<p>Opened: April 22, 2014</p>
+		<p>Modified: March 10, 2014</p>
+		<p>Created: January 19, 2014</p>
+	</div>
+</div>
+</template>
+<script>
+Polymer('drive-details-panel', {
+	domReady : function() {
+		
+	}
+});
+</script>
+</polymer-element>

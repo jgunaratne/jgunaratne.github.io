@@ -1,0 +1,192 @@
+body {
+	font-family: Arial;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	margin: 0;
+	color: #080808;
+}
+
+a {
+	color: #2360cb;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.header {
+	height: 59px;
+	background: #f7f7f7;
+	border-bottom: 1px solid #eeeeee;
+	font-family: Roboto;
+	font-size: 16pt;
+	font-weight: 100;
+	line-height: 60px;
+}
+
+.header span {
+	float: left;
+	color: #7b7777;
+}
+
+.glogo {
+	width: 81px;
+	height: 28px;
+	background: url(../img/glogo.png);
+	background-size: cover;
+	margin: 18px 8px 0 20px;
+	float: left;
+}
+
+h1 {
+	font-family: Roboto;
+	font-size: 32pt;
+	font-weight: 100;
+	margin: 30px 0 0 0;
+}
+
+h4 {
+	font-family: Roboto;
+	font-size: 14pt;
+	font-weight: 300;
+	margin: 0;
+	color: #7b7777;
+}
+
+.center {
+	text-align: center;
+}
+
+.cta {
+	text-align: center;
+	margin: 40px 0 20px 0;
+}
+
+.cta a {
+	border: 1px solid #2360cb;
+	padding: 10px 20px;
+	font-family: Arial, san-serif;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 3px;
+	color: #fff;
+	background: -webkit-linear-gradient(top, #5c97fb 0%, #3a74d9 100%);
+	background-color: #3a74d9;
+	outline: none;
+}
+
+.cta a:hover {
+	background: -webkit-linear-gradient(top, #3a74d9 0%, #3a74d9 100%);
+	background-color: #3a74d9;
+	text-decoration: none;
+}
+
+.devices {
+	background-size: cover;
+	width: 730px;
+	height: 320px;
+	margin: 40px auto;
+	position: relative;
+	left: 40px;
+	background-image: url(../img/devices.png);
+}
+
+.devices-cut {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-size: cover;
+	background-image: url(../img/empty.png);
+	animation: deviceanim 15s linear infinite;
+	-webkit-animation: deviceanim 15s linear infinite;
+}
+
+@keyframes deviceanim
+{
+	0%   {background-image: url(../img/empty.png);}
+	3%   {background-image: url(../img/empty.png);}
+	6% {background-image: url(../img/dog1.png);}
+	12% {background-image: url(../img/dog1.png);}
+	18%   {background-image: url(../img/dog2.png);}
+	27%   {background-image: url(../img/dog2.png);}
+	33%   {background-image: url(../img/projector-bg.png);}
+	39% {background-image: url(../img/budget1.png);}
+	45% {background-image: url(../img/budget1.png);}
+	51%   {background-image: url(../img/budget2.png);}
+	60%   {background-image: url(../img/budget2.png);}
+	67%   {background-image: url(../img/projector-bg.png);}
+	70% {background-image: url(../img/flyer1.png);}
+	76% {background-image: url(../img/flyer1.png);}
+	79%   {background-image: url(../img/flyer2.png);}
+	94%   {background-image: url(../img/flyer2.png);}
+	100%   {background-image: url(../img/empty.png);}
+}
+
+@-webkit-keyframes deviceanim
+{
+	0%   {background-image: url(../img/empty.png);}
+	3%   {background-image: url(../img/empty.png);}
+	6% {background-image: url(../img/dog1.png);}
+	12% {background-image: url(../img/dog1.png);}
+	18%   {background-image: url(../img/dog2.png);}
+	27%   {background-image: url(../img/dog2.png);}
+	33%   {background-image: url(../img/projector-bg.png);}
+	39% {background-image: url(../img/budget1.png);}
+	45% {background-image: url(../img/budget1.png);}
+	51%   {background-image: url(../img/budget2.png);}
+	60%   {background-image: url(../img/budget2.png);}
+	67%   {background-image: url(../img/projector-bg.png);}
+	70% {background-image: url(../img/flyer1.png);}
+	76% {background-image: url(../img/flyer1.png);}
+	79%   {background-image: url(../img/flyer2.png);}
+	94%   {background-image: url(../img/flyer2.png);}
+	100%   {background-image: url(../img/empty.png);}
+}
+
+.steps {
+	margin: 40px auto 80px auto;
+	text-align: center;
+}
+
+.step {
+	width: 270px;
+	height: 172px;
+	display: inline-block;
+	background-size: cover;
+	margin: 15px;
+}
+
+.step h4 {
+	margin: 185px 0 0 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.install {
+	background-image: url(../img/install.png);
+}
+
+.add {
+	background-image: url(../img/add.png);
+}
+
+.install-win {
+	background-image: url(../img/install-win.png);
+}
+
+.add-win {
+	background-image: url(../img/add-win.png);
+}
+
+.see {
+	background-image: url(../img/see.png);
+}
+
+.space-top {
+	margin-top: 30px;
+}

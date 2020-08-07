@@ -1,0 +1,166 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+
+@font-face {
+	font-family: 'roboto-thin';
+	src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+	font-family: 'roboto-regular';
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'roboto-bold';
+	src: url('../fonts/Roboto-Bold.ttf');
+}
+
+body {
+	font-family: 'Roboto', 'roboto-thin', Arial, sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	margin: 30px 50px;
+}
+
+.center {
+	text-align: center;
+}
+
+section {
+	margin: 0;
+	padding: 0;
+	width: 800px;
+	height: 520px;
+	display: block;
+	color: #666666;
+	position: absolute;
+	overflow: hidden;
+}
+
+h1.large {
+	font-weight: 100;
+	padding: 20px 0 0 0;
+	font-size: 42px;
+}
+
+.drive-logo {
+	width: 232px;
+	height: 205px;
+	background-image: url(../img/drive-logo.png);
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	margin-left: -116px;
+}
+
+section h1,section h4 {
+	font-weight: 100;
+	position: relative;
+}
+
+h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+h4 {
+	margin: .75em 0;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.mac .folder {
+	width: 700px;
+	height: 404px;
+	background-image: url(../img/mac-folder.png);
+	position: absolute;
+	bottom: -60px;
+	left: 50%;
+	margin-left: -350px;
+	position: absolute;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .33);
+	position: absolute;
+}
+
+.mac .mag {
+	background-image: url(../img/mac-mag.png);
+	position: absolute;
+	width: 280px;
+	height: 280px;
+	top: 180px;
+	left: 340px;
+}
+
+.nexus4-drive {
+	position: absolute;
+	background-image: url(../img/nexus4-drive.png);
+	left: 360px;
+	top: 240px;
+	width: 302px;
+	height: 493px;
+}
+
+.nexus7-drive {
+	position: absolute;
+	background-image: url(../img/nexus7-drive.png);
+	top: 80px;
+	left: 520px;
+	width: 368px;
+	height: 585px;
+}
+
+.download {
+	position: absolute;
+	margin: 50px 70px;
+}
+
+.download-android {
+	background-image: url(../img/download-android.png);
+	width: 163px;
+	height: 57px;
+}
+
+.download-apple {
+	margin-top: 20px;
+	background-image: url(../img/download-apple.png);
+	width: 163px;
+	height: 49px;
+	background-image: url(../img/download-apple.png);
+}
+
+.mac .share {
+	width: 705px;
+	height: 507px;
+	background-image: url(../img/mac-share.png);
+	background-size: cover;
+	position: absolute;
+	bottom: -143px;
+	left: 50%;
+	margin-left: -352px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .33);
+}
+
+.mac .mag-share {
+	background-image: url(../img/mac-mag-share.png);
+	background-size: cover;
+	position: absolute;
+	width: 280px;
+	height: 280px;
+	top: 350px;
+	left: 440px;
+}
+
+.mac .menu {
+	width: 722px;
+	height: 375px;
+	background-image: url(../img/mac-menu.png);
+	background-size: cover;
+	position: absolute;
+	left: 50%;
+	margin-left: -360px;
+	bottom: -20px;
+}

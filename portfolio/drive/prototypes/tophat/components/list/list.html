@@ -1,0 +1,9 @@
+<div ng-controller="listCtrl" class="list-container">
+	<ul class="list">
+		<li ng-repeat="item in folderItems track by $index" class="left-out"><dux-folder></dux-folder></li>
+	</ul>
+	<div class="clear"></div>
+	<ul class="list">
+		<li ng-repeat="item in fileItems track by $index" class="left-out"><dux-file></dux-file></li>
+	</ul>
+</div>

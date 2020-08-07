@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trix Gamefication</title>
+<link rel="stylesheet" href="game.css" type="text/css">
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/mole_update.js"></script>
+</head>
+<body>
+  <div class="mole">
+    <h1>Congratulations</h1>
+  </div>
+  <div class="mole-content">
+    <div class="badge large green" id="earnedItemBadge"></div>
+    <div id="earnedItemSkill" class="left">
+      <div class="circle green">
+        <div class="ring-first">
+          <div class="ring-second"></div>
+        </div>
+        <div class="icon"></div>
+        <div class="circle-desc">
+          Folder<br> Expert
+        </div>
+      </div>
+    </div>
+    <div class="mole-desc">
+      <h4 id="earnedBadgeTitle" class="badge-name">You earned a badge</h4>
+      <h4 id="earnedSkillTitle" class="badge-name">You earned a skill</h4>
+      <!-- <p>Earned today</p> -->
+      <!-- <div class="space"></div> -->
+      <p id="badgeReason">Your actions resulted in earning this badge.</p>
+      <p id="skillReason">Your actions resulted in earning this skill.</p>
+      <!-- <p>Share with a friend:</p> -->
+      <img class="gplus" src="/static/img/gplus.png"></img><img class="linkedin" src="/static/img/linkedin.png"></img>
+    </div>
+    <div class="break"></div>
+  </div>
+  <div class="mole-btns">
+    <button class="left">Earn more skills</button>
+    <button class="right">Close</button>
+    <div class="break"></div>
+  </div>
+</body>
+</html>

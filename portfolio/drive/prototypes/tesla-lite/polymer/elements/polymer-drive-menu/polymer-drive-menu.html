@@ -1,0 +1,34 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="polymer-drive-menu" on-click="onClick">
+<template>
+  <link rel="stylesheet" href="polymer-drive-menu.css">
+  <ul>
+  	<li>Comfortable</li>
+  	<li>Cozy</li>
+  	<li>Compact</li>
+  </ul>
+</template>
+<script>
+  (function() {
+    Polymer('polymer-drive-menu', {
+      ready: function() { 
+        this.super();
+      },
+      onClick: function(e) {
+        if (e && e.srcElement) {
+          var list = document.getElementsByTagName('polymer-drive-list')[0];
+          list.className = '';
+          var selText = e.srcElement.innerText.toLowerCase();
+          list.classList.add(selText);
+
+          var sbar = document.getElementsByTagName('polymer-drive-sidebar')[0];
+          sbar.className = '';
+          sbar.classList.add(selText);
+
+         
+        }
+      }
+    });
+  })();
+</script>
+</polymer-element>

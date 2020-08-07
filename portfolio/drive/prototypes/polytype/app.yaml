@@ -1,0 +1,30 @@
+application: google.com:polytype
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+
+- url: /platform
+  static_dir: platform
+
+- url: /polymer
+  static_dir: polymer
+
+- url: /assets
+  static_dir: assets
+
+- url: /components
+  static_dir: components
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"

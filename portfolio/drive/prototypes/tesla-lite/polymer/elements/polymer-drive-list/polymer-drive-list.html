@@ -1,0 +1,164 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="polymer-drive-list" attributes="layout">
+<template>
+  <link rel="stylesheet" href="polymer-drive-list.css">
+  <template if="{{layout == 'incoming'}}">
+    <dl id="items" class="{{layout}}">
+      <template repeat="{{range, r in folder.contents}}">
+        <dt>{{range.label}}</dt>
+        <dd>
+          <ol>
+            <template repeat="{{item, i in range.contents}}">
+              <li>
+                <div class="row" tabindex="0">
+                  <div class="person">
+                    <div class="photo"><img src="/quantum-lite/assets/img/people/photo_{{ item.photo }}.png"></div>
+                    <div class="person-data">
+                      <div class="name">{{ item.from }}</div>
+                      <div class="date">{{ item.date }}</div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="item-data">
+                      <div class="name fileicon" filetype="{{ item.type }}">{{ item.title }}</div>
+                      <div class="type">
+                        <template if="{{ item.type == 'doc' }}">Google Document</template>
+                        <template if="{{ item.type == 'slide' }}">Google Slides</template>
+                        <template if="{{ item.type == 'ppt' }}">Powerpoint file</template>
+                        <template if="{{ item.type == 'sheet' }}">Google Sheets</template>
+                        <template if="{{ item.type == 'pdf' }}">PDF file</template>
+                        <template if="{{ item.type == 'img' || item.type == 'png' || item.type == 'jpg' || item.type == 'gif' }}">Image</template>
+                        <template if="{{ item.type == 'folder' }}">Google Drive folder</template>
+                        <!-- {{ item.type }} -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="icon-accept"></div>
+                  </div>
+                </div><!-- row -->
+              </li>
+            </template>
+          </ol>
+        </dd>
+      </template>
+    </dl>
+  </template>
+  <template if="{{layout != 'incoming'}}">
+    <ul id="items" class="{{layout}}">
+      <template if="{{ layout == 'list'}}">
+        <li class="header">
+          <div class="icon-container"><div class="icon" style="background-image: url({{icon}})"></div></div>
+          <p class="title header-selected">Title</p>
+          <p class="owner">Owner</p>
+          <p class="date">Date</p>
+        </li>
+      </template>
+      <template repeat="{{item, i in folder.contents}}">
+        <li class="{{item.type == 'folder' ? 'folder' : 'file'}}"><polymer-drive-list-item item="{{item}}" items="{{items}}" type="{{item.type}}" name="{{item.title}}" selecteditem="{{item.selecteditem}}" icon="{{item.iconURL}}" thumb="{{item.thumbURL}}"></polymer-drive-list-item></li>
+        <template if="{{ numFolders == i}}">
+          <li class="folder-divider"></li>
+        </template>
+      </template>
+    </ul>
+    <div id="dragOverlay" class="{{layout}}">
+      <div id="count">1</div>
+      <div id="overlayItems"></div>
+    </div>
+    <div id="marquee"></div>
+  </template>
+</template>
+<script>
+  (function() {
+    Polymer('polymer-drive-list', {
+      folder: dataHandler.root,
+      layout: 'grid',
+      numFolders: 0,
+      ready: function() {
+        var t = this;
+        this.showFolder(this.folder);
+      },
+      showFolder: function(folder) {
+        var t = this;
+        this.numFolders = this.countFolders(folder);
+        this.folder = this.sortFolder(folder);
+      },
+      showIncoming: function() {
+        console.log("Switched to Incoming!");
+        var crumbs = document.getElementsByTagName('polymer-drive-breadcrumbs')[0];
+        crumbs.initIncoming();
+        this.folder = dataHandler.incoming;
+        this.layout = 'incoming';
+        this.showFolder(this.folder);
+      },
+      showExplorer: function() {
+        console.log("Switching back to a Drive view");
+        var crumbs = document.getElementsByTagName('polymer-drive-breadcrumbs')[0];
+        crumbs.initDrive();
+        this.folder = dataHandler.root;
+        this.layout = 'grid';
+        this.showFolder(this.folder);
+      },
+      sortFolder: function(folder) {
+        function typeTitleSort(a,b) {
+          if (a && b && a.title && b.title) {
+            var aTitle = a.title.toLowerCase();
+            var bTitle = b.title.toLowerCase();
+            if (a.type == b.type) {
+              return (aTitle < bTitle) ? -1 : (aTitle > bTitle) ? 1 : 0;
+            } else {
+              return (a.type > b.type) ? -1 : 1;
+            }
+          }
+        }
+        folder.contents.sort(typeTitleSort);
+        return folder;
+      },
+      countFolders: function(folder) {
+        var contents = folder.contents;
+        var n = -1;
+        for (i in contents) {
+          if (contents[i].type == 'folder') {
+            n++;
+          }
+        }
+        return n;
+      },
+      setFolder: function(folder) {
+        this.showFolder();
+      },
+      deselectAllItems: function() {
+        var listItems = document.getElementById('items').querySelectorAll('polymer-drive-list-item');
+        for (var i = 0; i < listItems.length; i++) {
+          listItems[i].classList.remove('selected');
+          if (listItems[i].selecteditem) {
+            listItems[i].selecteditem = false;
+          }
+        }
+        var toolbar = document.getElementsByTagName('polymer-drive-toolbar')[0]
+        toolbar.hideFileControls();
+      },
+      getAllItems: function() {
+        var selectedItems = [];
+        var listItems = document.getElementById('items').querySelectorAll('polymer-drive-list-item');
+        for (var i = 0; i < listItems.length; i++) {
+          selectedItems.push(listItems[i]);
+        }
+        return selectedItems;
+      },
+      getSelectedItems: function() {
+        var selectedItems = [];
+        var listItems = document.getElementById('items').querySelectorAll('polymer-drive-list-item');
+        for (var i = 0; i < listItems.length; i++) {
+          listItems[i].classList.remove('selected');
+          if (listItems[i].selecteditem) {
+            listItems[i].classList.add('selected');
+            selectedItems.push(listItems[i]);
+          }
+        }
+        return selectedItems;
+      }
+    });
+})();
+</script>
+</polymer-element>

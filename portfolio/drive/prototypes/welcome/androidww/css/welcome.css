@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'roboto-thin';
+	src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+	font-family: 'roboto-regular';
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'roboto-bold';
+	src: url('../fonts/Roboto-Bold.ttf');
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+html,body {
+	font-family: 'roboto-thin', Arial;
+}
+
+h1 {
+	font-family: 'roboto-thin', Arial;
+	font-size: 20pt;
+	font-weight: normal;
+	margin: 0;
+}
+
+h4 {
+	font-family: 'roboto-thin', Arial;
+	font-size: 13pt;
+	line-height: 18pt;
+	font-weight: normal;
+	margin: 0;
+}
+
+h5 {
+	font-family: 'roboto-thin', Arial;
+	font-size: 9pt;
+	width: 100%;
+	font-weight: normal;
+	text-align: center;
+	margin: 0;
+	position: relative;
+	top: 80px;
+}
+
+.msg {
+	width: 100%;
+	text-align: center;
+	padding: 1em 1em 0 1em;
+	-webkit-transition: all .5s ease;
+	position: absolute;
+	z-index: 100;
+	width: calc(768px/2);
+}
+
+.welcome-msg {
+	top: 180px;
+}
+
+.keep-msg, .bring-msg, .share-msg {
+	top: 420px;
+}
+
+.msg.fade-out {
+	-webkit-transition: all .5s ease;
+	opacity: 0;
+}
+
+.msg h4 {
+	margin-top: .33em;
+}

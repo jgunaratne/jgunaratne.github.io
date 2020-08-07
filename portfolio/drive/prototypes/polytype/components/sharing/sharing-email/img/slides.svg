@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Imported-Layers" sketch:type="MSLayerGroup">
+            <path d="M24,19.5 C24,21.986 21.984,24 19.5,24 L4.5,24 C2.016,24 0,21.986 0,19.5 L0,4.5 C0,2.014 2.016,0 4.5,0 L19.5,0 C21.984,0 24,2.014 24,4.5 L24,19.5" id="Fill-1" fill="#F4B400" sketch:type="MSShapeGroup"></path>
+            <path d="M4.5,6 L19.5,6 L19.5,16.5 L4.5,16.5 L4.5,6 Z" id="Fill-2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

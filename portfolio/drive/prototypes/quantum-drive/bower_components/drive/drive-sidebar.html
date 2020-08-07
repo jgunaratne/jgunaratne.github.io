@@ -1,0 +1,124 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="drive-sidebar" attributes="app state">
+<template>
+<style>
+:host {
+	
+}
+
+.sidebar-container {
+	position: fixed;
+	height: 100%;
+	background: #fff;
+	left: 0;
+	top: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	overflow: hidden;
+	-webkit-transition: all .5s;
+}
+.sidebar-container.opened {
+	width: 210px;
+	-webkit-transition: all .5s;
+}
+.sidebar-container.closed {
+	width: 0;
+	-webkit-transition: all .5s;
+}
+.sidebar-content {
+	width: 210px;
+}
+.avatar {
+	width: 110px;
+	height: 110px;
+	background: #e5e5e5;
+	border-radius: 50%;
+	margin: 60px 0 20px 30px;
+	background-image: url(img/person_photo.png);
+	background-size: cover;
+	background-position: center;
+}
+.nav {
+	list-style: none;
+	margin: 10px 20px;
+	padding: 0;
+	line-height: 48px;
+	font-size: 14px;
+}
+.icon {
+	width: 48px;
+	height: 48px;
+	background-color: #262626;
+	float: left;
+	margin-right: 10px;
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.name {
+	float: left;
+	cursor: pointer;
+}
+.selected .icon {
+	background-color: #2a56c6;
+}
+.selected .name {
+	color: #2a56c6;
+}
+.icon.folder {
+	-webkit-mask-image: url(img/folder.svg);
+}
+.icon.shared {
+	-webkit-mask-image: url(img/shared.svg);
+}
+.icon.starred {
+	-webkit-mask-image: url(img/starred.svg);
+}
+.icon.recent {
+	-webkit-mask-image: url(img/recent.svg);
+}
+.icon.upload {
+	-webkit-mask-image: url(img/upload.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.icon.trash {
+	-webkit-mask-image: url(img/trash.svg);
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+}
+.nav li:before, .nav li:after {
+    content: " ";
+    display: table;
+}
+.nav li:after {
+    clear: both;
+}
+
+@media all and (max-width: 800px) {
+	.sidebar-container {
+		width: 0;
+		-webkit-transition: all .5s;
+	}
+}
+
+</style>
+<div class="sidebar-container {{ state == 'opened' ? 'opened' : 'closed'}}">
+	<div class="sidebar-content">
+		<div class="avatar"></div>
+		<ul class="nav">
+			<li class="selected"><div class="icon folder"></div><div class="name">My Drive</div></li>
+			<li><div class="icon shared"></div><div class="name">Incoming</div></li>
+			<li><div class="icon recent"></div><div class="name">Recent</div></li>
+			<li><div class="icon starred"></div><div class="name">Starred</div></li>		
+			<li><div class="icon trash"></div><div class="name">Trash</div></li>
+		</ul>
+	</div>
+</div>
+</template>
+<script>
+	Polymer('drive-sidebar', {
+		domReady : function() {
+			this.app.sidebar = this;
+		}
+	});
+</script>
+</polymer-element>
