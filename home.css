@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400;9..40,600&display=swap');
+
+:root {
+  --blue: #0000A3;
+  --blue-grotto: #0067B3;
+  --aquamarine: #40B0DF;
+  --yellow: #FFD53D;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(170deg, #64B5F6, rgba(255, 255, 255, 0) 20%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+a {
+  color: #0D47A1;
+  text-decoration: none;
+}
+
+button {
+  color: white;
+  background: #2962FF;
+  padding: 10px 25px;
+  margin: 20px 0 0 0;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.tag {
+  position: fixed;
+  z-index: 1;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.main-grid {
+  min-width: 1200px;
+  width: 1200px;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 600;
+  text-shadow: 0 0 0.2em white;
+  margin: 0 0 40px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  background: #2962FF;
+  color: white;
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+ul {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 240px;
+  margin: 160px 0 0 0;
+  position: relative;
+}
+
+.card {
+  /* padding: 40px; */
+  /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); */
+  /* background: white; */
+  font-size: 20px;
+  line-height: 1.5em;
+  display: flex;
+}
+
+.preview {
+  flex: 0 0 480px;
+}
+
+p.main {
+  font-size: 24px;
+  line-height: 1.6em;
+}
+
+p.main, p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.mobile {
+  position: relative;
+  width: 520px;
+  height: 1040px;
+  top: -140px;
+}
+
+.mobile-content {
+  position: absolute;
+  top: 56px;
+  left: 58px;
+  border-radius: 50px;
+}
+
+.mobile-frame {
+  position: absolute;
+  width: 520px;
+  height: 1040px;
+  background-image: url(img/iphone.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+}
+
+.crop {
+  overflow: hidden;
+  position: absolute;
+  top: 118px;
+  left: 196px;
+  height: 630px;
+}
+
+.desktop {
+  position: relative;
+  width: 520px;
+  height: 1040px;
+  top: -160px;
+  left: -120px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.desktop:has(.desktop-content:hover) {
+  left: -520px;
+  transition: all 0.5s ease-in-out;
+}
+
+.desktop-frame {
+  position: absolute;
+  width: 1400px;
+  height: 865px;
+  background-image: url(img/macbook.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  /* transform: rotate(3deg); */
+  /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.2)), to(rgba(0,0,0,1))); */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), white 50%);
+  color: #90A4AE;
+  font-size: 14px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #CFD8DC;
+  margin: 120px 0 20px 0;
+}

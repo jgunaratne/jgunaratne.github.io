@@ -1,37 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Junius Gunaratne</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-</head>
-
-<body>
-  <div id="content" class="wrapper">
-    <header class="header" role="banner">
-      Junius Gunaratne
-      <nav class="header-nav" role="navigation" data-nav>
-        <a href="https://www.linkedin.com/in/juniusg/" class="header-link " data-transition-page>
-          Experience
-        </a>
-      </nav>
-    </header>
-    <main id="main" class="main" role="main" data-main-content>
-      <div class="main-inner" data-transition-content>
-        <header class="intro">
-          <div class="intro-header">
-            <p class="intro-desc">I'm a product designer and software developer with a human-computer interaction research background based
-              in Minneapolis. I currently work on Ad products as Senior UX Engineer at <a
-                href="https://www.google.com/">Google</a>.</p>
-          </div>
-        </header>
-        <footer class="footer" role="contentinfo">
-          <div class="wrapper footer-wrapper">
-            <div class="footer-legal">Updated August 2020</div>
-          </div>
-        </footer>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Junius Gunaratne - Product Design and Prototyping</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <header>
+      <div class="tag">
+        <h2>Junius Gunaratne</h2>
       </div>
-    </main>
-  </div>
-</body>
+    </header>
+    <div class="content">
+      <div class="main-grid">
+        <div class="container">
+          <div class="stack">
+            <div class="card">
+              <div class="desc">
+                <h1>Product design and prototyping</h1>
+                <p class="main">I'm a product designer with a technical background based in Seattle. I'm skilled in interaction design, user interface design and high-fidelity prototyping.</p>
+                <p>In addition to my extensive industry experience at various tech companies, I'm well-versed in the theoretical aspects of design and usability thanks to my graduate studies in human-computer interaction and behavioral economics.</p>
+                <p>I'm currently at Google, but I'm always open to learning about new opportunities and connecting with other similar minded people in my field. Please see my <a href="https://www.linkedin.com/in/juniusg/">background on LinkedIn</a> if you would like to connect.</p>
+                <p>This website includes several case studies of my recent work.</p>
+              </div>
+              <div class="preview">
+                <div class="mobile">
+                  <img src="img/reddit-home.png" width=406" class="mobile-content">
+                  <div class="mobile-frame">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card" id="bard">
+              <div class="desc">
+                <h1>Google Bard I/O Preview</h1>
+                <p>In early 2023 ChatGPT gained great public attention. To address market conditions Google leadership decided to accelerate efforts to release its large language model (LLM) to the public.</p>
+                <p>I served as a prototyper and designer on a five person design team to build a mobile prototype showcasing Google LLM technology in the Google App for Google I/O. I designed flows and implemented the flows into the prototype.</p>
+                <p>Throughout the process we had frequent reviews with senior design directors and product VP level leadership. Our prototype was shown to CEO Sundar Pichai, allowing the prototype to help shape strategy and direction for Google Bard.</p>
+                <button>See details</button>
+              </div>
+              <div class="preview">
+                <div class="mobile">
+                  <video width="406" class="mobile-content" autoplay muted loop>
+                    <source src="video/magi-waves.mp4" type="video/mp4">
+                  </video>
+                  <div class="mobile-frame">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card" id="reddit">
+              <div class="desc">
+                <h1>Reddit Home and Post Details</h1>
+                <p>I served as the primary designer and lead on new version of Reddit's logged out desktop and mobile web site. I worked with product and engineering VPs and EVPs for design reviews and feedback.</p>
+                <p>I partnered closely with design directors and the Head of Design. The project involved cross collaboration with numerous teams' PMs and designers (Ads, Search, Growth, etc.). I also mentored a more junior designer on how to structure and present work to executives.</p>
+                <p>The new design launched in 2023 and helped drive additional traffic and increased engagement on Reddit.com.</p>
+                <button>See details</button>
+              </div>
+              <div class="preview">
+                <div class="mobile">
+                  <img src="img/reddit-home.png" width=406" class="mobile-content">
+                  <div class="mobile-frame">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="desc">
+                <h1>Google Ads Format Design System</h1>
+                <p>Ads generate the bulk of Google's revenue, yet the ad formats used across Google are surprisingly balkanized. Many similar looking ads across Google differ in design and implementation significantly. </p>
+                <p>Serving in both design and engineering capacities on a team catering to several ads groups, I led an effort to streamline the use of ads across the search results page and across ads verticals (shopping, local, etc.). I helped establish consistent ad formats for designers and created shared components for engineers to use across ad engineering teams.</p>
+                <p>My work affected ads on Google's search results page, used by billions of people, and affected billions of dollars of revenue.</p>
+                <button>See details</button>
+              </div>
+              <div class="preview">
+                <div class="desktop">
+                  <div class="crop">
+                    <img src="img/ad-formats.png" width=1280" class="desktop-content">
+                  </div>
+                  <div class="desktop-frame">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="desc">
+                <h1>Google Ads + ML</h1>
+                <p>I worked with machine learning engineers to design an interface to suggest novel ad categories to advertising agencies. The end product transformed a command line interface into a product usable by non-technical advertising agencies. This enabled advertises to use high grade machine learning capabilities to surface ideas that may otherwise be overlooked.</p>
+                <p>A quick prototyping cycled enabled the team to launch a preview product to our customers showcasing ML capabilities. This helped the product team determine requirements and understand the value of ML ad category suggestions.</p>
+                <p>The product received praised from our VP as "the most innovative Ads product in recent years."</p>
+                <button>See details</button>
+              </div>
+              <div class="preview">
+                <div class="desktop">
+                  <div class="crop">
+                    <video width="1008" class="desktop-content" autoplay muted loop>
+                      <source src="video/creative-insights.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="desktop-frame">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="content">
+        <div class="main-grid">
+          <hr>
+          &copy; October 2023 Junius Gunaratne
+        </div>
+      </div>
+    </footer>
+    <script src="home.js"></script>
+  </body>
+</html>
