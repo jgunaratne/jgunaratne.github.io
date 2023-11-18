@@ -11,6 +11,7 @@ class JGMobile extends HTMLElement {
           width: 520px;
           height: 1040px;
           position: relative;
+          cursor: zoom-in;
         }
 
         .mobile-content {
