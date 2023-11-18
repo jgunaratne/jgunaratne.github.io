@@ -16,3 +16,16 @@ document.querySelectorAll('.thumbnail').forEach(function (thumbnail) {
     toggleLightbox(thumbnail);
   });
 });
+
+document.querySelectorAll('jg-mobile').forEach(function (elem) {
+  elem.addEventListener('click', function () {
+    toggleLightbox(elem);
+  });
+});
+
+document.querySelectorAll('jg-desktop').forEach(function (elem) {
+  elem.addEventListener('click', function () {
+    toggleLightbox(elem);
+  });
+});
+

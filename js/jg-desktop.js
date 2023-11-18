@@ -22,6 +22,7 @@ class JGDesktop extends HTMLElement {
           left: -120px;
           transition: all 0.5s ease-in-out;
           box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+          cursor: zoom-in;
         }
         
         .desktop:has(.desktop-content:hover) {
@@ -43,18 +44,7 @@ class JGDesktop extends HTMLElement {
       </style>
       <div class="desktop">
         <div class="crop">
-          <video
-            width="1008"
-            class="desktop-content"
-            autoplay
-            muted
-            loop
-          >
-            <source
-              src="video/creative-insights.mp4"
-              type="video/mp4"
-            />
-          </video>
+          <slot name="content"></slot>
         </div>
         <div class="desktop-frame"></div>
       </div>
