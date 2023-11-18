@@ -64,7 +64,18 @@ p {
 }
 
 section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.desc {
   padding: 20px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 .bi-check-circle-fill {
@@ -98,11 +109,16 @@ section {
   border-bottom: none;
 }
 
-.thumbnails, jg-mobile, jg-desktop {
+.thumbnails {
   display: none;
 }
 
 footer {
   font-size: 1rem;
   margin: 20px 0;
+}
+
+jg-mobile img, jg-mobile video, jg-desktop img, jg-desktop video {
+  object-fit: contain;
+  width: 100%;
 }
