@@ -1,0 +1,108 @@
+body {
+  background: linear-gradient(
+    185deg,
+    var(--light-purple),
+    var(--light-blue),
+    rgba(255, 255, 255, 0) 25%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.menu-control {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  z-index: 2;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.025);
+  padding: 20px 20px;
+  margin: 220px 20px 20px 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.avatar {
+  background-color: var(--blue);
+  background: url(../img/junius_2023.jpg);
+  background-size: 130%;
+  background-position: 0% 40%;
+  width: 240px;
+  height: 240px;
+  border-radius: 160px;
+  position: absolute;
+  top: -160px;
+  right: 20px;
+  filter: contrast(110%) brightness(110%) grayscale(20%);
+  transition: all 0.2s ease-in-out;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+}
+
+h2.roles {
+  font-size: 1rem;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  display: inline-block;
+  padding: 8px 25px 10px 25px;
+  border-radius: 100px;
+  background-color: white;
+  font-weight: 200;
+  margin: 90px 0 0 0;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+
+section {
+  padding: 20px;
+}
+
+.bi-check-circle-fill {
+  color: var(--green);
+  margin-right: 5px;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 20px;
+  left: -32px;
+}
+
+.accomplishments {
+  margin: 40px 0;
+  line-height: 1.5rem;
+}
+
+.accomplishments ul {
+  margin: 0 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.accomplishments li {
+  padding: 20px 0;
+  margin: 0 0;
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+}
+
+.accomplishments li:last-child {
+  border-bottom: none;
+}
+
+.thumbnails, jg-mobile, jg-desktop {
+  display: none;
+}
+
+footer {
+  font-size: 1rem;
+  margin: 20px 0;
+}
