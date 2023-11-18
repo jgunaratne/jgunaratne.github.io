@@ -23,6 +23,9 @@ class JGNav extends HTMLElement {
           font-size: 1.8rem;
           font-weight: 200;
           color: var(--blue);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
         
         h4 {
@@ -64,8 +67,8 @@ class JGNav extends HTMLElement {
         i.bi {
           font-size: 1.4rem;
           position: relative;
-          top: -2px;
-          margin-left: 5px;
+          top: 1px;
+          color: var(--light-blue);
         }
       </style>
       <div class="nav">
@@ -74,19 +77,19 @@ class JGNav extends HTMLElement {
             <h5>Featured Projects</h5>
           </li>
           <li>
-            <h3>01 <i class="bi bi-google"></i></h3>
+            <h3><span>01</span> <i class="bi bi-google"></i></h3>
             <h4><a href="#bard">Google I/O Bard Preview</a></h4>
           </li>
           <li>
-            <h3>02  <i class="bi bi-reddit"></i></h3>
+            <h3><span>02</span>  <i class="bi bi-reddit"></i></h3>
             <h4><a href="#reddit">Reddit Home and Post Details</a></h4>
           </li>
           <li>
-            <h3>03  <i class="bi bi-google"></i></h3>
+            <h3><span>03</span>  <i class="bi bi-google"></i></h3>
             <h4><a href="#ads-ml">Google Ads + ML</a></h4>
           </li>
           <li>
-            <h3>04  <i class="bi bi-google"></i></h3>
+            <h3><span>04</span>  <i class="bi bi-google"></i></h3>
             <h4><a href="#material">Material Design</a></h4>
           </li>
         </ul>
