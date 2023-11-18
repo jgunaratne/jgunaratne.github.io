@@ -49,11 +49,13 @@ class JGNav extends HTMLElement {
           background: rgba(255, 255, 255, 0.95);
           z-index: 1;
           transition: all 0.2s ease-in-out;
+          display: flex;
+          flex-direction: column;
         }
         
         .nav ul {
           list-style: none;
-          margin: 60px 0 0 0;
+          margin: 0;
           padding: 0;
         }
         
@@ -70,8 +72,17 @@ class JGNav extends HTMLElement {
           top: 1px;
           color: var(--light-blue);
         }
+
+        i.bi.menu-control {
+          font-size: 32px;
+          color: black;
+          margin: 24px 24px 0 24px ;
+          display: block;
+          cursor: pointer;
+        }
       </style>
       <div class="nav">
+        <i class="bi bi-list menu-control"></i>
         <ul>
           <li>
             <h5>Featured Projects</h5>
