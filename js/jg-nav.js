@@ -46,7 +46,7 @@ class JGNav extends HTMLElement {
           left: -240px;
           height: 100%;
           overflow: auto;
-          background: rgba(255, 255, 255, 0.6);
+          background: rgba(255, 255, 255, 0.95);
           z-index: 1;
           transition: all 0.2s ease-in-out;
         }
