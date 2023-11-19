@@ -37,4 +37,3 @@ document.querySelectorAll('jg-desktop').forEach(function (elem) {
     toggleLightbox(elem);
   });
 });
-
