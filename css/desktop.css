@@ -9,14 +9,6 @@ body {
   background-attachment: fixed;
 }
 
-.menu-control {
-  position: fixed;
-  top: 25px;
-  left: 25px;
-  font-size: 32px;
-  z-index: 2;
-}
-
 .bi-check-circle-fill {
   color: var(--green);
   margin-right: 5px;

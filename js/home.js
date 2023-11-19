@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
   adjustScreen(matchDesktop);
 });
 
-document.querySelector('.menu-control').addEventListener('click', function () {
-  document.querySelector('jg-nav').classList.toggle('open');
-  document.querySelector('.container').classList.toggle('menu-open');
-});
-
 document.querySelectorAll('.thumbnail').forEach(function (thumbnail) {
   thumbnail.addEventListener('click', function () {
     toggleLightbox(thumbnail);

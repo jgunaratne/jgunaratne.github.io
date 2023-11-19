@@ -4,6 +4,16 @@ class JGNav extends HTMLElement {
     this.attachShadow({ mode: 'open' });
   }
 
+  addEvents() {
+
+    this.shadowRoot.querySelectorAll('.menu-control').forEach(function (elem) {
+      elem.addEventListener('click', function () {
+        document.querySelector('jg-nav').classList.toggle('open');
+        document.querySelector('.container').classList.toggle('menu-open');
+      });
+    });
+  }
+
   connectedCallback() {
     this.shadowRoot.innerHTML = `
       <style>
@@ -73,14 +83,42 @@ class JGNav extends HTMLElement {
           color: var(--light-blue);
         }
 
+        :host(.open) .global .menu-control {
+          display: none;
+        }
+
         i.bi.menu-control {
-          font-size: 32px;
+          font-size: 28px;
           color: black;
-          margin: 24px 24px 0 24px ;
           display: block;
           cursor: pointer;
         }
+
+        .persist {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: white;
+          position: fixed;
+          width: 44px;
+          height: 44px;
+          top: 20px;
+          left: 20px;
+          border-radius: 22px;
+          z-index: 1;
+        }
+
+        .persist .menu-control {
+          margin-top: -2px;
+        }
+
+        .nav .menu-control {
+          margin: 23px 24px 0 27px;
+        }
       </style>
+      <div class="persist">
+        <i class="bi bi-list menu-control"></i>
+      </div>
       <div class="nav">
         <i class="bi bi-list menu-control"></i>
         <ul>
@@ -106,6 +144,7 @@ class JGNav extends HTMLElement {
         </ul>
       </div>
   `;
+  this.addEvents();
   }
 }
 
