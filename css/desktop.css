@@ -5,6 +5,12 @@ body {
     var(--light-blue),
     rgba(255, 255, 255, 0) 25%
   );
+  background: -webkit-linear-gradient(
+    265deg,
+    var(--light-purple),
+    var(--light-blue),
+    rgba(255, 255, 255, 0) 25%
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
