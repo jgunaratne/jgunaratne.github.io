@@ -38,7 +38,7 @@ class JGLightBox extends HTMLElement {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: calc(100% - 150px);
+        width: calc(100% - 50px);
         height: calc(100% - 150px);
         overflow: hidden;
       }
