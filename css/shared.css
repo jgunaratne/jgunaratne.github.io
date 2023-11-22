@@ -21,7 +21,7 @@ a {
   text-decoration: none;
 }
 
-button {
+a.button, button {
   font-family: "Sarabun", sans-serif;
   color: white;
   background: var(--blue);
@@ -31,6 +31,7 @@ button {
   font-size: 18px;
   border-radius: 40px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .container {

@@ -1,0 +1,181 @@
+body {
+  background: linear-gradient(
+    185deg,
+    var(--light-purple),
+    var(--light-blue),
+    rgba(255, 255, 255, 0) 25%
+  );
+  background: -webkit-linear-gradient(
+    265deg,
+    var(--light-purple),
+    var(--light-blue),
+    rgba(255, 255, 255, 0) 25%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bi-check-circle-fill {
+  color: var(--green);
+  margin-right: 5px;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 21px;
+  left: -32px;
+}
+
+.container.menu-open {
+  margin-left: 240px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.025);
+  padding: 60px;
+  margin: 180px 0 90px 0;
+  width: 800px;
+  border-radius: 60px;
+  position: relative;
+}
+
+h1 {
+  font-size: 3.6rem;
+  line-height: 3.8rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+section h1 {
+  margin-top: 0;
+  font-size: 3rem;
+  line-height: 3.2rem;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: var(--blue);
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+section h1 {
+  flex-basis: 1040px;
+  margin: 120px 0 80px 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  padding: 40px;
+  flex-basis: 240px;
+}
+
+.desc {
+  padding: 40px;
+  flex-basis: 720px;
+}
+
+footer {
+  font-size: 1rem;
+  margin: 80px 0;
+}
+
+.role {
+  flex-basis: 720px;
+  margin-left: 320px;
+}
+
+.role ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.role li {
+  padding: 10px 0;
+  margin: 0 0;
+  border-top: 1px solid var(--hairline);
+  position: relative;
+  display: flex;
+}
+
+.role strong {
+  flex: 0 0 160px;
+}
+
+.role li:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.accomplishments {
+  margin: -10px 0 40px 0;
+  line-height: 1.5rem;
+}
+
+.ads-ml .accomplishments {
+  margin-top: 120px;
+}
+
+.accomplishments ul {
+  flex-basis: 75%;
+  margin: 0 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.accomplishments li {
+  padding: 20px 0;
+  margin: 0 0;
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+}
+
+.accomplishments li:last-child {
+  border-bottom: none;
+}
+
+.figure {
+  width: 100%;
+  margin: 40px 0 0 0;
+}
+
+.caption {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.back {
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  top: 20px;
+  left: 84px;
+  font-size: 32px;
+}

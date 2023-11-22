@@ -1,0 +1,175 @@
+body {
+  background: linear-gradient(
+    185deg,
+    var(--light-purple),
+    var(--light-blue),
+    rgba(255, 255, 255, 0) 25%
+  );
+  background: -webkit-linear-gradient(
+    265deg,
+    var(--light-purple),
+    var(--light-blue),
+    rgba(255, 255, 255, 0) 25%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bi-check-circle-fill {
+  color: var(--green);
+  margin-right: 5px;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 21px;
+  left: -32px;
+}
+
+.avatar {
+  background-color: var(--blue);
+  background: url(../img/junius_2023.jpg);
+  background-size: 130%;
+  background-position: 0% 40%;
+  width: 320px;
+  height: 320px;
+  border-radius: 160px;
+  position: absolute;
+  top: -120px;
+  right: 60px;
+  filter: contrast(110%) brightness(110%) grayscale(20%);
+  transition: all 0.2s ease-in-out;
+}
+
+.avatar:hover {
+  background-size: 160%;
+}
+
+.container.menu-open {
+  margin-left: 240px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.025);
+  padding: 60px;
+  margin: 180px 0 90px 0;
+  width: 800px;
+  border-radius: 60px;
+  position: relative;
+}
+
+h1 {
+  font-size: 3.6rem;
+  line-height: 3.8rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h2.roles {
+  font-size: 1.2rem;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  display: inline-block;
+  padding: 8px 25px 10px 25px;
+  border-radius: 100px;
+  background-color: white;
+  font-weight: 200;
+}
+
+section h1 {
+  margin-top: 0;
+  font-size: 3rem;
+  line-height: 3.2rem;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: var(--blue);
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.025) 50%
+  );
+  width: 100%;
+  border-bottom: 1px solid var(--hairline);
+  margin: 80px 0;
+}
+
+.desc {
+  padding: 40px;
+  flex-basis: 640px;
+}
+
+.accomplishments {
+  margin: 90px 0 40px 0;
+  line-height: 1.5rem;
+}
+
+.ads-ml .accomplishments {
+  margin-top: 120px;
+}
+
+.accomplishments ul {
+  flex-basis: 75%;
+  margin: 0 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.accomplishments li {
+  padding: 20px 0;
+  margin: 0 0;
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+}
+
+.accomplishments li:last-child {
+  border-bottom: none;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: -120px;
+}
+
+.thumbnail {
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  background: white;
+  overflow: hidden;
+  width: 240px;
+  height: 240px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  cursor: zoom-in;
+}
+
+footer {
+  font-size: 1rem;
+  margin: 80px 0;
+}
