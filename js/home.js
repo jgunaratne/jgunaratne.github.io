@@ -12,6 +12,7 @@ function adjustScreen(matchDesktop) {
   if (matchDesktop.matches) {
     nav.classList.add('open');
     container.classList.add('menu-open');
+    addAutoPlay();
   }
 }
 
@@ -25,7 +26,6 @@ function addAutoPlay() {
 var matchDesktop = window.matchMedia('(min-width: 1024px)');
 document.addEventListener('DOMContentLoaded', function () {
   adjustScreen(matchDesktop);
-  addAutoPlay();
 });
 
 document.querySelectorAll('.thumbnail').forEach(function (thumbnail) {
