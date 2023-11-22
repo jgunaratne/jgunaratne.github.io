@@ -15,9 +15,17 @@ function adjustScreen(matchDesktop) {
   }
 }
 
+function addAutoPlay() {
+  let videos = document.querySelectorAll('video');
+  videos.forEach(function (video) {
+    video.setAttribute('autoplay', 'autoplay');
+  });
+}
+
 var matchDesktop = window.matchMedia('(min-width: 1024px)');
 document.addEventListener('DOMContentLoaded', function () {
   adjustScreen(matchDesktop);
+  addAutoPlay();
 });
 
 document.querySelectorAll('.thumbnail').forEach(function (thumbnail) {
