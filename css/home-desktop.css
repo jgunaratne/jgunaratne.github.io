@@ -1,16 +1,12 @@
 body {
-  background: linear-gradient(
-    185deg,
-    var(--light-purple),
-    var(--light-blue),
-    rgba(255, 255, 255, 0) 25%
-  );
-  background: -webkit-linear-gradient(
-    265deg,
-    var(--light-purple),
-    var(--light-blue),
-    rgba(255, 255, 255, 0) 25%
-  );
+  background: linear-gradient(185deg,
+      var(--light-purple),
+      var(--light-blue),
+      rgba(255, 255, 255, 0) 25%);
+  background: -webkit-linear-gradient(265deg,
+      var(--light-purple),
+      var(--light-blue),
+      rgba(255, 255, 255, 0) 25%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -109,11 +105,9 @@ p {
 .hero {
   display: flex;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.025) 50%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.025) 50%);
   width: 100%;
   border-bottom: 1px solid var(--hairline);
   margin: 80px 0;

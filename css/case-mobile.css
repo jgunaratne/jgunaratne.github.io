@@ -1,16 +1,12 @@
 body {
-  background: linear-gradient(
-    185deg,
-    var(--light-purple),
-    var(--light-blue),
-    rgba(255, 255, 255, 0) 25%
-  );
-  background: -webkit-linear-gradient(
-    265deg,
-    var(--light-purple),
-    var(--light-blue),
-    rgba(255, 255, 255, 0) 25%
-  );
+  background: linear-gradient(185deg,
+      var(--light-purple),
+      var(--light-blue),
+      rgba(255, 255, 255, 0) 25%);
+  background: -webkit-linear-gradient(265deg,
+      var(--light-purple),
+      var(--light-blue),
+      rgba(255, 255, 255, 0) 25%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -140,7 +136,10 @@ footer {
   margin: 20px 0;
 }
 
-jg-mobile img, jg-mobile video, jg-desktop img, jg-desktop video {
+jg-mobile img,
+jg-mobile video,
+jg-desktop img,
+jg-desktop video {
   object-fit: contain;
   width: 100%;
 }
