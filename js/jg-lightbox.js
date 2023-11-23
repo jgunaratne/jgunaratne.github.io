@@ -63,7 +63,6 @@ class JGLightBox extends HTMLElement {
         <div class="content">
         </div>
       </div>
-      
     `;
     this.addEvents();
   }
