@@ -4,21 +4,31 @@ class JGPassword extends HTMLElement {
     this.attachShadow({ mode: 'open' });
   }
 
+  validatePassword() {
+    let passwd = this.shadowRoot.querySelector('input');
+    if (passwd.value == 'Seattle') {
+      document.querySelector('jg-password').classList.remove('hide');
+    } else {
+      let label = this.shadowRoot.querySelector('label')
+      label.classList.add('error');
+      label.innerHTML = 'Incorrect password. Please try again.';
+      setTimeout(function () {
+        label.classList.remove('error');
+        label.innerHTML = 'Please enter password to view this case study.';
+      }, 5000);
+    }
+  }
+
   addEvents() {
     let self = this;
     this.shadowRoot.querySelector('.continue').addEventListener('click', function () {
-      let passwd = self.shadowRoot.querySelector('input');
-      if (passwd.value == 'Seattle') {
-        document.querySelector('jg-password').classList.remove('hide');
-      } else {
-        let label = self.shadowRoot.querySelector('label')
-        label.classList.add('error');
-        label.innerHTML = 'Incorrect password. Please try again.';
-        setTimeout(function () {
-          label.classList.remove('error');
-          label.innerHTML = 'Please enter password to view this case study.';
-        }, 5000);
-      }      
+      self.validatePassword();
+    });
+    this.shadowRoot.querySelector('input').focus();
+    this.shadowRoot.querySelector('input').addEventListener('keyup', function (e) {
+      if (e.key === 'Enter'){
+        self.validatePassword();
+      }
     });
   }
 
