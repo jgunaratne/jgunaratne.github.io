@@ -4,19 +4,33 @@ class JGPassword extends HTMLElement {
     this.attachShadow({ mode: 'open' });
   }
 
+  async getEncryptedData(passwd) {
+    const response = await fetch('../case/bard.txt');
+    const text = await response.text();
+    try {
+      let output = sjcl.decrypt(passwd, text)
+      document.querySelector('.container').innerHTML = output;
+      document.querySelector('jg-password').classList.remove('hide');
+    } catch (e) {
+      this.showPasswordError();
+    }
+  }
+
   validatePassword() {
     let passwd = this.shadowRoot.querySelector('input');
-    if (passwd.value == 'Seattle') {
-      document.querySelector('jg-password').classList.remove('hide');
-    } else {
-      let label = this.shadowRoot.querySelector('label')
-      label.classList.add('error');
-      label.innerHTML = 'Incorrect password. Please try again.';
-      setTimeout(function () {
-        label.classList.remove('error');
-        label.innerHTML = 'Please enter password to view this case study.';
-      }, 5000);
+    if (passwd.value) {
+      this.getEncryptedData(passwd.value);
     }
+  }
+
+  showPasswordError() {
+    let label = this.shadowRoot.querySelector('label')
+    label.classList.add('error');
+    label.innerHTML = 'Incorrect password. Please try again.';
+    setTimeout(function () {
+      label.classList.remove('error');
+      label.innerHTML = 'Please enter password to view this case study.';
+    }, 5000);
   }
 
   addEvents() {
@@ -143,7 +157,7 @@ class JGPassword extends HTMLElement {
           <label>Please enter password to view this case study.</label>
           <input type="password"></input>
           <div class="button-group">
-            <a href="index.html" class="button outline">Cancel</a>
+            <a href="/" class="button outline">Cancel</a>
             <button class="continue">Continue</button>
           </div>
         </div>
