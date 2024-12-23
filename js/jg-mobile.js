@@ -17,7 +17,7 @@ class JGMobile extends HTMLElement {
 
           .mobile-content {
             position: absolute;
-            top: 55px;
+            top: 54px;
             left: 58px;
           }
           

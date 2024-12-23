@@ -128,18 +128,22 @@ class JGNav extends HTMLElement {
           </li>
           <li>
             <h3><span>01</span> <i class="bi bi-google"></i></h3>
-            <h4><a href="/index.html#bard">Google I/O Bard Preview</a></h4>
+            <h4><a href="/index.html#live">Gemini Live</a></h4>
           </li>
           <li>
-            <h3><span>02</span>  <i class="bi bi-reddit"></i></h3>
+            <h3><span>02</span> <i class="bi bi-google"></i></h3>
+            <h4><a href="/index.html#bard">Bard Chat</a></h4>
+          </li>
+          <li>
+            <h3><span>03</span>  <i class="bi bi-reddit"></i></h3>
             <h4><a href="/index.html#reddit">Reddit Home and Post Details</a></h4>
           </li>
           <li>
-            <h3><span>03</span>  <i class="bi bi-google"></i></h3>
+            <h3><span>04</span>  <i class="bi bi-google"></i></h3>
             <h4><a href="/index.html#ads-ml">Google Ads + ML</a></h4>
           </li>
           <li>
-            <h3><span>04</span>  <i class="bi bi-google"></i></h3>
+            <h3><span>05</span>  <i class="bi bi-google"></i></h3>
             <h4><a href="/index.html#material">Material Design</a></h4>
           </li>
         </ul>
