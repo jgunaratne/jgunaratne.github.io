@@ -14,3 +14,7 @@
 .figure video.small {
   width: 75%;
 }
+
+.figure video.x-small {
+  width: 50%;
+}
