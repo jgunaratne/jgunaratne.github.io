@@ -36,27 +36,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../css/shared.css" />
-    <link rel="stylesheet" href="../css/case.css" />
-    <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
-    <script src="../js/jg-nav.js" defer></script>
-    <script src="../js/jg-lightbox.js" defer></script>
-    <script src="../js/jg-media.js" defer></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-004WGNVXFH");
-    </script>
+    <link rel="stylesheet" href="/css/shared.css" />
+    <link rel="stylesheet" href="/css/case.css" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32" />
+    <script type="module" src="/js/site.js"></script>
   </head>
 
   <body>
     <jg-nav></jg-nav>
-    <a href="../index.html" class="back" aria-label="Back to home"
+    <a href="/" class="back" aria-label="Back to home"
       ><i class="bi bi-arrow-left" aria-hidden="true"></i
     ></a>
     <div class="container">
@@ -136,7 +124,7 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/voice-turns.mp4" type="video/mp4" />
+              <source src="/video/live/voice-turns.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               An early prototype version showed conversation as two block-like entities going back
@@ -160,7 +148,7 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/gradient-bard.mp4" type="video/mp4" />
+              <source src="/video/live/gradient-bard.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               I experimented with using a "breathing" gradient to convey the notion of life.
@@ -185,7 +173,7 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/cm-speaking-states.mp4" type="video/mp4" />
+              <source src="/video/live/cm-speaking-states.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               Showing the states of the system allows the user to understand when to speak and
@@ -215,7 +203,7 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/double-circle.mp4" type="video/mp4" />
+              <source src="/video/live/double-circle.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               In this iteration two distinct circles convey when the system or user is speaking.
@@ -223,7 +211,7 @@
           </div>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/particle-wave.mp4" type="video/mp4" />
+              <source src="/video/live/particle-wave.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               A graphic shader exploration used a complex wave form to visualize sound.
@@ -246,13 +234,13 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/breathing.mp4" type="video/mp4" />
+              <source src="/video/live/breathing.mp4" type="video/mp4" />
             </video>
             <p class="caption">To convey life, the system shows it's breathing.</p>
           </div>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/gyroscope.mp4" type="video/mp4" />
+              <source src="/video/live/gyroscope.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               The user can tilt and move the device to affect the "life form" inside.
@@ -260,7 +248,7 @@
           </div>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/sentiment-mood.mp4" type="video/mp4" />
+              <source src="/video/live/sentiment-mood.mp4" type="video/mp4" />
             </video>
             <p class="caption">The system responding to user emotions using sentiment analysis.</p>
           </div>
@@ -281,7 +269,7 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" class="x-small" playsinline preload="none">
-              <source src="../video/live/gemini-production.mp4" type="video/mp4" />
+              <source src="/video/live/gemini-production.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               I ported much of the prototype visualization code into the production app.
@@ -304,7 +292,7 @@
           </p>
           <div class="figure">
             <img
-              src="../img/live/made-by-google.jpg"
+              src="/img/live/made-by-google.jpg"
               alt="Google UX VP presenting Gemini Live on stage at Made by Google 2024"
             />
             <p class="caption">
@@ -312,7 +300,7 @@
               positive media attention.
             </p>
             <img
-              src="../img/live/wsj.jpg"
+              src="/img/live/wsj.jpg"
               alt="Wall Street Journal front page featuring Gemini Live"
             />
           </div>
@@ -353,7 +341,7 @@
           </div>
         </div>
       </section>
-      <footer>&copy; 2026 &middot; Junius Gunaratne</footer>
+      <jg-footer></jg-footer>
     </div>
   </body>
 </html>

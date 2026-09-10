@@ -200,3 +200,8 @@ footer {
     margin: var(--space-xl) 0;
   }
 }
+
+/* The element is a shell around a real <footer>; it should not affect layout. */
+jg-footer {
+  display: contents;
+}

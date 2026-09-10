@@ -7,17 +7,21 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REF = re.compile(r'(?:src|href)="([^"]+)"')
 CSS_URL = re.compile(r'url\(([^)]+)\)')
+# Only the site's own files; dev tooling ships its own broken-looking HTML.
+SKIP_DIRS = {'.git', 'node_modules', 'test-results', 'playwright-report'}
 
 def main() -> int:
     broken = []
-    files = list(ROOT.rglob('*.html')) + list(ROOT.rglob('*.css'))
+    files = [
+        p
+        for p in list(ROOT.rglob('*.html')) + list(ROOT.rglob('*.css'))
+        if not SKIP_DIRS & set(p.parts)
+    ]
     for path in files:
-        if '.git' in path.parts:
-            continue
         text = path.read_text(encoding='utf-8')
         for ref in REF.findall(text) + CSS_URL.findall(text):
             ref = ref.strip('\'"').split('#')[0].split('?')[0]
-            if not ref or ref.startswith(('http://', 'https://', 'mailto:', 'data:')):
+            if not ref or ref.startswith(('http://', 'https://', 'mailto:', 'data:', 'about:')):
                 continue
             target = ROOT / ref.lstrip('/') if ref.startswith('/') else path.parent / ref
             if not target.exists():

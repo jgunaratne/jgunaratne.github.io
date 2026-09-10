@@ -10,7 +10,7 @@
 
 .avatar {
   background-color: var(--blue);
-  background: url(../img/junius_2023.jpg);
+  background: url(/img/junius_2023.jpg);
   background-size: 130%;
   background-position: 0% 40%;
   width: 240px;

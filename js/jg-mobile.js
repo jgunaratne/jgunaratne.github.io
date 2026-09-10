@@ -32,7 +32,7 @@ class JGMobile extends HTMLElement {
             position: absolute;
             width: 520px;
             height: 1040px;
-            background-image: url(../img/iphone.png);
+            background-image: url(/img/iphone.png);
             background-size: contain;
             background-repeat: no-repeat;
             top: 0;

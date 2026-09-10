@@ -35,7 +35,7 @@ class JGDesktop extends HTMLElement {
             position: absolute;
             width: 1400px;
             height: 865px;
-            background-image: url(../img/macbook.png);
+            background-image: url(/img/macbook.png);
             background-size: contain;
             background-repeat: no-repeat;
             top: 0;

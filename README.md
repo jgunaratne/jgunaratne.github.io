@@ -31,7 +31,15 @@ previously costing three round trips before first paint.
 
 ### JavaScript
 
-Each `jg-*.js` file defines one custom element and is loaded with `defer`.
+Every page loads exactly one script tag -- `<script type="module" src="/js/site.js">`.
+`site.js` imports each component, and ES module resolution guarantees every
+custom element is defined once. Add a new component by adding one import
+there, not by editing six pages.
+
+Asset paths are absolute (`/css/...`, `/js/...`, `/img/...`). The site is
+served from the domain root, so this makes the head identical on every page
+regardless of directory depth, and removes the class of bug where a
+`../img/favicon.png` was wrong on a page nested two levels down.
 
 - `jg-nav.js` — the nav drawer. `setOpen(bool)` keeps `aria-expanded` and
   the container offset in sync; call it rather than toggling the class.
@@ -43,21 +51,46 @@ Each `jg-*.js` file defines one custom element and is loaded with `defer`.
 - `jg-mobile.js` / `jg-desktop.js` — device frames around slotted media.
 - `jg-password.js` — gate for the encrypted case study. Reads the
   ciphertext path from the host element's `src` attribute.
+- `jg-footer.js` — renders a real `<footer>` with the current year, so the
+  copyright cannot drift out of sync across pages again.
+- `jg-analytics.js` — the Google Analytics snippet, defined once.
+
+Page-specific behaviour keys off `document.body.dataset.page` (the home page
+sets `data-page="home"`), since `site.js` is shared by every page.
 
 ## Working on the site
 
 ```sh
-python3 -m http.server 8000     # then open http://localhost:8000
-npx prettier --write .          # formatting
+npm install                     # dev tooling only; the site ships as-is
+npm run serve                   # then open http://localhost:8000
+npm run format
 ```
 
-CI runs Prettier in check mode and validates that every local `src`/`href`
-resolves. Run both before pushing:
+Absolute asset paths mean the site must be served over HTTP from the repo
+root -- opening `index.html` over `file://` will not load CSS or JS.
+
+### Tests
+
+`tests/site.spec.js` drives a real browser against every page at desktop and
+mobile widths, checking that pages load without script or asset errors, that
+custom elements upgrade, that images have alt text, that social metadata is
+present, that no video loads eagerly, and that the nav and lightbox work by
+keyboard.
 
 ```sh
-npx prettier --check .
-python3 scripts/check-links.py
+npm test
+npm run check                   # formatting + link resolution
 ```
+
+In a container that already ships a Chromium build, point at it instead of
+downloading one:
+
+```sh
+CHROMIUM_PATH=/path/to/chromium npm test
+```
+
+CI runs the static checks and the browser suite on every pull request and on
+pushes to master.
 
 ## Adding media
 

@@ -36,22 +36,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../css/shared.css" />
-    <link rel="stylesheet" href="../css/case.css" />
-    <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
-    <script src="../js/jg-nav.js" defer></script>
-    <script src="../js/jg-lightbox.js" defer></script>
-    <script src="../js/jg-media.js" defer></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-004WGNVXFH");
-    </script>
+    <link rel="stylesheet" href="/css/shared.css" />
+    <link rel="stylesheet" href="/css/case.css" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32" />
+    <script type="module" src="/js/site.js"></script>
   </head>
 
   <body>
@@ -100,7 +88,7 @@
           </p>
           <div class="figure">
             <img
-              src="../img/reddit/reddit-original.png"
+              src="/img/reddit/reddit-original.png"
               alt="Reddit's original logged-out design, cluttered and dated"
             />
             <p class="caption">
@@ -137,7 +125,7 @@
           </p>
           <div class="figure">
             <img
-              src="../img/reddit/reddit-old-customization.png"
+              src="/img/reddit/reddit-old-customization.png"
               alt="Reddit's previous feed customization controls"
             />
             <p class="caption">
@@ -181,7 +169,7 @@
           </p>
           <div class="figure">
             <img
-              src="../img/reddit/reddit-ideation.png"
+              src="/img/reddit/reddit-ideation.png"
               alt="Early ideation sketches for the Reddit redesign"
             />
             <p class="caption">
@@ -190,7 +178,7 @@
               aspect of Reddit.
             </p>
             <img
-              src="../img/reddit/reddit-ideation-communities.png"
+              src="/img/reddit/reddit-ideation-communities.png"
               alt="Ideation concepts for surfacing Reddit communities"
             />
           </div>
@@ -219,7 +207,7 @@
           </p>
           <div class="figure">
             <video muted loop slot="content" playsinline preload="none">
-              <source src="../video/reddit/reddit-animated-comments.mp4" type="video/mp4" />
+              <source src="/video/reddit/reddit-animated-comments.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               A prototype demonstrating animated comments on the home page received mixed feedback
@@ -254,7 +242,7 @@
           </p>
           <div class="figure">
             <img
-              src="../img/reddit/reddit-research.png"
+              src="/img/reddit/reddit-research.png"
               alt="User research findings from the Reddit redesign"
             />
             <p class="caption">
@@ -291,20 +279,20 @@
           </p>
           <div class="figure">
             <img
-              src="../img/reddit/reddit-nav-spec.png"
+              src="/img/reddit/reddit-nav-spec.png"
               alt="Navigation specification for the Reddit redesign"
             />
             <p class="caption">
               The final design included a series design specifications handed over to engineering to
               ensure accruate implemenation of design components.
             </p>
-            <img src="../img/reddit/reddit-final.png" alt="Final Reddit home page design" />
+            <img src="/img/reddit/reddit-final.png" alt="Final Reddit home page design" />
             <p class="caption">
               The final Reddit home page (above) and post details page (below), featuring a new
               design system and enhanced usability.
             </p>
             <img
-              src="../img/reddit/reddit-final-pdp.png"
+              src="/img/reddit/reddit-final-pdp.png"
               alt="Final Reddit post detail page design"
             />
           </div>
@@ -346,7 +334,7 @@
           </div>
         </div>
       </section>
-      <footer>&copy; 2026 &middot; Junius Gunaratne</footer>
+      <jg-footer></jg-footer>
     </div>
   </body>
 </html>
