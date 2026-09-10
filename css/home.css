@@ -1,0 +1,158 @@
+/* Home page layout. Mobile-first; the desktop block sits at the bottom. */
+
+.card {
+  background-color: var(--tint);
+  padding: var(--space-md);
+  margin: 220px var(--space-md) var(--space-md) var(--space-md);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.avatar {
+  background-color: var(--blue);
+  background: url(../img/junius_2023.jpg);
+  background-size: 130%;
+  background-position: 0% 40%;
+  width: 240px;
+  height: 240px;
+  border-radius: 160px;
+  position: absolute;
+  top: -160px;
+  right: var(--space-md);
+  filter: contrast(110%) brightness(110%) grayscale(20%);
+  transition: all 0.2s ease-in-out;
+}
+
+h2.roles {
+  font-size: 1rem;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  display: inline-block;
+  padding: 8px 25px 10px 25px;
+  border-radius: var(--radius-pill);
+  background-color: white;
+  font-weight: 200;
+  margin: 90px 0 0 0;
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.desc {
+  padding: var(--space-md);
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: var(--space-md);
+  gap: var(--space-md);
+  width: calc(100% - var(--space-lg));
+}
+
+.thumbnail {
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: white;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  box-shadow: var(--shadow-card);
+  cursor: zoom-in;
+}
+
+.thumbnail video,
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+jg-mobile img,
+jg-mobile video,
+jg-desktop img,
+jg-desktop video {
+  object-fit: contain;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  /* The mobile sheet clipped sections; the desktop sheet never did. */
+  section {
+    overflow: visible;
+  }
+
+  .card {
+    padding: var(--radius-lg);
+    margin: 180px 0 90px 0;
+    width: 800px;
+    border-radius: var(--radius-lg);
+  }
+
+  .avatar {
+    width: 320px;
+    height: 320px;
+    top: -120px;
+    right: var(--radius-lg);
+  }
+
+  .avatar:hover {
+    background-size: 160%;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h2.roles {
+    font-size: 1.2rem;
+    /* Restores the UA default the old desktop sheet left untouched. */
+    margin: 0.83em 0;
+  }
+
+  section h1 {
+    margin-top: 0;
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0),
+        var(--tint) 50%);
+    width: 100%;
+    border-bottom: 1px solid var(--hairline);
+    margin: var(--space-xl) 0;
+  }
+
+  .desc {
+    padding: var(--space-lg);
+    flex-basis: 640px;
+  }
+
+  .accomplishments {
+    margin: 90px 0 var(--space-lg) 0;
+  }
+
+  .ads-ml .accomplishments {
+    margin-top: 120px;
+  }
+
+  .thumbnails {
+    flex-wrap: nowrap;
+    padding: 0;
+    width: auto;
+    gap: 50px;
+    margin-top: -120px;
+  }
+
+  .thumbnail {
+    width: 240px;
+    height: 240px;
+  }
+}
