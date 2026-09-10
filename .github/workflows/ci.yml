@@ -26,7 +26,7 @@ jobs:
 
       - name: Check every image has alt text
         run: |
-          if grep -rno '<img [^>]*>' --include='*.html' . | grep -v 'alt='; then
+          if grep -rno '<img [^>]*>' --include='*.html' --exclude-dir=node_modules . | grep -v 'alt='; then
             echo "::error::images above are missing alt text"
             exit 1
           fi
@@ -34,11 +34,11 @@ jobs:
 
       - name: Check videos are not eagerly loaded
         run: |
-          if grep -rno '<video[^>]*autoplay[^>]*>' --include='*.html' .; then
+          if grep -rno '<video[^>]*autoplay[^>]*>' --include='*.html' --exclude-dir=node_modules .; then
             echo "::error::videos must not use autoplay; jg-media.js plays them in view"
             exit 1
           fi
-          if grep -rno '<video[^>]*>' --include='*.html' . | grep -v 'preload='; then
+          if grep -rno '<video[^>]*>' --include='*.html' --exclude-dir=node_modules . | grep -v 'preload='; then
             echo "::error::videos above are missing preload"
             exit 1
           fi
