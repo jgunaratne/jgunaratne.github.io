@@ -15,10 +15,24 @@ class JGMobile extends HTMLElement {
             cursor: zoom-in;
           }
 
+          /* The frame image paints over the content, but its screen aperture
+             is transparent, so square media corners show through it. Clip
+             them to the aperture: 56px is the largest circular radius that
+             stays inside the frame's squircle corners, so no page background
+             leaks through and the trimmed corner hides under the bezel. */
           .mobile-content {
             position: absolute;
             top: 54px;
             left: 58px;
+            overflow: hidden;
+            border-radius: 56px;
+          }
+
+          /* Slotted media is inline, and the line box's descender space would
+             leave the wrapper 4px taller than the media, dropping the rounded
+             corners below the screen. */
+          ::slotted(*) {
+            display: block;
           }
           
           :host(.no-frame) .mobile-content {

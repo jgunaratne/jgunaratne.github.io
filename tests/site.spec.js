@@ -214,6 +214,49 @@ test.describe('device frames', () => {
     );
     expect(notFilled).toEqual([]);
   });
+
+  // The phone frame is a PNG that paints over the media, and its screen is a
+  // transparent squircle aperture, so unclipped media showed its square
+  // corners on top of the bezel. 56px is the largest circular radius that
+  // still fits inside that aperture: bigger and the page background shows
+  // through at the corners, smaller than the screen's own curve and the trim
+  // simply hides under the bezel.
+  test('phone frames clip their media to the screen aperture', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'frames only render at desktop widths');
+    await ready(page, '/');
+    const unclipped = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('jg-mobile'))
+        .map((host) => {
+          const content = host.shadowRoot.querySelector('.mobile-content');
+          const style = getComputedStyle(content);
+          const radius = parseFloat(style.borderTopLeftRadius);
+          if (style.overflow === 'hidden' && radius >= 40 && radius <= 56) return null;
+          return { overflow: style.overflow, radius };
+        })
+        .filter(Boolean),
+    );
+    expect(unclipped).toEqual([]);
+  });
+
+  // Slotted media is inline by default, and the line box's descender space
+  // would leave the clipping wrapper taller than the media, which drops the
+  // rounded corners below the screen.
+  test('the clipping wrapper hugs its media', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'frames only render at desktop widths');
+    await ready(page, '/');
+    const gaps = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('jg-mobile:not(.no-frame)'))
+        .map((host) => {
+          const media = host.querySelector('video, img');
+          if (!media) return null;
+          const wrapper = host.shadowRoot.querySelector('.mobile-content');
+          const gap = wrapper.getBoundingClientRect().height - media.getBoundingClientRect().height;
+          return Math.abs(gap) <= 0.5 ? null : { gap };
+        })
+        .filter(Boolean),
+    );
+    expect(gaps).toEqual([]);
+  });
 });
 
 test('the hamburger control is left aligned', async ({ page }) => {
