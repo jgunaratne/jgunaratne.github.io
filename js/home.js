@@ -1,8 +1,6 @@
+// The nav drawer is pinned open on desktop and collapsed on smaller screens.
 function adjustScreen(matchDesktop) {
-  const nav = document.querySelector('jg-nav');
-  const container = document.querySelector('.container');
-  nav.classList.toggle('open', matchDesktop.matches);
-  container.classList.toggle('menu-open', matchDesktop.matches);
+  document.querySelector('jg-nav').setOpen(matchDesktop.matches);
 }
 
 const matchDesktop = window.matchMedia('(min-width: 1024px)');

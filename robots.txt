@@ -1,4 +1,8 @@
+# The case studies opt out of indexing with a noindex meta tag on each page.
+# They are intentionally left crawlable here -- a Disallow rule would stop
+# crawlers fetching the pages at all, so they would never see that tag.
+# /img and /video must stay crawlable for link previews to render.
 User-agent: *
-Disallow: /case/
-Disallow: /img/
-Disallow: /video/
+Allow: /
+
+Sitemap: https://juniusg.com/sitemap.xml

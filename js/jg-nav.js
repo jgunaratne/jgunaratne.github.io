@@ -5,12 +5,26 @@ class JGNav extends HTMLElement {
   }
 
   addEvents() {
-
+    const self = this;
     this.shadowRoot.querySelectorAll('.menu-control').forEach(function (elem) {
       elem.addEventListener('click', function () {
-        document.querySelector('jg-nav').classList.toggle('open');
-        document.querySelector('.container').classList.toggle('menu-open');
+        self.toggle();
       });
+    });
+  }
+
+  toggle() {
+    this.setOpen(!this.classList.contains('open'));
+  }
+
+  setOpen(open) {
+    this.classList.toggle('open', open);
+    const container = document.querySelector('.container');
+    if (container) {
+      container.classList.toggle('menu-open', open);
+    }
+    this.shadowRoot.querySelectorAll('.menu-control').forEach(function (elem) {
+      elem.setAttribute('aria-expanded', String(open));
     });
   }
 
@@ -83,15 +97,26 @@ class JGNav extends HTMLElement {
           color: var(--light-blue);
         }
 
-        :host(.open) .global .menu-control {
+        :host(.open) .persist .menu-control {
           display: none;
         }
 
-        i.bi.menu-control {
+        button.menu-control {
           font-size: 28px;
           color: black;
           display: block;
           cursor: pointer;
+          background: none;
+          border: none;
+          padding: 0;
+          line-height: 1;
+          font-family: inherit;
+        }
+
+        button.menu-control:focus-visible {
+          outline: 2px solid var(--blue);
+          outline-offset: 4px;
+          border-radius: 4px;
         }
 
         .persist {
@@ -118,10 +143,10 @@ class JGNav extends HTMLElement {
         }
       </style>
       <div class="persist">
-        <i class="bi bi-list menu-control"></i>
+        <button class="bi bi-list menu-control" type="button" aria-label="Menu" aria-expanded="false"></button>
       </div>
-      <div class="nav">
-        <i class="bi bi-list menu-control"></i>
+      <nav class="nav" aria-label="Featured projects">
+        <button class="bi bi-list menu-control" type="button" aria-label="Menu" aria-expanded="false"></button>
         <ul>
           <li>
             <h5>Featured Projects</h5>
@@ -147,7 +172,7 @@ class JGNav extends HTMLElement {
             <h4><a href="/index.html#material">Material Design</a></h4>
           </li>
         </ul>
-      </div>
+      </nav>
   `;
   this.addEvents();
   }

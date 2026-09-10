@@ -71,3 +71,10 @@ p:last-child {
   height: 100%;
   object-fit: cover;
 }
+.thumbnails {
+  scroll-margin-top: 80px;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
