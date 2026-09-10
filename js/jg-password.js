@@ -10,7 +10,7 @@ class JGPassword extends HTMLElement {
     const response = await fetch(this.getAttribute('src') || 'bard.txt');
     const text = await response.text();
     try {
-      let output = sjcl.decrypt(passwd, text)
+      let output = sjcl.decrypt(passwd, text);
       document.querySelector('.container').innerHTML = output;
       document.querySelector('jg-password').classList.remove('hide');
     } catch (e) {
@@ -26,7 +26,7 @@ class JGPassword extends HTMLElement {
   }
 
   showPasswordError() {
-    let label = this.shadowRoot.querySelector('label')
+    let label = this.shadowRoot.querySelector('label');
     label.classList.add('error');
     label.innerHTML = 'Incorrect password. Please try again.';
     setTimeout(function () {
@@ -42,7 +42,7 @@ class JGPassword extends HTMLElement {
     });
     this.shadowRoot.querySelector('input').focus();
     this.shadowRoot.querySelector('input').addEventListener('keyup', function (e) {
-      if (e.key === 'Enter'){
+      if (e.key === 'Enter') {
         self.validatePassword();
       }
     });
@@ -166,7 +166,7 @@ class JGPassword extends HTMLElement {
       </div>
     </div>
   `;
-  this.addEvents();
+    this.addEvents();
   }
 }
 

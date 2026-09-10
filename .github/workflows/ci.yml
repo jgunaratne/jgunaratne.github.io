@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check formatting
+        run: npx --yes prettier@3 --check .
+
+      - name: Check local links and assets resolve
+        run: python3 scripts/check-links.py
+
+      - name: Check every image has alt text
+        run: |
+          if grep -rno '<img [^>]*>' --include='*.html' . | grep -v 'alt='; then
+            echo "::error::images above are missing alt text"
+            exit 1
+          fi
+          echo "All images have alt text."
+
+      - name: Check videos are not eagerly loaded
+        run: |
+          if grep -rno '<video[^>]*autoplay[^>]*>' --include='*.html' .; then
+            echo "::error::videos must not use autoplay; jg-media.js plays them in view"
+            exit 1
+          fi
+          if grep -rno '<video[^>]*>' --include='*.html' . | grep -v 'preload='; then
+            echo "::error::videos above are missing preload"
+            exit 1
+          fi
+          echo "Video loading attributes OK."

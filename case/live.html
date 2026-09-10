@@ -1,315 +1,359 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Gemini Live - Case Study</title>
+    <meta
+      name="description"
+      content="How a Google team designed, prototyped and launched Gemini Live, evolving Gemini text chat into a natural voice conversation product over eight months."
+    />
+    <link rel="canonical" href="https://juniusg.com/case/live.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Junius Gunaratne" />
+    <meta property="og:title" content="Gemini Live - Case Study" />
+    <meta
+      property="og:description"
+      content="How a Google team designed, prototyped and launched Gemini Live, evolving Gemini text chat into a natural voice conversation product over eight months."
+    />
+    <meta property="og:url" content="https://juniusg.com/case/live.html" />
+    <meta property="og:image" content="https://juniusg.com/img/live/made-by-google.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gemini Live - Case Study" />
+    <meta
+      name="twitter:description"
+      content="How a Google team designed, prototyped and launched Gemini Live, evolving Gemini text chat into a natural voice conversation product over eight months."
+    />
+    <meta name="twitter:image" content="https://juniusg.com/img/live/made-by-google.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <link rel="stylesheet" href="../css/case.css" />
+    <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
+    <script src="../js/jg-nav.js" defer></script>
+    <script src="../js/jg-lightbox.js" defer></script>
+    <script src="../js/jg-media.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-004WGNVXFH");
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex" />
-  <title>Gemini Live - Case Study</title>
-  <meta name="description" content="How a Google team designed, prototyped and launched Gemini Live, evolving Gemini text chat into a natural voice conversation product over eight months." />
-  <link rel="canonical" href="https://juniusg.com/case/live.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Junius Gunaratne" />
-  <meta property="og:title" content="Gemini Live - Case Study" />
-  <meta property="og:description" content="How a Google team designed, prototyped and launched Gemini Live, evolving Gemini text chat into a natural voice conversation product over eight months." />
-  <meta property="og:url" content="https://juniusg.com/case/live.html" />
-  <meta property="og:image" content="https://juniusg.com/img/live/made-by-google.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gemini Live - Case Study" />
-  <meta name="twitter:description" content="How a Google team designed, prototyped and launched Gemini Live, evolving Gemini text chat into a natural voice conversation product over eight months." />
-  <meta name="twitter:image" content="https://juniusg.com/img/live/made-by-google.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;600&display=swap" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="../css/shared.css" />
-  <link rel="stylesheet" href="../css/case.css" />
-  <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
-  <script src="../js/jg-nav.js" defer></script>
-  <script src="../js/jg-lightbox.js" defer></script>
-  <script src="../js/jg-media.js" defer></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-004WGNVXFH");
-  </script>
-</head>
-
-<body>
-  <jg-nav></jg-nav>
-  <a href="../index.html" class="back" aria-label="Back to home"><i class="bi bi-arrow-left" aria-hidden="true"></i></a>
-  <div class="container">
-    <section>
-      <h1>Case Study: Gemini Live</h1>
-    </section>
-    <section>
-      <div class="role">
-        <ul>
-          <li>
-            <strong>Role</strong>
-            <span>Design Lead and Front-End Engineer</span>
-          </li>
-          <li>
-            <strong>Stakeholders</strong>
-            <span>Product, Engineering and UX Directors, VPs, CEO</span>
-          </li>
-          <li>
-            <strong>Timeframe</strong>
-            <span>8 months</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Background</h2>
-      </div>
-      <div class="desc">
-        <p>
-          Gemini Live provides a natural way to interact with Google Gemini's large language model (LLM)
-          conversationally with voice. Recent advances in voice technology have made speech recognition and natural
-          language interaction with devices a compelling way to interact with LLMs. These advances have made it easier
-          to create consumer applications for voice interaction as well. Our product and design teams envisioned a
-          natural language product to become a helpful AI assistant enabling conversational interaction. I led
-          visualization and design prototyping efforts in product development.</p>
-
-        <p>Conversation is a good way to talk through complex ideas. Imagine using technology as a conversation partner
-          to explore a concept verbally, to toss ideas back and forth while brainstorming, or to prepare for an
-          interview as a conversation partner.</p>
-
-        <p>It's difficult to design and prototype conversational user interfaces because they differ so much from
-          conventional user interfaces. Speech user interfaces generally lack a comprehensive visual user interface.
-          Furthermore, prototyping speech user interfaces requires extensive use of on-device speech recognition and
-          text-to-speech APIs to achieve even a rudimentary level of realism.</p>
-
-        <p>LLMs make mimicking natural language communication easier to do, but there are still many challenges due to
-          how LLMs hallucinate. Oddly, using LLMs means we do not have all the capabilities of conventional voice
-          assistants, such as setting timers for events or accessing information from the Internet in real-time. Due to
-          these factors, prototyping future looking conversational user interfaces can be difficult since the
-          capabilities of current LLMs can lack functionality of LLMs of the near future.
-        </p>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Early design and prototypes</h2>
-      </div>
-      <div class="desc">
-        <p>
-          To design and prototype a conversational user interface, I used many existing technologies to simulate the
-          future. My prototype app started by using an early 1.0 version of Google Gemini's LLM. On top of this LLM I
-          built a basic voice interaction interface with on-device text-to-speech and speech recognition APIs on both
-          Android and iOS. While this meant that text-to-speech sounded a bit archaic and robotic, it enabled our small
-          four person design team to quickly get a feel of how it would feel speaking to a mobile phone with the LLM.
-        </p>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/voice-turns.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            An early prototype version showed conversation as two block-like entities going back and forth.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Anthropomorphizing technology</h2>
-      </div>
-      <div class="desc">
-        <p>
-          As a design team we wanted to make a conversational speech system feel non-robotic, natural and human-like.
-          With this in mind, we wanted to simulate human-like features, including giving the appearance that the system
-          breathed and thought like a human. With this feedback from our design and product teams, I embodied these
-          qualities into the look and feel of the system with “breathing” pulsating gradients, and distinct
-          visualizations contrasting user voice input to system voice output.
-        </p>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/gradient-bard.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            I experimented with using a "breathing" gradient to convey the notion of life.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>System states</h2>
-      </div>
-      <div class="desc">
-        <p>
-          User conversation with an application required visualizing several conversational states such as listening,
-          user speaking, system processing and system responding. While these programmatic states are required to be
-          reflected in the system, we also wished to create human-like conversation and show a back-and-forth speaking
-          duality between two individuals. The design needed to reflect each individual as distinct participants. To
-          accomplish this I explored several design iterations including UI elements that grew according to the active
-          speaker, and sound wave visualizations that changed color and form based on the active speaker.
-        </p>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/cm-speaking-states.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            Showing the states of the system allows the user to understand when to speak and listen.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Ideation</h2>
-      </div>
-      <div class="desc">
-        <p>
-          As the design progressed, I took advantage of more advanced technology to convey realistic conversation to our
-          leadership team. These changes included using more sophisticated text-to-speech engines, and moving from
-          on-device TTS to server-side voice generated output streamed to the device. Initially this came from Google
-          Assistant and then from more advanced TTS APIs on Google's internal systems.
-        </p>
-        <p>
-          I also explored many different types of visualizations to show how voice could be brought to life. I started
-          with conventional user interface toolkits to build the visualization UI, but it soon became necessary to
-          create more complex visualizations to achieve a compelling UI. To do this I used graphics shader technology
-          and wrote shaders using OpenGL technologies such as GLSL on Android and Metal on iOS.
-        </p>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/double-circle.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            In this iteration two distinct circles convey when the system or user is speaking.
-          </p>
-        </div>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/particle-wave.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            A graphic shader exploration used a complex wave form to visualize sound.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Illustrating life in a device</h2>
-      </div>
-      <div class="desc">
-        <p>
-          To further extend the idea of the conversational partner being a living being, I made use of complex graphics
-          shaders to give the visualization the appearance of a breathing life form. Using the device accelerometer and
-          gyroscopes, I also allowed the user to move the visualization on the devices by physically moving and tilting
-          the device. Finally, through use of text sentiment analysis I allowed the application to appear to emotionally
-          respond based on positive or negative feedback from the user speaking.
-        </p>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/breathing.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            To convey life, the system shows it's breathing.
-          </p>
-        </div>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/gyroscope.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            The user can tilt and move the device to affect the "life form" inside.
-          </p>
-        </div>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/sentiment-mood.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            The system responding to user emotions using sentiment analysis.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Productionizing a prototype</h2>
-      </div>
-      <div class="desc">
-        <p>
-          As the design and prototype reached a more mature state where our team became comfortable with interaction
-          with the application, I worked closely with our engineering team to port much of the UI and visualizations
-          into production code. I worked closely with our engineering team to productionize visualizations and spec out
-          interaction. As part of this process, I incorporated sound into the UI from our sound designers, and I
-          implemented haptic responses into the UI to complement UI interaction.
-        </p>
-        <div class="figure">
-          <video muted loop slot="content" class="x-small" playsinline preload="none">
-            <source src="../video/live/gemini-production.mp4" type="video/mp4" />
-          </video>
-          <p class="caption">
-            I ported much of the prototype visualization code into the production app.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Media attention</h2>
-      </div>
-      <div class="desc">
-        <p>
-          Our VP of UX presented Gemini Live at Made by Google 2024, an event showcasing Google's latest Pixel phones
-          and AI technology. At the event our VP of UX showcased Gemini Live's conversational capabilities in front of a
-          live audience with real-time unscripted responses from the system. Gemini Live received largely positive media
-          attention for having an innovative user interface and setting a new industry bar for natural language voice
-          interaction capabilities in a consumer product. </p>
-          <div class="figure">
-            <img src="../img/live/made-by-google.jpg" alt="Google UX VP presenting Gemini Live on stage at Made by Google 2024" />
-            <p class="caption">
-              Google UX VP presents Gemini Live at Made by Google 2024. Gemini Live received largely positive media attention.
-            </p>
-            <img src="../img/live/wsj.jpg" alt="Wall Street Journal front page featuring Gemini Live" />
-          </div>
-      </div>
-    </section>
-    <section>
-      <div class="title">
-        <h2>Results</h2>
-      </div>
-      <div class="desc">
-        <div class="accomplishments">
+  <body>
+    <jg-nav></jg-nav>
+    <a href="../index.html" class="back" aria-label="Back to home"
+      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+    ></a>
+    <div class="container">
+      <section>
+        <h1>Case Study: Gemini Live</h1>
+      </section>
+      <section>
+        <div class="role">
           <ul>
             <li>
-              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-              <strong>Innovative use of visualization for AI</strong>
-              &mdash; Through use of complex graphics shaders this UI visualization was a first of its kind at Google.
+              <strong>Role</strong>
+              <span>Design Lead and Front-End Engineer</span>
             </li>
             <li>
-              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-              <strong>Led junior design engineers</strong> &mdash; I led a team of junior design engineers in the
-              creation and iteration of the UI visualizations over tight deadlines.
+              <strong>Stakeholders</strong>
+              <span>Product, Engineering and UX Directors, VPs, CEO</span>
             </li>
             <li>
-              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-              <strong>Worked closely with design leadership</strong>
-              &mdash; Design iterations required close collaboration with design directors and VP level leadership.
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-              <strong>Positive reviews from major media publications</strong> &mdash; The Wall Street Journal, amongst
-              others, featured Gemini Live on its front page with a largely positive review.
+              <strong>Timeframe</strong>
+              <span>8 months</span>
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-    <footer>&copy; 2026 &middot; Junius Gunaratne</footer>
-  </div>
-</body>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Background</h2>
+        </div>
+        <div class="desc">
+          <p>
+            Gemini Live provides a natural way to interact with Google Gemini's large language model
+            (LLM) conversationally with voice. Recent advances in voice technology have made speech
+            recognition and natural language interaction with devices a compelling way to interact
+            with LLMs. These advances have made it easier to create consumer applications for voice
+            interaction as well. Our product and design teams envisioned a natural language product
+            to become a helpful AI assistant enabling conversational interaction. I led
+            visualization and design prototyping efforts in product development.
+          </p>
 
+          <p>
+            Conversation is a good way to talk through complex ideas. Imagine using technology as a
+            conversation partner to explore a concept verbally, to toss ideas back and forth while
+            brainstorming, or to prepare for an interview as a conversation partner.
+          </p>
+
+          <p>
+            It's difficult to design and prototype conversational user interfaces because they
+            differ so much from conventional user interfaces. Speech user interfaces generally lack
+            a comprehensive visual user interface. Furthermore, prototyping speech user interfaces
+            requires extensive use of on-device speech recognition and text-to-speech APIs to
+            achieve even a rudimentary level of realism.
+          </p>
+
+          <p>
+            LLMs make mimicking natural language communication easier to do, but there are still
+            many challenges due to how LLMs hallucinate. Oddly, using LLMs means we do not have all
+            the capabilities of conventional voice assistants, such as setting timers for events or
+            accessing information from the Internet in real-time. Due to these factors, prototyping
+            future looking conversational user interfaces can be difficult since the capabilities of
+            current LLMs can lack functionality of LLMs of the near future.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Early design and prototypes</h2>
+        </div>
+        <div class="desc">
+          <p>
+            To design and prototype a conversational user interface, I used many existing
+            technologies to simulate the future. My prototype app started by using an early 1.0
+            version of Google Gemini's LLM. On top of this LLM I built a basic voice interaction
+            interface with on-device text-to-speech and speech recognition APIs on both Android and
+            iOS. While this meant that text-to-speech sounded a bit archaic and robotic, it enabled
+            our small four person design team to quickly get a feel of how it would feel speaking to
+            a mobile phone with the LLM.
+          </p>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/voice-turns.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              An early prototype version showed conversation as two block-like entities going back
+              and forth.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Anthropomorphizing technology</h2>
+        </div>
+        <div class="desc">
+          <p>
+            As a design team we wanted to make a conversational speech system feel non-robotic,
+            natural and human-like. With this in mind, we wanted to simulate human-like features,
+            including giving the appearance that the system breathed and thought like a human. With
+            this feedback from our design and product teams, I embodied these qualities into the
+            look and feel of the system with “breathing” pulsating gradients, and distinct
+            visualizations contrasting user voice input to system voice output.
+          </p>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/gradient-bard.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              I experimented with using a "breathing" gradient to convey the notion of life.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>System states</h2>
+        </div>
+        <div class="desc">
+          <p>
+            User conversation with an application required visualizing several conversational states
+            such as listening, user speaking, system processing and system responding. While these
+            programmatic states are required to be reflected in the system, we also wished to create
+            human-like conversation and show a back-and-forth speaking duality between two
+            individuals. The design needed to reflect each individual as distinct participants. To
+            accomplish this I explored several design iterations including UI elements that grew
+            according to the active speaker, and sound wave visualizations that changed color and
+            form based on the active speaker.
+          </p>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/cm-speaking-states.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              Showing the states of the system allows the user to understand when to speak and
+              listen.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Ideation</h2>
+        </div>
+        <div class="desc">
+          <p>
+            As the design progressed, I took advantage of more advanced technology to convey
+            realistic conversation to our leadership team. These changes included using more
+            sophisticated text-to-speech engines, and moving from on-device TTS to server-side voice
+            generated output streamed to the device. Initially this came from Google Assistant and
+            then from more advanced TTS APIs on Google's internal systems.
+          </p>
+          <p>
+            I also explored many different types of visualizations to show how voice could be
+            brought to life. I started with conventional user interface toolkits to build the
+            visualization UI, but it soon became necessary to create more complex visualizations to
+            achieve a compelling UI. To do this I used graphics shader technology and wrote shaders
+            using OpenGL technologies such as GLSL on Android and Metal on iOS.
+          </p>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/double-circle.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              In this iteration two distinct circles convey when the system or user is speaking.
+            </p>
+          </div>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/particle-wave.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              A graphic shader exploration used a complex wave form to visualize sound.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Illustrating life in a device</h2>
+        </div>
+        <div class="desc">
+          <p>
+            To further extend the idea of the conversational partner being a living being, I made
+            use of complex graphics shaders to give the visualization the appearance of a breathing
+            life form. Using the device accelerometer and gyroscopes, I also allowed the user to
+            move the visualization on the devices by physically moving and tilting the device.
+            Finally, through use of text sentiment analysis I allowed the application to appear to
+            emotionally respond based on positive or negative feedback from the user speaking.
+          </p>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/breathing.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">To convey life, the system shows it's breathing.</p>
+          </div>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/gyroscope.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              The user can tilt and move the device to affect the "life form" inside.
+            </p>
+          </div>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/sentiment-mood.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">The system responding to user emotions using sentiment analysis.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Productionizing a prototype</h2>
+        </div>
+        <div class="desc">
+          <p>
+            As the design and prototype reached a more mature state where our team became
+            comfortable with interaction with the application, I worked closely with our engineering
+            team to port much of the UI and visualizations into production code. I worked closely
+            with our engineering team to productionize visualizations and spec out interaction. As
+            part of this process, I incorporated sound into the UI from our sound designers, and I
+            implemented haptic responses into the UI to complement UI interaction.
+          </p>
+          <div class="figure">
+            <video muted loop slot="content" class="x-small" playsinline preload="none">
+              <source src="../video/live/gemini-production.mp4" type="video/mp4" />
+            </video>
+            <p class="caption">
+              I ported much of the prototype visualization code into the production app.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Media attention</h2>
+        </div>
+        <div class="desc">
+          <p>
+            Our VP of UX presented Gemini Live at Made by Google 2024, an event showcasing Google's
+            latest Pixel phones and AI technology. At the event our VP of UX showcased Gemini Live's
+            conversational capabilities in front of a live audience with real-time unscripted
+            responses from the system. Gemini Live received largely positive media attention for
+            having an innovative user interface and setting a new industry bar for natural language
+            voice interaction capabilities in a consumer product.
+          </p>
+          <div class="figure">
+            <img
+              src="../img/live/made-by-google.jpg"
+              alt="Google UX VP presenting Gemini Live on stage at Made by Google 2024"
+            />
+            <p class="caption">
+              Google UX VP presents Gemini Live at Made by Google 2024. Gemini Live received largely
+              positive media attention.
+            </p>
+            <img
+              src="../img/live/wsj.jpg"
+              alt="Wall Street Journal front page featuring Gemini Live"
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="title">
+          <h2>Results</h2>
+        </div>
+        <div class="desc">
+          <div class="accomplishments">
+            <ul>
+              <li>
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <strong>Innovative use of visualization for AI</strong>
+                &mdash; Through use of complex graphics shaders this UI visualization was a first of
+                its kind at Google.
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <strong>Led junior design engineers</strong> &mdash; I led a team of junior design
+                engineers in the creation and iteration of the UI visualizations over tight
+                deadlines.
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <strong>Worked closely with design leadership</strong>
+                &mdash; Design iterations required close collaboration with design directors and VP
+                level leadership.
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <strong>Positive reviews from major media publications</strong> &mdash; The Wall
+                Street Journal, amongst others, featured Gemini Live on its front page with a
+                largely positive review.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer>&copy; 2026 &middot; Junius Gunaratne</footer>
+    </div>
+  </body>
 </html>

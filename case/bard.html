@@ -1,47 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>Bard - Case Study</title>
-  <meta name="description" content="Designing and prototyping a mobile LLM experience for the Google App, presented at Google I/O 2023 and to CEO Sundar Pichai." />
-  <link rel="canonical" href="https://juniusg.com/case/bard.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Junius Gunaratne" />
-  <meta property="og:title" content="Bard Chat - Case Study" />
-  <meta property="og:description" content="Designing and prototyping a mobile LLM experience for the Google App, presented at Google I/O 2023 and to CEO Sundar Pichai." />
-  <meta property="og:url" content="https://juniusg.com/case/bard.html" />
-  <meta property="og:image" content="https://juniusg.com/img/bard/bard-io-sundar.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bard Chat - Case Study" />
-  <meta name="twitter:description" content="Designing and prototyping a mobile LLM experience for the Google App, presented at Google I/O 2023 and to CEO Sundar Pichai." />
-  <meta name="twitter:image" content="https://juniusg.com/img/bard/bard-io-sundar.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;600&display=swap" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="../css/shared.css" />
-  <link rel="stylesheet" href="../css/case.css" />
+    <meta
+      name="description"
+      content="Designing and prototyping a mobile LLM experience for the Google App, presented at Google I/O 2023 and to CEO Sundar Pichai."
+    />
+    <link rel="canonical" href="https://juniusg.com/case/bard.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Junius Gunaratne" />
+    <meta property="og:title" content="Bard Chat - Case Study" />
+    <meta
+      property="og:description"
+      content="Designing and prototyping a mobile LLM experience for the Google App, presented at Google I/O 2023 and to CEO Sundar Pichai."
+    />
+    <meta property="og:url" content="https://juniusg.com/case/bard.html" />
+    <meta property="og:image" content="https://juniusg.com/img/bard/bard-io-sundar.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bard Chat - Case Study" />
+    <meta
+      name="twitter:description"
+      content="Designing and prototyping a mobile LLM experience for the Google App, presented at Google I/O 2023 and to CEO Sundar Pichai."
+    />
+    <meta name="twitter:image" content="https://juniusg.com/img/bard/bard-io-sundar.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <link rel="stylesheet" href="../css/case.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
-  <script src="../js/jg-nav.js" defer></script>
-  <script src="../js/jg-lightbox.js" defer></script>
-  <script src="../js/jg-media.js" defer></script>
+    <script src="../js/jg-nav.js" defer></script>
+    <script src="../js/jg-lightbox.js" defer></script>
+    <script src="../js/jg-media.js" defer></script>
     <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-004WGNVXFH");
-  </script>
-</head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-004WGNVXFH");
+    </script>
+  </head>
 
   <body>
     <jg-nav></jg-nav>
-    <a href="../index.html" class="back" aria-label="Back to home"><i class="bi bi-arrow-left" aria-hidden="true"></i></a>
+    <a href="../index.html" class="back" aria-label="Back to home"
+      ><i class="bi bi-arrow-left" aria-hidden="true"></i
+    ></a>
     <div class="container">
       <section>
         <h1>Case Study: Bard Chat</h1>
@@ -70,18 +87,16 @@
         </div>
         <div class="desc">
           <p>
-            The increasing popularity of LLM technology motivated Google to
-            address the need for a consumer solution. As a member of Google's
-            early LLM consumer solution team, our task centered around creating
-            a prototype for Google I/O. This evolved into a project now known as
-            Google Bard. In my role within a five-person design team, I served
-            as a designer and prototyper responsible for developing the Google
-            App LLM solution for the event. The urgency stemmed from the CEO's
-            insistence on reviewing Google's LLM solution before Google I/O,
-            aligning it with the company's overall strategic planning. This
-            initiative demonstrated the challenges inherent in swiftly
-            developing and presenting a consumer-focused LLM solution,
-            addressing both technological demands and executive expectations.
+            The increasing popularity of LLM technology motivated Google to address the need for a
+            consumer solution. As a member of Google's early LLM consumer solution team, our task
+            centered around creating a prototype for Google I/O. This evolved into a project now
+            known as Google Bard. In my role within a five-person design team, I served as a
+            designer and prototyper responsible for developing the Google App LLM solution for the
+            event. The urgency stemmed from the CEO's insistence on reviewing Google's LLM solution
+            before Google I/O, aligning it with the company's overall strategic planning. This
+            initiative demonstrated the challenges inherent in swiftly developing and presenting a
+            consumer-focused LLM solution, addressing both technological demands and executive
+            expectations.
           </p>
         </div>
       </section>
@@ -91,27 +106,27 @@
         </div>
         <div class="desc">
           <p>
-            Using the insights from our dedicated researcher, the design team
-            explored how to apply Google's latest advancements in large language
-            models (LLMs) and adapt to changing user expectations. An in-depth
-            analysis of ChatGPT usage patterns brought to light a strong user
-            preference for authentic and engaging conversational experiences.
-            The leadership team debated monetizing the product on launch, yet
-            research consistently supported maintaining a purely chat-oriented
-            experience for the time being. Additional questions included
-            determining the appropriate level of creativity to incorporate into
-            the LLM and the acceptable degree of tolerance for hallucinations.
-            The leadership team moved towards restraining creativity to address
-            hallucination concerns. The LLM's confident responses created
-            discussions on strategies on how to effectively manage user
-            perception of confidence levels and how to incorporate reference
-            material links into responses from the LLM.
+            Using the insights from our dedicated researcher, the design team explored how to apply
+            Google's latest advancements in large language models (LLMs) and adapt to changing user
+            expectations. An in-depth analysis of ChatGPT usage patterns brought to light a strong
+            user preference for authentic and engaging conversational experiences. The leadership
+            team debated monetizing the product on launch, yet research consistently supported
+            maintaining a purely chat-oriented experience for the time being. Additional questions
+            included determining the appropriate level of creativity to incorporate into the LLM and
+            the acceptable degree of tolerance for hallucinations. The leadership team moved towards
+            restraining creativity to address hallucination concerns. The LLM's confident responses
+            created discussions on strategies on how to effectively manage user perception of
+            confidence levels and how to incorporate reference material links into responses from
+            the LLM.
           </p>
           <div class="figure">
-            <img src="../img/bard/bard-chatgpt.png" alt="Research comparing exploratory LLM chat usage with conventional search" />
+            <img
+              src="../img/bard/bard-chatgpt.png"
+              alt="Research comparing exploratory LLM chat usage with conventional search"
+            />
             <p class="caption">
-              Research on LLM usage patterns, including ChatGPT, revealed a much
-              more exploratory type of engagement with users compared to search.
+              Research on LLM usage patterns, including ChatGPT, revealed a much more exploratory
+              type of engagement with users compared to search.
             </p>
           </div>
         </div>
@@ -122,14 +137,12 @@
         </div>
         <div class="desc">
           <p>
-            The design team emphasis three different types of users: one who's
-            curious and keen on learning about science, another researching
-            consumer products like coffee makers, and anotherSeat planning a
-            vacation. Our approach prioritized accuracy, placing less emphasis
-            on ads, which was influenced by a previous public Google
-            presentation that drew negative media attention due to inaccurate
-            data. These varied user profiles shaped our strategy, ensuring a
-            well-balanced approach that considers user interests, accuracy, and
+            The design team emphasis three different types of users: one who's curious and keen on
+            learning about science, another researching consumer products like coffee makers, and
+            anotherSeat planning a vacation. Our approach prioritized accuracy, placing less
+            emphasis on ads, which was influenced by a previous public Google presentation that drew
+            negative media attention due to inaccurate data. These varied user profiles shaped our
+            strategy, ensuring a well-balanced approach that considers user interests, accuracy, and
             targeted advertising.
           </p>
         </div>
@@ -140,29 +153,33 @@
         </div>
         <div class="desc">
           <p>
-            The product team asked us to address how users start chat threads
-            and transition between them. We also considered which flows to
-            support and the appropriate times to display ads. While some
-            explorations included integrating ads into the results, users did
-            not perceive this approach as particularly useful. Additionally,
-            questions arose about how to color chat bubble responses to signify
-            the type of generated response and how to strike a balance between
-            design and usability. These considerations shaped our exploration
-            and decision-making process in ensuring a user-friendly and visually
+            The product team asked us to address how users start chat threads and transition between
+            them. We also considered which flows to support and the appropriate times to display
+            ads. While some explorations included integrating ads into the results, users did not
+            perceive this approach as particularly useful. Additionally, questions arose about how
+            to color chat bubble responses to signify the type of generated response and how to
+            strike a balance between design and usability. These considerations shaped our
+            exploration and decision-making process in ensuring a user-friendly and visually
             effective design.
           </p>
           <div class="figure">
-            <img src="../img/bard/bard-wireframes.png" alt="Wireframes exploring chat bubble and content layouts" />
+            <img
+              src="../img/bard/bard-wireframes.png"
+              alt="Wireframes exploring chat bubble and content layouts"
+            />
             <p class="caption">
-              Wireframes explored different ways to display chat bubbles and
-              various content types into the flow.
+              Wireframes explored different ways to display chat bubbles and various content types
+              into the flow.
             </p>
           </div>
           <div class="figure">
-            <img src="../img/bard/bard-flow.jpg" alt="User flow from the Google App search screen into suggested LLM questions" />
+            <img
+              src="../img/bard/bard-flow.jpg"
+              alt="User flow from the Google App search screen into suggested LLM questions"
+            />
             <p class="caption">
-              The user flow started from the Google App search screen that took
-              users to a series of suggested questions for the LLM to answer.
+              The user flow started from the Google App search screen that took users to a series of
+              suggested questions for the LLM to answer.
             </p>
           </div>
         </div>
@@ -173,25 +190,26 @@
         </div>
         <div class="desc">
           <p>
-            Prototypes demonstrated how the LLM could respond to three
-            scenarios, with the chosen flow showcasing a variety of user
-            questions based on insights from user research. The three scenarios
-            answering questions included: finding the best place to raise a
-            family; finding suitable plants to have in an apartment; and more
-            scientific query on understanding ocean waves, catering to high
-            school students. The final prototype flow was influenced by feedback
-            from CEO Sundar Pichai, ensuring alignment with leadership insights.
+            Prototypes demonstrated how the LLM could respond to three scenarios, with the chosen
+            flow showcasing a variety of user questions based on insights from user research. The
+            three scenarios answering questions included: finding the best place to raise a family;
+            finding suitable plants to have in an apartment; and more scientific query on
+            understanding ocean waves, catering to high school students. The final prototype flow
+            was influenced by feedback from CEO Sundar Pichai, ensuring alignment with leadership
+            insights.
           </p>
           <p>
-            Design explorations also included several mocks featuring ads in
-            different formats, expanding on existing search result ads.
+            Design explorations also included several mocks featuring ads in different formats,
+            expanding on existing search result ads.
           </p>
           <div class="figure">
-            <img src="../img/bard/bard-ads.jpg" alt="Early concept integrating ads into product and service chat flows" />
+            <img
+              src="../img/bard/bard-ads.jpg"
+              alt="Early concept integrating ads into product and service chat flows"
+            />
             <p class="caption">
-              Ads were initially integrated into chat flows with product and
-              service inquiries, but were later removed after receiving negative
-              feedback in user tests.
+              Ads were initially integrated into chat flows with product and service inquiries, but
+              were later removed after receiving negative feedback in user tests.
             </p>
           </div>
           <div class="figure">
@@ -199,8 +217,8 @@
               <source src="../video/bard/magi-waves.mp4" type="video/mp4" />
             </video>
             <p class="caption">
-              One prototype scenario, targed at high school students, answered
-              questions about understanding ocean waves.
+              One prototype scenario, targed at high school students, answered questions about
+              understanding ocean waves.
             </p>
           </div>
         </div>
@@ -211,13 +229,12 @@
         </div>
         <div class="desc">
           <p>
-            Tests showed largely positive user responses to the prototypes, yet
-            a notable dissatisfaction surfaced with the inclusion of ads,
-            perceived as intrusive and forced into the LLM. Consequently, we
-            eliminated ads from the flow. Substantial concerns regarding
-            hallucinations prompted an evaluation of our engineering team's
-            capability to manage them effectively. To tackle this, we limited
-            the creativity level of the LLM to improve accuracy.
+            Tests showed largely positive user responses to the prototypes, yet a notable
+            dissatisfaction surfaced with the inclusion of ads, perceived as intrusive and forced
+            into the LLM. Consequently, we eliminated ads from the flow. Substantial concerns
+            regarding hallucinations prompted an evaluation of our engineering team's capability to
+            manage them effectively. To tackle this, we limited the creativity level of the LLM to
+            improve accuracy.
           </p>
         </div>
       </section>
@@ -227,26 +244,32 @@
         </div>
         <div class="desc">
           <p>
-            The final design made its debut at Google I/O in May 2023, with an
-            introduction by Sundar Pichai and a demonstration by a product VP,
-            gathering significant positive media attention.
+            The final design made its debut at Google I/O in May 2023, with an introduction by
+            Sundar Pichai and a demonstration by a product VP, gathering significant positive media
+            attention.
           </p>
           <div class="figure">
             <video muted loop slot="content" class="small" playsinline preload="none">
               <source src="../video/bard/magi-family.mp4" type="video/mp4" />
             </video>
             <p class="caption">
-              One of the three scenarios answering questions included finding
-              the best place to raise a family.
+              One of the three scenarios answering questions included finding the best place to
+              raise a family.
             </p>
           </div>
           <div class="figure">
-            <img src="../img/bard/bard-io-sissie.jpg" alt="Bard designs shown during the Google I/O 2023 presentation" />
+            <img
+              src="../img/bard/bard-io-sissie.jpg"
+              alt="Bard designs shown during the Google I/O 2023 presentation"
+            />
             <p class="caption">
-              Senior leadership showcased portions of the designs in their
-              Google I/O 2023 Bard presentation.
+              Senior leadership showcased portions of the designs in their Google I/O 2023 Bard
+              presentation.
             </p>
-            <img src="../img/bard/bard-io-sundar.jpg" alt="Sundar Pichai presenting Bard at Google I/O 2023" />
+            <img
+              src="../img/bard/bard-io-sundar.jpg"
+              alt="Sundar Pichai presenting Bard at Google I/O 2023"
+            />
           </div>
         </div>
       </section>
@@ -260,27 +283,24 @@
               <li>
                 <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                 <strong>Improved speed of design iteration</strong>
-                &mdash; Use of agile prototyping in design helped address
-                internal and external criticism that Google was not moving fast
-                enough in the LLM space.
+                &mdash; Use of agile prototyping in design helped address internal and external
+                criticism that Google was not moving fast enough in the LLM space.
               </li>
               <li>
                 <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                <strong>Influenced senior leadership</strong> &mdash; Prototype
-                presented to CEO helped shape and influence leadership
-                decision-making throughout Search and Ads.
+                <strong>Influenced senior leadership</strong> &mdash; Prototype presented to CEO
+                helped shape and influence leadership decision-making throughout Search and Ads.
               </li>
               <li>
                 <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                 <strong>Received recognition from senior leadership</strong>
-                &mdash; Product and design leadership praised the high quality
-                deliverables that addressed rapidly changing market conditions.
+                &mdash; Product and design leadership praised the high quality deliverables that
+                addressed rapidly changing market conditions.
               </li>
               <li>
                 <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                <strong>Created positive media attention</strong> &mdash; Google
-                I/O presentation influenced media portrayal of Google as quickly
-                closing gaps with competition.
+                <strong>Created positive media attention</strong> &mdash; Google I/O presentation
+                influenced media portrayal of Google as quickly closing gaps with competition.
               </li>
             </ul>
           </div>

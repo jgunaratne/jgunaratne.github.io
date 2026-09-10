@@ -174,7 +174,7 @@ class JGNav extends HTMLElement {
         </ul>
       </nav>
   `;
-  this.addEvents();
+    this.addEvents();
   }
 }
 

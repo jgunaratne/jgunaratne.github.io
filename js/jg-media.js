@@ -28,7 +28,7 @@
           }
         });
       },
-      { rootMargin: '200px 0px', threshold: 0.1 }
+      { rootMargin: '200px 0px', threshold: 0.1 },
     );
 
     videos.forEach(function (video) {
