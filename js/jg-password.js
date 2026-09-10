@@ -5,7 +5,9 @@ class JGPassword extends HTMLElement {
   }
 
   async getEncryptedData(passwd) {
-    const response = await fetch('../case/bard.txt');
+    // Resolved against this page, not the site root: the previous
+    // '../case/bard.txt' pointed one directory above the ciphertext.
+    const response = await fetch(this.getAttribute('src') || 'bard.txt');
     const text = await response.text();
     try {
       let output = sjcl.decrypt(passwd, text)

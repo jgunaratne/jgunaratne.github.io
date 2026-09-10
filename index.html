@@ -5,12 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Junius Gunaratne</title>
-  <link href="css/home.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;600&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/home-mobile.css" media="(max-width: 1023.98px)" />
+  <link rel="stylesheet" href="css/home-desktop.css" media="(min-width: 1024px)" />
   <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32" />
-  <script src="js/jg-nav.js"></script>
-  <script src="js/jg-mobile.js"></script>
-  <script src="js/jg-desktop.js"></script>
-  <script src="js/jg-lightbox.js"></script>
+  <script src="js/jg-nav.js" defer></script>
+  <script src="js/jg-mobile.js" defer></script>
+  <script src="js/jg-desktop.js" defer></script>
+  <script src="js/jg-lightbox.js" defer></script>
+  <script src="js/jg-media.js" defer></script>
   <script src="js/home.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-004WGNVXFH"></script>
@@ -104,24 +111,24 @@
         </div>
       </div>
       <jg-mobile>
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/live/gel-first-rev.mp4" type="video/mp4" />
         </video>
       </jg-mobile>
     </section>
     <section class="thumbnails">
       <div class="thumbnail">
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/live/gyroscope.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/live/particle-wave.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/live/wave-view.mp4" type="video/mp4" />
         </video>
       </div>
@@ -184,19 +191,19 @@
         </div>
       </div>
       <jg-mobile>
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/bard/magi-waves.mp4" type="video/mp4" />
         </video>
       </jg-mobile>
     </section>
     <section class="thumbnails">
       <div class="thumbnail">
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/bard/magi-vegetable.mp4#t=10" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/bard/magi-family.mp4#t=10" type="video/mp4" />
         </video>
       </div>
@@ -275,12 +282,12 @@
         <img src="img/reddit/reddit-comments.png" slot="content" />
       </div>
       <div class="thumbnail">
-        <video muted loop slot="content">
+        <video muted loop slot="content" playsinline preload="none">
           <source src="video/reddit/reddit-animated-comments.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video muted loop slot="content">
+        <video muted loop slot="content" playsinline preload="none">
           <source src="video/reddit/reddit-watch-tab.mp4" type="video/mp4" />
         </video>
       </div>
@@ -341,7 +348,7 @@
         </div>
       </div>
       <jg-desktop>
-        <video width="1008" class="desktop-content" muted loop slot="content">
+        <video width="1008" class="desktop-content" muted loop slot="content" playsinline preload="none">
           <source src="video/creative-insights.mp4" type="video/mp4" />
         </video>
       </jg-desktop>
@@ -413,34 +420,34 @@
         </div>
       </div>
       <jg-mobile class="no-frame">
-        <video width="406" muted loop slot="content">
+        <video width="406" muted loop slot="content" playsinline preload="none">
           <source src="video/mdc/mdc-catalog.mp4" type="video/mp4" />
         </video>
       </jg-mobile>
     </section>
     <section class="thumbnails">
       <div class="thumbnail">
-        <video muted loop slot="content">
+        <video muted loop slot="content" playsinline preload="none">
           <source src="video/mdc/mdc-filters.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video muted loop slot="content">
+        <video muted loop slot="content" playsinline preload="none">
           <source src="video/mdc/mdc-pliability.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video muted loop slot="content">
+        <video muted loop slot="content" playsinline preload="none">
           <source src="video/mdc/mdc-shadows.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="thumbnail">
-        <video muted loop slot="content">
+        <video muted loop slot="content" playsinline preload="none">
           <source src="video/mdc/mdc-shapes.mp4" type="video/mp4" />
         </video>
       </div>
     </section>
-    <footer>&copy; 2024 &middot; Junius Gunaratne</footer>
+    <footer>&copy; 2026 &middot; Junius Gunaratne</footer>
   </div>
 </body>
 

@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>Material Design - Case Study</title>
-    <link href="../css/case.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;600&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/case-mobile.css" media="(max-width: 1023.98px)" />
+  <link rel="stylesheet" href="../css/case-desktop.css" media="(min-width: 1024px)" />
+  <link rel="stylesheet" href="../css/case.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32" />
-    <script src="../js/jg-nav.js"></script>
-    <script src="../js/jg-lightbox.js"></script>
+  <script src="../js/jg-nav.js" defer></script>
+  <script src="../js/jg-lightbox.js" defer></script>
+  <script src="../js/jg-media.js" defer></script>
   </head>
 
   <body>
@@ -52,7 +60,7 @@
             within the design system.
           </p>
           <div class="figure">
-            <video autoplay muted loop slot="content" class="small">
+            <video muted loop slot="content" class="small" playsinline preload="none">
               <source src="../video/mdc/mdc-filters.mp4" type="video/mp4" />
             </video>
             <p class="caption">
@@ -119,14 +127,14 @@
             dynamic quality to the user interface.
           </p>
           <div class="figure">
-            <video autoplay muted loop slot="content" class="small">
+            <video muted loop slot="content" class="small" playsinline preload="none">
               <source src="../video/mdc/mdc-shadows.mp4" type="video/mp4" />
             </video>
             <p class="caption">
               I explored different shadow effects to illustrate hierarchy and
               depth in the user interface.
             </p>
-            <video autoplay muted loop slot="content" class="small">
+            <video muted loop slot="content" class="small" playsinline preload="none">
               <source src="../video/mdc/mdc-shapes.mp4" type="video/mp4" />
             </video>
             <p class="caption">
@@ -156,7 +164,7 @@
             functionalities.
           </p>
           <div class="figure">
-            <video autoplay muted loop slot="content" class="small">
+            <video muted loop slot="content" class="small" playsinline preload="none">
               <source src="../video/mdc/mdc-catalog.mp4" type="video/mp4" />
             </video>
             <p class="caption">
@@ -207,7 +215,7 @@
             standards but also captured external acclaim.
           </p>
           <div class="figure">
-            <video autoplay muted loop slot="content" class="small">
+            <video muted loop slot="content" class="small" playsinline preload="none">
               <source src="../video/mdc/mdc-shrine.mp4" type="video/mp4" />
             </video>
             <p class="caption">
@@ -250,7 +258,7 @@
           </div>
         </div>
       </section>
-      <footer>&copy; 2023 &middot; Junius Gunaratne</footer>
+      <footer>&copy; 2026 &middot; Junius Gunaratne</footer>
     </div>
   </body>
 </html>
