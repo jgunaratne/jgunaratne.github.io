@@ -162,3 +162,67 @@ test('case pages do not pin the nav open', async ({ page }) => {
   );
   expect(open).toBe(false);
 });
+
+// Regressions these guard against, both caused by refactors:
+//
+// 1. The rule sizing media inside the device frames lived only in the mobile
+//    stylesheet. Folding the breakpoint files into one mobile-first sheet put
+//    it in the base layer, so width:100% started applying at desktop and
+//    stretched slotted media out of the phone and laptop frames. The earlier
+//    computed-style snapshot missed it because it sampled the jg-mobile host,
+//    whose own box never changed, and not the slotted child.
+//
+// 2. The nav toggles became <button>s for keyboard access. A button centres
+//    its content where the previous <i> inherited left alignment, so the
+//    hamburger drifted to the middle of the full-width control.
+test.describe('device frames', () => {
+  test('slotted media is sized by its width attribute at desktop', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'frames only render at desktop widths');
+    await ready(page, '/');
+    const mismatches = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('jg-mobile, jg-desktop'))
+        .map((host) => {
+          const media = host.querySelector('video, img');
+          if (!media) return null;
+          const attr = media.getAttribute('width');
+          if (!attr) return null;
+          const actual = Math.round(parseFloat(getComputedStyle(media).width));
+          return actual === Number(attr)
+            ? null
+            : { host: host.tagName.toLowerCase(), expected: Number(attr), actual };
+        })
+        .filter(Boolean),
+    );
+    expect(mismatches).toEqual([]);
+  });
+
+  test('slotted media fills the column below the desktop breakpoint', async ({
+    page,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'only applies below 1024px');
+    await ready(page, '/');
+    const notFilled = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('jg-mobile, jg-desktop'))
+        .map((host) => {
+          const media = host.querySelector('video, img');
+          if (!media) return null;
+          const hostWidth = host.getBoundingClientRect().width;
+          const mediaWidth = media.getBoundingClientRect().width;
+          return Math.abs(hostWidth - mediaWidth) <= 1 ? null : { hostWidth, mediaWidth };
+        })
+        .filter(Boolean),
+    );
+    expect(notFilled).toEqual([]);
+  });
+});
+
+test('the hamburger control is left aligned', async ({ page }) => {
+  await ready(page, '/');
+  const controls = await page.evaluate(() =>
+    Array.from(document.querySelector('jg-nav').shadowRoot.querySelectorAll('.menu-control')).map(
+      (el) => getComputedStyle(el).textAlign,
+    ),
+  );
+  expect(controls.length).toBeGreaterThan(0);
+  expect(controls.every((a) => a === 'left' || a === 'start')).toBe(true);
+});

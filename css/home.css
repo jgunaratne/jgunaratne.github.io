@@ -71,12 +71,14 @@ section {
   object-fit: cover;
 }
 
-jg-mobile img,
-jg-mobile video,
-jg-desktop img,
-jg-desktop video {
-  object-fit: contain;
-  width: 100%;
+@media (max-width: 1023.98px) {
+  jg-mobile img,
+  jg-mobile video,
+  jg-desktop img,
+  jg-desktop video {
+    object-fit: contain;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1024px) {

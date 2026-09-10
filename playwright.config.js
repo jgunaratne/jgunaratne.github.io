@@ -15,7 +15,10 @@ export default {
       : {}),
   },
   webServer: {
-    command: 'python3 -m http.server 8899',
+    // Range-capable: python -m http.server answers Range with a 200 and the
+    // whole file, which browsers reject for media, so video would be
+    // untestable against it.
+    command: 'python3 scripts/serve.py 8899',
     url: 'http://localhost:8899',
     reuseExistingServer: !process.env.CI,
   },

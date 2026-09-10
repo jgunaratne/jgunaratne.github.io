@@ -11,7 +11,7 @@
     video.setAttribute('playsinline', '');
     video.removeAttribute('autoplay');
     if (!video.hasAttribute('preload')) {
-      video.preload = 'none';
+      video.preload = 'metadata';
     }
   }
 

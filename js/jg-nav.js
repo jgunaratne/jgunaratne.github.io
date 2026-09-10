@@ -109,8 +109,10 @@ class JGNav extends HTMLElement {
           background: none;
           border: none;
           padding: 0;
-          line-height: 1;
           font-family: inherit;
+          /* A button centres its content and an <i> did not; without this the
+             glyph sits in the middle of the full-width control. */
+          text-align: left;
         }
 
         button.menu-control:focus-visible {
